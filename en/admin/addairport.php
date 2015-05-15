@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar aeropuerto</title>
+    <title>Administración - Add airport</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar aeropuerto</h1>
+        <h1 class="text-center">Add airport</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["location"]))
 {
@@ -39,13 +39,13 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
 }
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
+            <h3>Help</h3>
             <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaciòn de dicho aeropuerto</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addairport.php">
             <div class="form-group">
-            <label for="name">Nombre del aeropuerto</label>
+            <label for="name">Name of the airport</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del aeropuerto" required>
             </div>
             <label for="location">Ubicación</label>

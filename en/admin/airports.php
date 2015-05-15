@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Aeropuertos</title>
+    <title>Administration - Airport</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Listado de aeropuertos</h1>
+        <h1 class="text-center">List of airports </h1>
         <br>
 <?php
 include "../docs/connect.php";
@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Nombre del aeropuerto</td><td>Ubicación (Ciudad - Estado)</td><td><a href='addairport.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar aeropuerto</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the airport</td><td>Ubication (City - Stade)</td><td><a href='addairport.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add Airport</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -41,7 +41,7 @@ if($total>0)
 } 
 else
 {
-    echo "<p class='text-danger text-center'>Error: la base de datos esta vacia <a href='addairport.php' class='text-success'>Agregar aeropuerto</a></p>";
+    echo "<p class='text-danger text-center'>Error: The database is empty <a href='addairport.php' class='text-success'>Agregar aeropuerto</a></p>";
 }
 ?>
         </tbody></table>
