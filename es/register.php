@@ -59,7 +59,7 @@
                         }
                     }
                 }else{
-                    echo '<script language="javascript">alert("The passwords are incorrect")</script>';
+                    echo '<script language="javascript">alert("La contraseña es incorrecta")</script>';
                     echo"<script>location.href='index.php'</script>";
                 }
         }
