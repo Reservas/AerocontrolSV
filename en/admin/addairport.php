@@ -28,29 +28,29 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
     $query = mysql_query("INSERT INTO airports (id, name, location) VALUES ('','$name','$location')");
     if($query)
     {
-        echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='airports.php'>Lista de aeropuertos</a></p>";
+        echo "<p class='text-success text-center'><strong>Data were stored</strong></p>";
+        echo "<p class='text-success text-center'><a href='airports.php'>List of the airport</a></p>";
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='airports.php'>Lista de aeropuertos</a></p>";
+        echo "<p class='text-danger text-center'><strong>Error: the data were not saved</strong></p>";
+        echo "<p class='text-success text-center'><a href='airports.php'>List of the airport</a></p>";
     }
 }
 ?>
         <div class="col-md-4 well">
             <h3>Help</h3>
-            <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaciòn de dicho aeropuerto</p>
+            <p>Add the name of the <strong>airport</strong> the location to</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addairport.php">
             <div class="form-group">
             <label for="name">Name of the airport</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del aeropuerto" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name of the airport" required>
             </div>
-            <label for="location">Ubicación</label>
+            <label for="location">Location</label>
             <select class="form-control" name="location" id="location">
-                <option value="">Escoja la ciudad don de se ubica</option>
+                <option value="">Location</option>
                 <?php
                 include "../docs/connect.php";
                 $query = "SELECT * FROM cities ORDER BY id";
@@ -65,7 +65,7 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
                 }
                 ?>
             </select>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Save">
         </form>
         </div>
     </div>    

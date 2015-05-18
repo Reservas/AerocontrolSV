@@ -29,35 +29,35 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
     $query = mysql_query("INSERT INTO cities (id, city, state, zip) VALUES ('','$city','$state','$zip')");
     if($query)
     {
-        echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='cities.php'>Lista de ciudades</a></p>";
+        echo "<p class='text-success text-center'><strong>Data were stored</strong></p>";
+        echo "<p class='text-success text-center'><a href='cities.php'>List of the cities</a></p>";
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='cities.php'>Lista de ciudades</a></p>";
+        echo "<p class='text-danger text-center'><strong>Error: the data were not saved</strong></p>";
+        echo "<p class='text-success text-center'><a href='cities.php'>List of the cities</a></p>";
     }
 }
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
-            <p>Escribe el nombre de la <strong>Ciudad</strong> luego ingresamos el nombre del <strong>Estado(departament)</strong> que se encuentra y el <strong>Código ZIP</strong> </p>
+            <h3>Help</h3>
+            <p>Write the name of the <strong>City</strong> Later, the name of the <strong>State(departament)</strong> and the <strong>ZIP code</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addcity.php">
             <div class="form-group">
-            <label for="city">Nombre de la ciudad</label>
-            <input type="text" class="form-control" id="city" name="city" placeholder="Nombre de la ciudad" required>
+            <label for="city">Name of the city</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Name of the city" required>
             </div>
             <div class="form-group">
-            <label for="state">Nombre del estado</label>
-            <input type="text" class="form-control" id="state" name="state" placeholder="Nombre del estado" required>
+            <label for="state">Name of the state</label>
+            <input type="text" class="form-control" id="state" name="state" placeholder="Name of the state" required>
             </div>
             <div class="form-group">
-            <label for="zip">Código ZIP</label>
-            <input type="number" class="form-control" id="zip" name="zip" placeholder="Código ZIP" required min="0">
+            <label for="zip">ZIP code</label>
+            <input type="number" class="form-control" id="zip" name="zip" placeholder="ZIP code" required min="0">
             </div>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Save">
         </form>
         </div>
     </div>    
