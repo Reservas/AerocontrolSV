@@ -2,6 +2,11 @@
 <?php 
 session_start();
 require_once "docs/connect.php";
+
+$user_pool = mysql_query("SELECT user FROM costumers");                          
+
+
+
 ?>
 <html lang="en">
 <head>
@@ -65,6 +70,20 @@ require_once "docs/connect.php";
     </div>
     <!--HOME SECTION END  -->
      <!-- ABOUT SECTION START-->
+
+     <script type="text/javascript"> 
+     function alpha(e) {
+       var k;
+       document.all ? k = e.keyCode : k = e.which;
+       return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k==32);
+    }
+
+    function numbers(e) {
+       var k;
+       document.all ? k = e.keyCode : k = e.which;
+       return ((k > 47 && k < 58) || k==45 k == 8 || k==32);
+    }
+     </script>
     <section id="about">
         <div class="container">
             <div class="row">
@@ -76,7 +95,7 @@ require_once "docs/connect.php";
                           <div class="panel-body">
                             <form action="validate.php" method="post">
                               <label>Usuario</label>
-                              <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required> 
+                              <input type="text" class="form-control input-sm" id="user" name="user" placeholder="Usuario" autocomplete="off" required  > 
                               <label>Contraseña</label>
                               <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required>
                               <?php
@@ -127,10 +146,10 @@ require_once "docs/connect.php";
                             <h2 class="text-center" style="color:#fff;">Registro de clientes</h2>
                           </div>
                           <div class="panel-body">
-                            <form action="register.php" method="post">
+                            <form name="register" action="register.php" method="post">
                               <div class="col-md-6"> 
                                 <label>Usuario</label>
-                                <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required > 
                                 <label>Contraseña</label>
                                 <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required>  
                                 <label>Repetir contraseña</label>
@@ -138,15 +157,31 @@ require_once "docs/connect.php";
                                 <label>Fecha de nacimiento</label>
                                 <input type="text" class="form-control input-sm" name="nac" placeholder="Fecha de nacimiento" autocomplete="off" required> 
                                 <label>Telefono</label>
-                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telefono" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telefono" autocomplete="off" required
+                                onkeypress="return numbers(event)"> 
                               </div>
                               <div class="col-md-6">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control input-sm" name="name" placeholder="Nombre" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="name" placeholder="Nombre" autocomplete="off" required
+                                onkeypress="return alpha(event)" > 
                                 <label>Pais</label>
-                                <input type="text" class="form-control input-sm" name="city" placeholder="Pais" autocomplete="off" required> 
+                                <!--<div class="panel-body">-->
+                                  <select class="form-control input-sm" id="city" name="city">
+                                    <option value="">Elige un pais</option>
+                                    <?php
+                                      $query = mysql_query("SELECT city FROM cities");
+                                      while($row = mysql_fetch_row($query))
+                                      {
+                                          echo "<option value='".$row[0]."'>".$row[0]."</option>";
+                                      }
+                                    ?>
+                                  </select>
+                                <!--</div>-->
+                                <!--<input type="text" class="form-control input-sm" name="city" placeholder="Pais" autocomplete="off" required 
+                                onkeyup="this.value=this.value.replace(/[^a-zA-Z] /g,'');"> -->
                                 <label>Estado</label>
-                                <input type="text" class="form-control input-sm" name="state" placeholder="Estado" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="state" placeholder="Estado" autocomplete="off" required 
+                                onkeypress="return alpha(event)"> 
                                 <label>Direccion</label>
                                 <input type="text" class="form-control input-sm" name="address" placeholder="Direccion" autocomplete="off" required> 
                                 <label>Correo</label>
