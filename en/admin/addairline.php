@@ -97,7 +97,7 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
             <input type="text" class="form-control" id="name" name="name" placeholder="Name of the airline" required>
             </div>
             <div class="form-group">
-            <label for="description">Description (Mac 300 characters)</label>
+            <label for="description">Description (Max 300 characters)</label>
             <textarea class="form-control" id="description" name="description" rows="3" maxlength="300"></textarea>
             </div>
             <div class="form-group">
