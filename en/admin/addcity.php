@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar ciudad</title>
+    <title>Administrator - Add city</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar ciudad</h1>
+        <h1 class="text-center">Add city</h1>
 <?php
 if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 {

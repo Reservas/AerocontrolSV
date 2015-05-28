@@ -48,9 +48,9 @@
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
+            <div class="alert alert-info">  
                 <h3>Aviones</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="aircrafts.php" class="btn btn-primary">Ver lista</a>   <a href="addaircraft.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
         <div class="col-md-4">
@@ -66,9 +66,9 @@
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
+            <div class="alert alert-info">  
                 <h3>Pistas de aterrizaje</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="runways.php" class="btn btn-primary">Ver lista</a>   <a href="addrunway.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
     </div>    

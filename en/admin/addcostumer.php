@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar cliente</title>
+    <title>Administrator - Add client</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -42,76 +42,64 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         $query = mysql_query("INSERT INTO costumers (id, name, address, city, state, zip, birthdate, phone, user, password, status) VALUES ('','$name','$address', '$ciudad', '$estado', '$zip', '$birthdate', '$phone', '$user', '$pass', '1')");
         if($query)
         {
-            echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de clientes</a></p>";
+            echo "<p class='text-success text-center'><strong>The data were stored</strong></p>";
+            echo "<p class='text-success text-center'><a href='costumers.php'>List of clients</a></p>";
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de clientes</a></p>";
+            echo "<p class='text-danger text-center'><strong>Error: The data were not saved</strong></p>";
+            echo "<p class='text-success text-center'><a href='costumers.php'>List of clients</a></p>";
         }
     }
     else
     {
-        echo "<p class='text-danger'><strong>Las contraseñas no coinciden</strong></p>";
+        echo "<p class='text-danger'><strong>The password are incorrect</strong></p>";
     }
 }
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
-            <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
+            <h3>Help</h3>
+            <p>Please write the <strong>name</strong> of the client you want to add, ow write the  <strong>address</strong> were you lived,  <strong>city</strong> write you <strong>birthday </strong> put your <strong>phone number</strong>put the  <strong>username</strong>and finish write the <strong>password</strong> and repeat.</p>
         </div>
-        <div class="col-md-8">
-        <form method="post" action="addcostumer.php">
-            <div class="form-group">
-            <label for="name">Nombre del cliente</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la cliente" required>
-            </div>
-            <div class="form-group">
-            <label for="address">Dirección</label>
-            <input type="text" class="form-control" id="address" name="address" placeholder="Dirección" required>
-            </div>
-            <div class="form-group">
-            <label for="location">Ubicación</label>
-            <select class="form-control" name="location" id="location">
-                <option value="">Escoja la ciudad donde se ubica</option>
-                <?php
-                include "../docs/connect.php";
-                $query = "SELECT * FROM cities ORDER BY id";
-                $resultado = mysql_query($query, $link);
-                $total = mysql_num_rows($resultado);
-                if($total>0)
-                {
-                    while($row = mysql_fetch_array($resultado))
-                    {
-                        echo "<option value='".$row['zip']."-".$row['city']."-".$row['state']."'>".$row['zip']." - ".$row['city']." - ".$row['state']."</option>";
-                    }                    
-                }
-                ?>
-            </select>
-            </div>
-            <div class="form-group">
-            <label for="birthdate">Nacimiento</label>
-            <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="AAAA/MM/DD" required>
-            </div>
-            <div class="form-group">
-            <label for="phone">Telefono</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="####-####" required>
-            </div>
-            <div class="form-group">
-            <label for="user">Nombre de usuario</label>
-            <input type="text" class="form-control" id="user" name="user" placeholder="Nombre de usuario" required>
-            </div>
-            <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
-            </div>
-            <div class="form-group">
-            <label for="password2">Confirme</label>
-            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirme" required>
-            </div>
-            <input type="submit" name="enviar" value="Enviar">
-        </form>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h2 class="text-center" style="color:#fff;">Customer login
+</h2>
+                          </div>
+                          <div class="panel-body">
+                            <form action="register.php" method="post">
+                              <div class="col-md-6"> 
+                                <label>Username</label>
+                                <input type="text" class="form-control input-sm" name="user" placeholder="Username" autocomplete="off" required> 
+                                <label>Password</label>
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Passwprd" autocomplete="off" required>  
+                                <label>Repeat password</label>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repit password" autocomplete="off" required>
+                                <label>Birthday</label>
+                                <input type="text" class="form-control input-sm" name="nac" placeholder="Birthday" autocomplete="off" required> 
+                                <label>Telephone</label>
+                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telephone" autocomplete="off" required> 
+                              </div>
+                              <div class="col-md-6">
+                                <label>Name</label>
+                                <input type="text" class="form-control input-sm" name="name" placeholder="Name" autocomplete="off" required> 
+                                <label>Country</label>
+                                <input type="text" class="form-control input-sm" name="city" placeholder="Country" autocomplete="off" required> 
+                                <label>State</label>
+                                <input type="text" class="form-control input-sm" name="state" placeholder="State" autocomplete="off" required> 
+                                <label>Address</label>
+                                <input type="text" class="form-control input-sm" name="address" placeholder="Address" autocomplete="off" required> 
+                                <label>E-mail</label>
+                                <input type="text" class="form-control input-sm" name="mail" placeholder="E-mail" autocomplete="off" required> 
+                              </div>
+                          </div> 
+                          <div class="panel-footer">
+                              <input type="submit" class="btn btn-success form-control btn-sm" value="Register">
+                            </form>
+                          </div>
+                        </div>
+                    </div>
         </div>
     </div>    
 </div>
