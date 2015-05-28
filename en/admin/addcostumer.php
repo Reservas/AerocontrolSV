@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar cliente</h1>
+        <h1 class="text-center">Add Costumers</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location"]) AND isset($_POST["birthdate"]) AND isset($_POST["phone"]) AND isset($_POST["user"]) AND isset($_POST["password"]) AND isset($_POST["password2"]))
 {
