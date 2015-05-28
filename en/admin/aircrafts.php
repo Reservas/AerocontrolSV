@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Aviones</title>
+    <title>Administrator - Aircraft</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Name of the aircrats</td><td>Asientos</td><td>Tipo</td><td>Aerolinea</td><td><a href='addaircraft.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar avion</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the aircrats</td><td>Seats</td><td>Type</td><td>Airline</td><td><a href='addaircraft.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add aircraft</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{

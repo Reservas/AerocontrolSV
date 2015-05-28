@@ -30,32 +30,32 @@
         </div>
         <div class="col-md-4">
             <div class="alert alert-info">  
-                <h3>Aeropuertos</h3>
+                <h3>Airport</h3>
                     <a href="airports.php" class="btn btn-primary">List</a>   <a href="addairport.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-info">  
-                <h3>Clientes</h3>
+                <h3>Clients</h3>
                     <a href="costumers.php" class="btn btn-primary">List</a>   <a href="addcostumer.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <!-- NO ESTAN -->
         <div class="col-md-4">
             <div class="alert alert-info">  
-                <h3>Aerolineas</h3>
+                <h3>Airlines</h3>
                     <a href="airlines.php" class="btn btn-primary">List</a>   <a href="addairline.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
-                <h3>Aviones</h3>
-                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
+            <div class="alert alert-info">  
+                <h3>Aircrafts</h3>
+                    <a href="aircrafts.php" class="btn btn-primary">List</a>   <a href="addaircraft.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-danger">  
-                <h3>Vuelos</h3>
+                <h3>Fligths</h3>
                     <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
@@ -66,9 +66,9 @@
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
-                <h3>Pistas de aterrizaje</h3>
-                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
+            <div class="alert alert-info">  
+                <h3>Runways</h3>
+                    <a href="runways.php" class="btn btn-primary">List</a>   <a href="addrunway.php" class="btn btn-success">New</a>
                 </div>
         </div>
     </div>    
