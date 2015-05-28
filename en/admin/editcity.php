@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar ciudad</title>
+    <title>Administratir - Edit city</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Editando datos de una ciudad</h1>
+        <h1 class="text-center">Edit city</h1>
 <?php
 if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 {
@@ -30,13 +30,13 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
     $query = mysql_query("UPDATE cities SET city = '$city', state = '$state', zip = '$zip' WHERE id = $idcity");
     if($query)
     {
-        echo "<p class='text-success text-center'><strong>Los datos de la ciudad &quot;".$city."&quot; fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='cities.php'>Lista de ciudades</a></p>";
+        echo "<p class='text-success text-center'><strong>The data of the city &quot;".$city."&quot; were stored</strong></p>";
+        echo "<p class='text-success text-center'><a href='cities.php'>List of the city</a></p>";
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='cities.php'>Lista de ciudades</a></p>";
+        echo "<p class='text-danger text-center'><strong>Error: The data were not saved</strong></p>";
+        echo "<p class='text-success text-center'><a href='cities.php'>Lis of the city</a></p>";
     }
 }
 else
@@ -55,28 +55,28 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente a las ciudades</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+            <p>You can edit everything about the cities</p>
+
         </div>
         <div class="col-md-8">
         <form method="post" action="editcity.php">
             <div class="form-group">
-            <label for="idcity">ID de la ciudad (No se puede editar)</label>
+            <label for="idcity">ID of the city (Can`t be edit)</label>
             <input type="text" class="form-control" id="idcity" name="idcity" value="<?=$row["id"]?>"  readonly>
             </div>
             <div class="form-group">
-            <label for="city">Nombre de la ciudad</label>
+            <label for="city">Name of the city</label>
             <input type="text" class="form-control" id="city" name="city" value="<?=$row["city"]?>"  required>
             </div>
             <div class="form-group">
-            <label for="state">Nombre del estado</label>
+            <label for="state">Name of the estate</label>
             <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required>
             </div>
             <div class="form-group">
-            <label for="zip">Código ZIP</label>
+            <label for="zip">ZIP code</label>
             <input type="number" class="form-control" id="zip" name="zip"  value="<?=$row["zip"]?>"  required min="0" max="999">
             </div>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Send">
         </form>
         </div>        
 <?php

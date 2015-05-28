@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Listado de ciudades y destinos</h1>
+        <h1 class="text-center">List city </h1>
         <br>
 <?php
 include "../docs/connect.php";
@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Nombre de la ciudad</td><td>Estado</td><td>Código ZIP</td><td><a href='addcity.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar ciudad</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the city</td><td>Estate</td><td>ZIP cpde</td><td><a href='addcity.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add city</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -37,12 +37,12 @@ if($total>0)
         echo "<td>".$row['city']."</td>";
         echo "<td>".$row['state']."</td>";
         echo "<td>".$row['zip']."</td>";
-        echo "<td><a href='editcity.php?city=".$row['id']."'><span class='glyphicon glyphicon-cog' aria-hidden='true'></span>  Editar</a>   <a href='dropcity.php?city=".$row['id']."' class='text-danger'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span>  Borrar</a></td></tr>";
+        echo "<td><a href='editcity.php?city=".$row['id']."'><span class='glyphicon glyphicon-cog' aria-hidden='true'></span>  Edit</a>   <a href='dropcity.php?city=".$row['id']."' class='text-danger'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span>  Delete</a></td></tr>";
     }
 } 
 else
 {
-    echo "<p class='text-danger text-center'>Error: la base de datos esta vacia <a href='addcity.php' class='text-success'>Agregar ciudad</a></p>";
+    echo "<p class='text-danger text-center'>Error: The data base is empty <a href='addcity.php' class='text-success'>Add city</a></p>";
 }
 ?>
         </tbody></table>
