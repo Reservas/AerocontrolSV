@@ -12,7 +12,7 @@ $row = mysql_fetch_array($query);
     <link href="../../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../../docs/css/ionicons.css" rel="stylesheet">
-    <title>Administración - <?=$row['name']?></title>
+    <title>Administration - <?=$row['name']?></title>
 </head>
 <body>
 <div class="container-fluid">
@@ -22,11 +22,11 @@ $row = mysql_fetch_array($query);
     <!-- /NAV -->
         <div class="container">
             <div class="jumbotron well">
-              <h1>Bienvenid@!</h1>
-              <p>Acaba de iniciar sesion dentro como Administrador</p>
+              <h1>Welcome!</h1>
+              <p>Login as Administrator</p>
             </div>
             <div class="col-md-12">
-                <h2 class="text-center">Vuelos (<?=$row['name']?>)</h2>
+                <h2 class="text-center">Flights (<?=$row['name']?>)</h2>
                 <div class="container vuelos"></div>
             </div>
         </div>

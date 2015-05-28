@@ -29,11 +29,11 @@ include "../files/conexion.php";
                       </div>
                       <form action='reserva.php' method='post'>
                       <div class='form-group ' style='margin-left:4%;margin-right:4%;'>
-                          <label class='control-label'>Numero de personas</label>
+                          <label class='control-label'>Number of persons</label>
                           <div class='input-group'>
                             
                             <span class='input-group-addon'><i class='fa fa-users'></i></span>
-                            <input type='text' name='number' placeholder='Ingrese el numero de personas' class='form-control'>
+                            <input type='text' name='number' placeholder='Insert number of staff' class='form-control'>
                           </div>
                         </div>
                       <div class='modal-footer'>

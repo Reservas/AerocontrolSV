@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Clientes</title>
+    <title>Administration - Clients</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Listado de clientes</h1>
+        <h1 class="text-center">List of clients</h1>
         <br>
 <?php
 include "../docs/connect.php";
@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Nombre del cliente</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar cliente</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the client</td><td>Direccn</td><td>Ubicación (ZIP - City - State)</td><td>Birth (AAAA-MM-DD)</td><td>Telephone</td><td>User</td><td>State</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add client</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -58,7 +58,7 @@ if($total>0)
 } 
 else
 {
-    echo "<p class='text-danger text-center'>Error: la base de datos esta vacia <a href='addcostumer.php' class='text-success'>Agregar cliente</a></p>";
+    echo "<p class='text-danger text-center'>Error: The database is empty <a href='addcostumer.php' class='text-success'>Add client</a></p>";
 }
 ?>
         </tbody></table>
