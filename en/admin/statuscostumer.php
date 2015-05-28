@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Cambiando estado de un cliente</title>
+    <title>Administrator - Changing status of a client</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Cambiando estado de un cliente</h1>
+        <h1 class="text-center">Changing status of a client</h1>
 <?php
     if(isset($_GET["costumer"]))
     {
@@ -37,11 +37,11 @@
                     $resultado2 = mysql_query($query2, $link);
                     if($resultado2)
                     {
-                        echo "<p class='text-success text-center'><strong>El estado del usuario &quot; ".$row['name']." &quot; se cambio a ACTIVO. <a href='costumers.php'>Lista de clientes</a></strong></p>";  
+                        echo "<p class='text-success text-center'><strong>The status of a client &quot; ".$row['name']." &quot; Change to ACTIVE. <a href='costumers.php'>List of clients</a></strong></p>";  
                     }
                     else
                     {
-                        echo "<p class='text-danger text-center'><strong>Error. <a href='costumers.php'>Lista de clientes</a></strong></p>";  
+                        echo "<p class='text-danger text-center'><strong>Error. <a href='costumers.php'>List of clients</a></strong></p>";  
                     }
                 }
                 elseif($row["status"]==1)
@@ -50,18 +50,18 @@
                     $resultado2 = mysql_query($query2, $link);
                     if($resultado2)
                     {
-                        echo "<p class='text-success text-center'><strong>El estado del usuario &quot; ".$row['name']." &quot; se cambio a INACTIVO. <a href='costumers.php'>Lista de clientes</a></strong></p>";  
+                        echo "<p class='text-success text-center'><strong>The status of a client &quot; ".$row['name']." &quot; Change to INACTIVE <a href='costumers.php'>Lista de clientes</a></strong></p>";  
                     }
                     else
                     {
-                        echo "<p class='text-danger text-center'><strong>Error al borrar. <a href='costumers.php'>Lista de clientes</a></strong></p>";  
+                        echo "<p class='text-danger text-center'><strong>Error to deleted. <a href='costumers.php'>List of clients</a></strong></p>";  
                     }
                 }
             }
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error. <a href='costumers.php'>Lista de clientes</a></strong></p>"; 
+            echo "<p class='text-danger text-center'><strong>Error. <a href='costumers.php'>List of clients</a></strong></p>"; 
         }
     }
     else

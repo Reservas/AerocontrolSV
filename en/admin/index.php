@@ -14,43 +14,43 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Administración</h1>
+        <h1 class="text-center">Administrator</h1>
         <div class="col-md-12">
-            <h2 class="text-center">Vuelos en tiempo real</h2>
+            <h2 class="text-center">Flights in real time</h2>
             <div class="container vuelos"></div>
-            <h2 class="text-center">Mantenimientos</h2>
+            <h2 class="text-center">Maintenance</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <div class="alert alert-info">  
-                <h3>Destinos - Ciudades</h3>
-                    <a href="cities.php" class="btn btn-primary">Ver lista</a>   <a href="addcity.php" class="btn btn-success">Nuevo</a>
+                <h3>Destination - Cities</h3>
+                    <a href="cities.php" class="btn btn-primary">List</a>   <a href="addcity.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-info">  
                 <h3>Aeropuertos</h3>
-                    <a href="airports.php" class="btn btn-primary">Ver lista</a>   <a href="addairport.php" class="btn btn-success">Nuevo</a>
+                    <a href="airports.php" class="btn btn-primary">List</a>   <a href="addairport.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-info">  
                 <h3>Clientes</h3>
-                    <a href="costumers.php" class="btn btn-primary">Ver lista</a>   <a href="addcostumer.php" class="btn btn-success">Nuevo</a>
+                    <a href="costumers.php" class="btn btn-primary">List</a>   <a href="addcostumer.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <!-- NO ESTAN -->
         <div class="col-md-4">
             <div class="alert alert-info">  
                 <h3>Aerolineas</h3>
-                    <a href="airlines.php" class="btn btn-primary">Ver lista</a>   <a href="addairline.php" class="btn btn-success">Nuevo</a>
+                    <a href="airlines.php" class="btn btn-primary">List</a>   <a href="addairline.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-danger">  
                 <h3>Aviones</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
@@ -68,7 +68,7 @@
         <div class="col-md-4">
             <div class="alert alert-danger">  
                 <h3>Pistas de aterrizaje</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
                 </div>
         </div>
     </div>    

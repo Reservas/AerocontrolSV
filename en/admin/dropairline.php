@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Borrando aerolinea</title>
+    <title>Administrator - Delete airline</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Borrando un aerolinea</h1>
+        <h1 class="text-center">Delete airline</h1>
 <?php
     if(isset($_GET["air"]))
     {
@@ -33,11 +33,11 @@
             $resultado2 = mysql_query($query2, $link);
             if($resultado2)
             {
-                echo "<p class='text-success text-center'><strong>El aerolinea se borro. <a href='airlines.php'>Lista de aerolineas</a></strong></p>";  
+                echo "<p class='text-success text-center'><strong>The airline was deleted. <a href='airlines.php'>List of airline</a></strong></p>";  
             }
             else
             {
-                echo "<p class='text-danger text-center'><strong>Error al borrar. <a href='airlines.php'>Lista de aerolineas</a></strong></p>";  
+                echo "<p class='text-danger text-center'><strong>Error to delete. <a href='airlines.php'>List of airline</a></strong></p>";  
             }
         }
         else
@@ -47,7 +47,7 @@
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: no hay id de ciudad. <a href='airlines.php'>Lista de aerolineas</a></strong></p>"; 
+        echo "<p class='text-danger text-center'><strong>Error: Put the id of the city. <a href='airlines.php'>List of airlines</a></strong></p>"; 
     }
 ?>
     </div>    
