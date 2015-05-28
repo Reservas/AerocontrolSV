@@ -10,11 +10,9 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-<<<<<<< HEAD
-    <title>Administration - Clients</title>
-=======
+
     <title>Administrator - Clients</title>
->>>>>>> origin/master
+
 </head>
 <body>
 <div class="container-fluid">
@@ -33,11 +31,9 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-<<<<<<< HEAD
-            <thead><tr><td>ID</td><td>Name of the client</td><td>Direccn</td><td>Ubicación (ZIP - City - State)</td><td>Birth (AAAA-MM-DD)</td><td>Telephone</td><td>User</td><td>State</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add client</a></td></tr></thead><tbody>          
-=======
-            <thead><tr><td>ID</td><td>Name of the clients</td><td>Address</td><td>Location (ZIP - city - Estate)</td><td>Birthday (YYY-MM-DD)</td><td>Phone</td><td>Username</td><td>Estate</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add client</a></td></tr></thead><tbody>          
->>>>>>> origin/master
+
+            <thead><tr><td>ID</td><td>Name of the clients</td><td>Address</td><td>Location (ZIP - city - State)</td><td>Birthday (YYY-MM-DD)</td><td>Phone</td><td>Username</td><td>State</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add client</a></td></tr></thead><tbody>          
+0
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -66,11 +62,10 @@ if($total>0)
 } 
 else
 {
-<<<<<<< HEAD
+
     echo "<p class='text-danger text-center'>Error: The database is empty <a href='addcostumer.php' class='text-success'>Add client</a></p>";
-=======
-    echo "<p class='text-danger text-center'>Error: The data base is empty <a href='addcostumer.php' class='text-success'>Add client</a></p>";
->>>>>>> origin/master
+
+
 }
 ?>
         </tbody></table>
