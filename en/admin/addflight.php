@@ -32,7 +32,7 @@
 				});
 		}
 	</script>
-    <title>Administración - Agregar vuelo</title>
+    <title>Administration - Add flight</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -40,7 +40,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar vuelo</h1>
+        <h1 class="text-center">Add Flight</h1>
 <?php
 if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
 {
@@ -71,15 +71,15 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 }
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
-            <p>Se necesita insertar el<strong>vuelo</strong> </p>
+            <h3>Help</h3>
+            <p>Nedd to insert <strong>flight</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addflight.php">
             <div class="form-group">
-				<label for="airline">Aerolinea</label>	
+				<label for="airline">Airline</label>	
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirline(this.value);" required>
-					<option value="">Escoja la aerolinea</option>
+					<option value="">Choose Airline</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, name FROM airlines ORDER BY id";
@@ -96,14 +96,14 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="airline">Avion</label>	
+				<label for="airline">Airplane</label>	
 				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_city">Ciudad destino</label>	
+				<label for="arrival_city">City destination</label>	
 				<select class="form-control" name="arrival_city" id="arrival_city" required>
-					<option value="">Escoja la ciudad - Estado</option>
+					<option value="">Choose City - State</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, city, state FROM cities ORDER BY id";
@@ -120,9 +120,9 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_runway">Pista destino</label>	
+				<label for="arrival_runway">Runway</label>	
 				<select class="form-control" name="arrival_runway" id="arrival_runway" required>
-					<option value="">Escoja la pista</option>
+					<option value="">Choose runway</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id FROM runways ORDER BY id";
@@ -139,7 +139,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_time">Fecha llegada</label>
+				<label for="arrival_time">Arrival date</label>
 						<input type='text' class="form-control" name="arrival_time" id="arrival_time" required>
 						<script type="text/javascript">
 							$(function () {
@@ -148,13 +148,13 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						</script>
             </div>
 			<div class="form-group">
-				<label for="cost">Costo</label>
-				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Costo del vuelo" required>
+				<label for="cost">Cost</label>
+				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Cost of the flight" required>
             </div>
 			<div class="form-group">
-				<label for="departure_city">Ciudad de salida</label>	
+				<label for="departure_city">Departure City</label>	
 				<select class="form-control" name="departure_city" id="departure_city" required>
-					<option value="">Escoja la ciudad - Estado</option>
+					<option value="">Choose City - State</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, city, state FROM cities ORDER BY id";
@@ -171,9 +171,9 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="departure_runway">Pista de salida</label>	
+				<label for="departure_runway">Runway </label>	
 				<select class="form-control" name="departure_runway" id="departure_runway" required>
-					<option value="">Escoja la pista</option>
+					<option value="">Choose Runway</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id FROM runways ORDER BY id";
@@ -190,7 +190,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="departure_time">Fecha de salida</label>
+				<label for="departure_time">Departure date</label>
 						<input type='text' class="form-control" name="departure_time" id="departure_time" required>
 						<script type="text/javascript">
 							$(function () {
@@ -199,11 +199,11 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						</script>
             </div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" required>
+				<label for="seats">Number of seats</label>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seatsco" required>
             </div>
 			<div class="form-group">
-				<label for="type">Descripcion</label>
+				<label for="type">Description</label>
 				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Descripcion del vuelo" required>
             </div>
             <input type="submit" name="enviar" value="Enviar">
