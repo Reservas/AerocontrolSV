@@ -250,13 +250,13 @@ else
             </div>
 			<div class="form-group">
 				<label for="seats">Number of seats</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" value="<?=$row["seats"]?>" required>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="seats fo the flight" value="<?=$row["seats"]?>" required>
             </div>
 			<div class="form-group">
 				<label for="type">Descripcion</label>
-				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Descripcion del vuelo" value="<?=$row["description"]?>" required>
+				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Description of the flight" value="<?=$row["description"]?>" required>
             </div>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Send">
         </form>
         </div>        
 <?php

@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Vuelos</title>
+    <title>Administrator - Flights</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Listado de vuelos</h1>
+        <h1 class="text-center">List of flights</h1>
         <br>
 <?php
 include "../docs/connect.php";
@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Aerolinea</td><td>Nombre del avion</td><td>Ciudad de salida</td><td>Ciudad de destino</td><td>Pista salida</td><td>Pista llegada</td><td>Costo</td><td>Hora salida</td><td>Hora aterrizaje</td><td>Asientos</td><td><a href='addflight.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar vuelo</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Airline</td><td>Name of the aircraft</td><td>Departure city</td><td>city destination</td><td>Departurne track</td><td>track arribal</td><td>Cost</td><td>Departure time</td><td>Landing time</td><td>Seats</td><td><a href='addflight.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add flights</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -44,12 +44,12 @@ if($total>0)
 		echo "<td>".$row['departure_time']."</td>";
 		echo "<td>".$row['arrival_time']."</td>";
 		echo "<td>".$row['seats']."</td>";
-        echo "<td><a href='editflight.php?flight=".$row['id']."'><span class='glyphicon glyphicon-cog' aria-hidden='true'></span>  Editar</a> <a href='dropflight.php?flight=".$row['id']."' class='text-danger'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span>  Borrar</a></td></tr> \n";
+        echo "<td><a href='editflight.php?flight=".$row['id']."'><span class='glyphicon glyphicon-cog' aria-hidden='true'></span>  Edit</a> <a href='dropflight.php?flight=".$row['id']."' class='text-danger'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span>  Delete</a></td></tr> \n";
     }
 } 
 else
 {
-    echo "<p class='text-danger text-center'>Error: la base de datos esta vacia <a href='addflight.php' class='text-success'>Agregar avion</a></p>";
+    echo "<p class='text-danger text-center'>Error: The data base is empty <a href='addflight.php' class='text-success'>Add flight</a></p>";
 }
 ?>
         </tbody></table>
