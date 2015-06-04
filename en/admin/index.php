@@ -56,13 +56,13 @@
         <div class="col-md-4">
             <div class="alert alert-danger">  
                 <h3>Fligths</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
             <div class="alert alert-danger">  
                 <h3>Personal</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
