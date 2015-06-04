@@ -56,7 +56,7 @@
         <div class="col-md-4">
             <div class="alert alert-danger">  
                 <h3>Flights</h3>
-                    <a href="Fligts.php" class="btn btn-primary">List</a>   <a href="EditFligt.php" class="btn btn-success">New</a>
+                    <a href="Flights.php" class="btn btn-primary">List</a>   <a href="EditFlight.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
