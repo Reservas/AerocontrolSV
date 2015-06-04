@@ -54,9 +54,9 @@
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
+            <div class="alert alert-info">  
                 <h3>Vuelos</h3>
-                    <a href="#" class="btn btn-primary">Ver lista</a>   <a href="#" class="btn btn-success">Nuevo</a>
+                    <a href="flights.php" class="btn btn-primary">Ver lista</a>   <a href="addflight.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
         <div class="col-md-4">
