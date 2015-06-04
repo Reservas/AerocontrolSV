@@ -69,7 +69,7 @@ else
             <input type="text" class="form-control" id="city" name="city" value="<?=$row["city"]?>"  required>
             </div>
             <div class="form-group">
-            <label for="state">Name of the estate</label>
+            <label for="state">Name of the State</label>
             <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required>
             </div>
             <div class="form-group">

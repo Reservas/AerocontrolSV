@@ -29,7 +29,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Name of the city</td><td>Estate</td><td>ZIP cpde</td><td><a href='addcity.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add city</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the city</td><td>State</td><td>ZIP cpde</td><td><a href='addcity.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add city</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{

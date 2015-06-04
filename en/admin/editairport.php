@@ -68,7 +68,7 @@ else
             <input type="text" class="form-control" id="airname" name="airname" value="<?=$row["name"]?>"  required>
             </div>
             <div class="form-group">
-            <label for="state">Name of the estate (actual <?= $row["zip"]." - ".$row["city"]." - ".$row["state"]?>)</label>
+            <label for="state">Name of the State (actual <?= $row["zip"]." - ".$row["city"]." - ".$row["state"]?>)</label>
             <select class="form-control" name="location" id="location">
                 <option value="">Choose your location</option>
                 <?php

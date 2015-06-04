@@ -133,7 +133,7 @@ else
 			<div class="form-group">
 				<label for="arrival_city">city destination <?= $row["arrcity"]?>)</label>	
 				<select class="form-control" name="arrival_city" id="arrival_city" required>
-					<option value="">Chosse the city -Estate</option>
+					<option value="">Chosse the city -State</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, city, state FROM cities ORDER BY id";
