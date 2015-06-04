@@ -34,7 +34,7 @@
 				});
 		}
 	</script>
-    <title>Administración - Editar vuelo</title>
+    <title>Administrator - Edit flight</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -42,7 +42,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Editando datos de un vuelo</h1>
+        <h1 class="text-center">Editing the data of the flights</h1>
 <?php
 if(isset($_POST["id"]) AND isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
 {
@@ -62,13 +62,13 @@ if(isset($_POST["id"]) AND isset($_POST["airline"]) AND isset($_POST["aircraft"]
     $query = mysql_query("UPDATE flights SET airline='$airline',departure_time='$departure_time',departure_city='$departure_city',arrival_time='$arrival_time',arrival_city='$arrival_city',aircraft='$aircraft',departure_runway='$departure_runway',arrival_runway='$arrival_runway',cost='$cost',seats='$seats',description='$description' WHERE id = $id");
     if($query)
     {
-        echo "<p class='text-success text-center'><strong>Los datos del vuelo &quot;".$id."&quot; fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+        echo "<p class='text-success text-center'><strong>The data of the flight&quot;".$id."&quot; were saved</strong></p>";
+        echo "<p class='text-success text-center'><a href='flights.php'>List of flight</a></p>";
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+        echo "<p class='text-danger text-center'><strong>Error: The data were not stored</strong></p>";
+        echo "<p class='text-success text-center'><a href='flights.php'>List of flight</a></p>";
     }
 }
 else
@@ -86,20 +86,20 @@ else
             {
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente al vuelo</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+            <h3>Help</h3>
+            <p>You can edit everything about the flight</p>
+         
         </div>
         <div class="col-md-8">
         <form method="post" action="editflight.php">
             <div class="form-group">
-            <label for="id">ID del vuelo (No se puede editar)</label>
+            <label for="id">ID of the flight (Can`t be edit)</label>
             <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly>
             </div>
            <div class="form-group">
-				<label for="airline">Aerolinea (actual <?= $row["airlinename"]?>)</label>	
+				<label for="airline">Airline<?= $row["airlinename"]?>)</label>	
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirlineEdit(this.value);" required>
-					<option value="">Escoja la aerolinea </option>
+					<option value="">Chosse the airline </option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, name FROM airlines ORDER BY id";
@@ -121,7 +121,7 @@ else
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="airline">Avion (actual <?= $row["aircname"]?>)</label>	
+				<label for="airline">Aircraft <?= $row["aircname"]?>)</label>	
 				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
 				</select>
 				<script type="text/javascript">
@@ -131,9 +131,9 @@ else
 						</script>
 			</div>
 			<div class="form-group">
-				<label for="arrival_city">Ciudad destino (actual <?= $row["arrcity"]?>)</label>	
+				<label for="arrival_city">city destination <?= $row["arrcity"]?>)</label>	
 				<select class="form-control" name="arrival_city" id="arrival_city" required>
-					<option value="">Escoja la ciudad - Estado</option>
+					<option value="">Chosse the city -Estate</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, city, state FROM cities ORDER BY id";
@@ -155,9 +155,9 @@ else
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_runway">Pista destino (actual <?= $row["arrival_runway"]?>)</label>	
+				<label for="arrival_runway">destination runway<?= $row["arrival_runway"]?>)</label>	
 				<select class="form-control" name="arrival_runway" id="arrival_runway" required>
-					<option value="">Escoja la pista</option>
+					<option value="">Chosse the runway</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id FROM runways ORDER BY id";
@@ -179,7 +179,7 @@ else
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_time">Fecha llegada</label>
+				<label for="arrival_time">date arrival</label>
 						<input type='text' class="form-control" name="arrival_time" id="arrival_time" value="<?=$row["arrival_time"]?>" required>
 						<script type="text/javascript">
 							$(function () {
@@ -188,13 +188,13 @@ else
 						</script>
             </div>
 			<div class="form-group">
-				<label for="cost">Costo</label>
+				<label for="cost">Cost</label>
 				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Costo del vuelo" value="<?=$row["cost"]?>" required>
             </div>
 			<div class="form-group">
-				<label for="departure_city">Ciudad de salida (actual <?= $row["depcity"]?>)</label>	
+				<label for="departure_city">Departure City<?= $row["depcity"]?>)</label>	
 				<select class="form-control" name="departure_city" id="departure_city" required>
-					<option value="">Escoja la ciudad - Estado</option>
+					<option value="">Chosse the city - Estate</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, city, state FROM cities ORDER BY id";
@@ -216,9 +216,9 @@ else
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="departure_runway">Pista de salida (actual <?= $row["departure_runway"]?>)</label>	
+				<label for="departure_runway">Departure track<?= $row["departure_runway"]?>)</label>	
 				<select class="form-control" name="departure_runway" id="departure_runway" required>
-					<option value="">Escoja la pista</option>
+					<option value="">Chosse the runway</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id FROM runways ORDER BY id";
@@ -240,7 +240,7 @@ else
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="departure_time">Fecha de salida</label>
+				<label for="departure_time">Departure date</label>
 						<input type='text' class="form-control" name="departure_time" id="departure_time" value="<?=$row["departure_time"]?>" required>
 						<script type="text/javascript">
 							$(function () {
@@ -249,7 +249,7 @@ else
 						</script>
             </div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
+				<label for="seats">Number of seats</label>
 				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" value="<?=$row["seats"]?>" required>
             </div>
 			<div class="form-group">
@@ -264,12 +264,12 @@ else
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error: el vuelo no existe. <a href='runways.php'>Lista de vuelos</a></strong></p>"; 
+            echo "<p class='text-danger text-center'><strong>Error: The flight doesn`t exist. <a href='runways.php'>List of flights</a></strong></p>"; 
         }
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: no hay id de vuelo. <a href='runways.php'>Lista de vuelos</a></strong></p>"; 
+        echo "<p class='text-danger text-center'><strong>Error: Put the id of the flight  <a href='runways.php'>List of flights</a></strong></p>"; 
     }
 }
 ?>

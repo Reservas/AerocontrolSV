@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Borrando vuelos</title>
+    <title>Administrator - Delete flights</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Borrando vuelo</h1>
+        <h1 class="text-center">Delete flights</h1>
 <?php
     if(isset($_GET["flight"]))
     {
@@ -33,21 +33,21 @@
             $resultado2 = mysql_query($query2, $link);
             if($resultado2)
             {
-                echo "<p class='text-success text-center'><strong>El vuelo se borro. <a href='flights.php'>Lista de vuelos</a></strong></p>";  
+                echo "<p class='text-success text-center'><strong>The flight was delete. <a href='flights.php'>List of flights</a></strong></p>";  
             }
             else
             {
-                echo "<p class='text-danger text-center'><strong>Error al borrar. <a href='flights.php'>Lista de vuelos</a></strong></p>";  
+                echo "<p class='text-danger text-center'><strong>Error to delete. <a href='flights.php'>List of flights</a></strong></p>";  
             }
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error. <a href='flights.php'>Lista de vuelos</a></strong></p>"; 
+            echo "<p class='text-danger text-center'><strong>Error. <a href='flights.php'>List of flights</a></strong></p>"; 
         }
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: no hay id de vuelo. <a href='flights.php'>Lista de vuelos</a></strong></p>"; 
+        echo "<p class='text-danger text-center'><strong>Error: Put the id of the flight  <a href='flights.php'>List of flights</a></strong></p>"; 
     }
 ?>
     </div>    
