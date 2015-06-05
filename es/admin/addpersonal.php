@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar cliente</title>
+    <title>Administración - Agregar personal</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,15 +18,17 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar cliente</h1>
+        <h1 class="text-center">Agregar Personal</h1>
+<!--               <thead><tr><td>ID</td><td>Nombre del personal</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>   -->
 <?php
-if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location"]) AND isset($_POST["birthdate"]) AND isset($_POST["phone"]) AND isset($_POST["user"]) AND isset($_POST["password"]) AND isset($_POST["password2"]))
+if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location"])AND isset($_POST["mail"]) AND isset($_POST["birthdate"]) AND isset($_POST["phone"]) AND isset($_POST["user"]) AND isset($_POST["password"]) AND isset($_POST["password2"]))
 {
     if($_POST["password"] == $_POST["password2"])
     {
         $name = $_POST["name"];
         $address = $_POST["address"];
         $location = $_POST["location"];
+        $mail = $_POST["mail"];
         $birthdate = $_POST["birthdate"];
         $phone = $_POST["phone"];
         $user = $_POST["user"];
@@ -39,7 +41,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         $estado = $porcion[2];
         //ciudad, estado y zip
         include "../docs/connect.php";
-        $query = mysql_query("INSERT INTO costumers (id, name, address, city, state, zip, birthdate, phone, user, password, status) VALUES ('','$name','$address', '$ciudad', '$estado', '$zip', '$birthdate', '$phone', '$user', '$pass', '1')");
+        $query = mysql_query("INSERT INTO costumers (id, name, address, city, state, zip, mail, birthdate, phone, user, password, status) VALUES ('','$name','$address', '$ciudad', '$estado', '$zip', '$mail', '$birthdate', '$phone', '$user', '$pass', '1')");
         if($query)
         {
             echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
@@ -65,7 +67,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         <form method="post" action="addcostumer.php">
             <div class="form-group">
             <label for="name">Nombre del cliente</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la cliente" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del personal" required>
             </div>
             <div class="form-group">
             <label for="address">Dirección</label>
@@ -90,9 +92,13 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
                 ?>
             </select>
             </div>
+             <div class="form-group">
+            <label for="birthdate">Correo</label>
+            <input type="text" class="form-control" id="mail" name="mail" placeholder="correo eléctronico" required>
+            </div>
             <div class="form-group">
             <label for="birthdate">Nacimiento</label>
-            <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="AAAA/MM/DD" required>
+            <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="AAAA/MM/DD" required>
             </div>
             <div class="form-group">
             <label for="phone">Telefono</label>
