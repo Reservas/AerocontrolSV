@@ -20,6 +20,7 @@
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un avion</h1>
 <?php
+session_start();
 if(isset($_POST["id"]) AND isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"]) AND isset($_POST["type"]))
 {
     $id = $_POST["id"];
@@ -70,6 +71,14 @@ else
 			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Nombre del avion" required>
             </div>
             <div class="form-group">
+			<?php
+				if(isset($_SESSION['airline'])){
+					echo " <label for='airline'>Aerolinea</label>";
+					echo "<input type='text' class='form-control' id='airlinedes' name='airlinedes' value='".$_SESSION['airname']."' readonly>";
+					echo "<input type='hidden' id='airline' name='airline' value='".$_SESSION['airline']."'>";
+				}else{
+				
+			  ?>
            <label for="airline">Aerolinea (actual <?= $row["airline"]?>)</label>
              <select class="form-control" name="airline" id="airline" required>
                <option value="">Escoja la aerolinea</option>
@@ -94,6 +103,9 @@ else
                 }
                 ?>
             </select>
+			<?php
+				}
+			?>
             </div>
 			<div class="form-group">
 				<label for="seats">Numero de asientos</label>

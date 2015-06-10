@@ -21,12 +21,18 @@
         <h1 class="text-center">Listado de aviones</h1>
         <br>
 <?php
+session_start();
 include "../docs/connect.php";
-$query = "SELECT aircraft.id, aircraft.name, aircraft.seats, aircraft.type, airlines.name AS airline FROM aircraft  INNER JOIN airlines ON aircraft.airline = airlines.id ORDER BY aircraft.id";
+$query = "SELECT aircraft.id, aircraft.name, aircraft.seats, aircraft.type, airlines.name AS airline FROM aircraft  INNER JOIN airlines ON aircraft.airline = airlines.id ";
+if(isset($_SESSION['airline'])){
+	$query = $query.'WHERE aircraft.airline = '.$_SESSION['airline'].' ';
+}
+$query = $query.'ORDER BY aircraft.id';
 $resultado = mysql_query($query, $link);
 $total = mysql_num_rows($resultado);
 if($total>0)
 {
+echo ''.$_SESSION['airline'].'';
 ?>
         <table class="table table-striped">
             <thead><tr><td>ID</td><td>Nombre del avion</td><td>Asientos</td><td>Tipo</td><td>Aerolinea</td><td><a href='addaircraft.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar avion</a></td></tr></thead><tbody>          

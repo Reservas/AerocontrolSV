@@ -8,11 +8,13 @@ if(isset($_POST['user'],$_POST['pass'],$_POST['airline']))
     {
         $md5 = md5($_POST['pass']);
         $db = new PDO("mysql:host=". $hostname . ";dbname=$database", $username, $password);
-        $stmt = $db->prepare("SELECT * 
-                                FROM  `user-airline` 
-                                WHERE  `user` =   :user 
-                                AND  `airline` =   :airline 
-                                AND  `password` =   :pass 
+        $stmt = $db->prepare("SELECT `user-airline`.*, `airlines`.`name` AS airname 
+                                FROM  `user-airline`
+								INNER JOIN `airlines`
+								on `user-airline`.`airline` = `airlines`.`id`
+                                WHERE  `user-airline`.`user` =   :user 
+                                AND  `user-airline`.`airline` =   :airline 
+                                AND  `user-airline`.`password` =   :pass 
                                 LIMIT 0 , 30");
         $stmt->bindParam(':user',$_POST['user'], PDO::PARAM_STR);
         $stmt->bindParam(':pass',$md5 , PDO::PARAM_STR);
@@ -28,12 +30,14 @@ if(isset($_POST['user'],$_POST['pass'],$_POST['airline']))
                                 header("location:airline/admin/");
                                 $_SESSION['usuario'] = $row['Usuario'];
                                 $_SESSION['airline'] = $row['airline'];
+								$_SESSION['airname'] = $row['airname'];
                                 $_SESSION['tipo'] = $row['air-admin'];
                             exit();
                             case 2:
                                 header("location:airline/employee/");
                                 $_SESSION['usuario'] = $row['Usuario'];
                                 $_SESSION['airline'] = $row['airline'];
+								$_SESSION['airname'] = $row['airname'];
                                 $_SESSION['tipo'] = $row['air-employ'];
                             exit();
                         }

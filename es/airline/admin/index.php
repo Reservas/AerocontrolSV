@@ -28,9 +28,25 @@ $row = mysql_fetch_array($query);
             <div class="col-md-12">
                 <h2 class="text-center">Vuelos (<?=$row['name']?>)</h2>
                 <div class="container vuelos"></div>
+				<h2 class="text-center">Mantenimientos</h2>
             </div>
         </div>
-    </div>   
+    </div>
+	<div class="row">
+        
+        <div class="col-md-4">
+            <div class="alert alert-info">  
+                <h3>Aviones</h3>
+                    <a href="../../admin/aircrafts.php" class="btn btn-primary">Ver lista</a>   <a href="../../admin/addaircraft.php" class="btn btn-success">Nuevo</a>
+                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-info">  
+                <h3>Vuelos</h3>
+                    <a href="../../admin/flights.php" class="btn btn-primary">Ver lista</a>   <a href="../../admin/addflight.php" class="btn btn-success">Nuevo</a>
+                </div>
+        </div>
+    </div>    	
 </div>
     
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->

@@ -20,6 +20,7 @@
     <!-- /NAV -->
         <h1 class="text-center">Agregar avion</h1>
 <?php
+session_start();
 if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"]) AND isset($_POST["type"]))
 {
     $name = $_POST["name"];
@@ -52,6 +53,13 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
             </div>
             <label for="airline">Aerolinea</label>
 			 <div class="form-group">
+			  <?php
+				if(isset($_SESSION['airline'])){
+					echo "<input type='text' class='form-control' id='airlinedes' name='airlinedes' value='".$_SESSION['airname']."' readonly>";
+					echo "<input type='hidden' id='airline' name='airline' value='".$_SESSION['airline']."'>";
+				}else{
+				
+			  ?>
             <select class="form-control" name="airline" id="airline" required>
                 <option value="">Escoja la aerolinea</option>
                 <?php
@@ -68,6 +76,9 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
                 }
                 ?>
             </select>
+			<?php
+				}
+			?>
 			</div>
 			<div class="form-group">
 				<label for="seats">Numero de asientos</label>

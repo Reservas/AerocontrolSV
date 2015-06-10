@@ -44,6 +44,7 @@
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un vuelo</h1>
 <?php
+session_start();
 if(isset($_POST["id"]) AND isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
 {
     $id = $_POST["id"];
@@ -97,6 +98,19 @@ else
             <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly>
             </div>
            <div class="form-group">
+			<?php
+				if(isset($_SESSION['airline'])){
+					echo " <label for='airline'>Aerolinea</label>";
+					echo "<input type='text' class='form-control' id='airlinedes' name='airlinedes' value='".$_SESSION['airname']."' readonly>";
+					echo "<input type='hidden' id='airline' name='airline' value='".$_SESSION['airline']."'>";
+					echo "<script type='text/javascript'>
+							$(function () {
+								findAircraftsByAirlineEdit(".$_SESSION['airline'].");
+							});
+						</script>";
+				}else{
+				
+			  ?>
 				<label for="airline">Aerolinea (actual <?= $row["airlinename"]?>)</label>	
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirlineEdit(this.value);" required>
 					<option value="">Escoja la aerolinea </option>
@@ -119,6 +133,9 @@ else
 						}
 					?>
 				</select>
+				<?php
+				}
+			?>
 			</div>
 			<div class="form-group">
 				<label for="airline">Avion (actual <?= $row["aircname"]?>)</label>	

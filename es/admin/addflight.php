@@ -42,6 +42,7 @@
     <!-- /NAV -->
         <h1 class="text-center">Agregar vuelo</h1>
 <?php
+session_start();
 if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
 {
     $airline = $_POST["airline"];
@@ -77,7 +78,19 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
         <div class="col-md-8">
         <form method="post" action="addflight.php">
             <div class="form-group">
-				<label for="airline">Aerolinea</label>	
+				<label for="airline">Aerolinea</label>
+				<?php
+				if(isset($_SESSION['airline'])){
+					echo "<input type='text' class='form-control' id='airlinedes' name='airlinedes' value='".$_SESSION['airname']."' readonly>";
+					echo "<input type='hidden' id='airline' name='airline' value='".$_SESSION['airline']."'>";
+					echo "<script type='text/javascript'>
+							$(function () {
+								findAircraftsByAirline(".$_SESSION['airline'].");
+							});
+						</script>";
+				}else{
+				
+			  ?>
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirline(this.value);" required>
 					<option value="">Escoja la aerolinea</option>
 					<?php
@@ -94,6 +107,9 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						}
 					?>
 				</select>
+				<?php
+				}
+			?>
 			</div>
 			<div class="form-group">
 				<label for="airline">Avion</label>	

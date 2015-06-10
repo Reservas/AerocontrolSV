@@ -21,8 +21,13 @@
         <h1 class="text-center">Listado de vuelos</h1>
         <br>
 <?php
+session_start();
 include "../docs/connect.php";
-$query = "SELECT f.id, f.airline, a.name AS airlinename, f.departure_time, f.departure_city, c1.city AS depcity, f.arrival_time, f.arrival_city, c2.city AS arrcity, f.aircraft, ac.name AS aircname, f.departure_runway, f.arrival_runway, f.cost, f.seats, f.description FROM flights f INNER JOIN airlines a ON f.airline = a.id INNER JOIN cities c1 ON f.departure_city = c1.id INNER JOIN cities c2 ON f.arrival_city = c2.id INNER JOIN aircraft ac ON f.aircraft = ac.id ORDER BY f.id";
+$query = "SELECT f.id, f.airline, a.name AS airlinename, f.departure_time, f.departure_city, c1.city AS depcity, f.arrival_time, f.arrival_city, c2.city AS arrcity, f.aircraft, ac.name AS aircname, f.departure_runway, f.arrival_runway, f.cost, f.seats, f.description FROM flights f INNER JOIN airlines a ON f.airline = a.id INNER JOIN cities c1 ON f.departure_city = c1.id INNER JOIN cities c2 ON f.arrival_city = c2.id INNER JOIN aircraft ac ON f.aircraft = ac.id ";
+if(isset($_SESSION['airline'])){
+	$query = $query.'WHERE a.id = '.$_SESSION['airline'].' ';
+}
+$query = $query.'ORDER BY f.id';
 $resultado = mysql_query($query, $link);
 $total = mysql_num_rows($resultado);
 if($total>0)
