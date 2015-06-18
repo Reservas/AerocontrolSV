@@ -84,7 +84,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
        return ((k > 47 && k < 58) || k==45 k == 8 || k==32);
     }
      </script>
-    <section id="about">
+    <section id="about" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -137,6 +137,14 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                             </div>
                           <div class="panel-footer">
                               <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Inicio de sesion" style="width:100%;"></a>
+                          </div>
+                        </div>
+                      <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h2 class="text-center" style="color:#fff;">Admin</h2>
+                          </div>
+                          <div class="panel-footer">
+                              <a href="adminlog.php"><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Admin" style="width:100%;"></a>
                           </div>
                         </div>
                     </div>
