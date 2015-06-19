@@ -70,7 +70,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
     <!--HOME SECTION END  -->
      <!-- ABOUT SECTION START-->
 
-     <script type="text/javascript"> 
+<!--     <script type="text/javascript"> 
      function alpha(e) {
        var k;
        document.all ? k = e.keyCode : k = e.which;
@@ -82,7 +82,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
        document.all ? k = e.keyCode : k = e.which;
        return ((k > 47 && k < 58) || k==45 k == 8 || k==32);
     }
-     </script>
+     </script> -->
     <section id="about" >
         <div class="container">
             <div class="row">

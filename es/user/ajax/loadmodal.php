@@ -33,7 +33,17 @@ include "../files/conexion.php";
                           <div class='input-group'>
                             
                             <span class='input-group-addon'><i class='fa fa-users'></i></span>
-                            <input type='text' name='number' placeholder='Ingrese el numero de personas' class='form-control'>
+                            <input type='text' name='number' placeholder='Ingrese el numero de personas' class='form-control' onkeypress="return justNumbers(event);" value="1"></input>
+                            <script>
+                            function justNumbers(e)
+        {
+        var keynum = window.event ? window.event.keyCode : e.which;
+        if ((keynum == 8) || (keynum == 46))
+        return true;
+         
+        return /\d/.test(String.fromCharCode(keynum));
+        }
+                            </script>
                           </div>
                         </div>
                       <div class='modal-footer'>
