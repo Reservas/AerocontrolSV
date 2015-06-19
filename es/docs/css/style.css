@@ -94,7 +94,7 @@ header {
 ==================================*/
 
 #home {
-    background: url(../img/home.jpg) no-repeat center center fixed; 
+    background: url(../img/6972_1280x800.jpg) no-repeat center center fixed; 
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
@@ -255,10 +255,9 @@ line-height: 35px;
 /*================================
     FEATURES STYLES
 ==================================*/
-#features {
+#features    {
     background-color:rgba(234, 234, 234, 0.90);
 }
-
 /*================================
     EMAIL-SUBSCRIBE STYLES
  ============================  */
@@ -287,7 +286,7 @@ margin-top:-10px;
 ==================================*/
 
    #contact {
-    background: url(../img/contact.jpg) no-repeat center center; 
+    background: url(../img/business.jpg) no-repeat center center; 
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
@@ -303,14 +302,14 @@ margin-top:-10px;
             padding: 10px 20px;
             background-color: rgba(0, 0, 0, 0.36);
             color: #fff;
-            font-size: 25px;
+            font-size:15px;
         }
 .space {
-    height:40px;
+    height:40px;0
 }
 .contact-cover {
-    background-color:#0094ff;
-    padding:50px 50px 50px 50px;
+    background-color:transparent;
+    padding:25px 25px 25px 25px;
     color:#fff;
 }
 /*================================
@@ -318,7 +317,7 @@ margin-top:-10px;
  ============================  */
 footer {
     padding:15px;
-    background-color:#48A5FF;
+    background-color:transparent;
     color:#fff;
     }
     footer a,footer a:hover,footer a:focus {
