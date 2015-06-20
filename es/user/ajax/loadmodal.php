@@ -1,3 +1,22 @@
+<script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>  
 <?php 
 include "../files/conexion.php";
         $stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.id = ? ORDER BY `flights`.`arrival_time` ASC");
@@ -11,7 +30,7 @@ include "../files/conexion.php";
                 $newFormatDep =  date("D M j y", strtotime($departure_time));
                 $resta = $date->diff($now)->format("%h horas, %i minutos y %s segundos");
                 $restaDos = $date->diff($now)->format("%h");
-                  
+                        
                 echo "<div class='modal-dialog'>
                     <div class='modal-content'>
                       <div class='modal-header'>
@@ -33,17 +52,8 @@ include "../files/conexion.php";
                           <div class='input-group'>
                             
                             <span class='input-group-addon'><i class='fa fa-users'></i></span>
-                            <input type='text' name='number' placeholder='Ingrese el numero de personas' class='form-control' onkeypress="return justNumbers(event);" value="1"></input>
-                            <script>
-                            function justNumbers(e)
-        {
-        var keynum = window.event ? window.event.keyCode : e.which;
-        if ((keynum == 8) || (keynum == 46))
-        return true;
-         
-        return /\d/.test(String.fromCharCode(keynum));
-        }
-                            </script>
+                            <input type='text' name='number' placeholder='Ingrese el numero de personas' class='form-control'onkeypress='return numeros(event)'>
+
                           </div>
                         </div>
                       <div class='modal-footer'>
