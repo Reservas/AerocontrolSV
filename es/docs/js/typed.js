@@ -266,7 +266,7 @@
                 //  self.stopNum = 0;
                 // }
 
-                if (self.contentType === 'html') {
+                if (self.contentType === 'text') {
                     // skip over html tags while backspacing
                     if (curString.substr(curStrPos).charAt(0) === '>') {
                         var tag = '';
@@ -287,7 +287,7 @@
                 } else {
                     if (self.isInput) {
                         self.el.val(nextString);
-                    } else if (self.contentType === 'html') {
+                    } else if (self.contentType === 'text') {
                         self.el.html(nextString);
                     } else {
                         self.el.text(nextString);
@@ -396,9 +396,9 @@
         // time before backspacing
         backDelay: 500,
         // loop
-        loop: false,
+        loop: true,
         // false = infinite
-        loopCount: false,
+        loopCount: true,
         // show cursor
         showCursor: true,
         // character for cursor
@@ -406,7 +406,7 @@
         // attribute to type (null == text)
         attr: null,
         // either html or text
-        contentType: 'html',
+        contentType: 'text',
         // call when done callback function
         callback: function() {},
         // starting callback function before each string
