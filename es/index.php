@@ -84,6 +84,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
        return ((k > 47 && k < 58) || k==45 k == 8 || k==32);
     }
      </script> -->
+    
     <section id="about" >
         <div class="container">
             <div class="row">
@@ -95,9 +96,9 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                           <div class="panel-body">
                             <form action="validate.php" method="post">
                               <label>Usuario</label>
-                              <input type="text" class="form-control input-sm" id="user" name="user" placeholder="Usuario" autocomplete="off" required  > 
+                              <input type="text"  class="form-control input-sm" id="user" name="user" placeholder="Usuario" autocomplete="off" required  > 
                               <label>Contraseña</label>
-                              <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required>
+                              <input type="password"  class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required>
                               <?php
                                 if(isset($_SESSION['error'])) 
                                 {
@@ -114,6 +115,13 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                                     }
                                 }
                               ?>
+                                <script type="text/javascript">
+// Solo permite ingresar numeros.
+function soloNumeros(e){
+	var key = window.Event ? e.which : e.keyCode
+	return (key >= 48 && key <= 57)
+}
+</script>
                           </div> 
                           <div class="panel-footer">
                               <input type="submit" class="btn btn-success btn-xs" value="Iniciar" style="width:100%;">
@@ -159,14 +167,34 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                                 <label>Usuario</label>
                                 <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required > 
                                 <label>Contraseña</label>
-                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required>  
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required maxlength="6" >  
                                 <label>Repetir contraseña</label>
-                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required maxlength="6">
                                 <label>Fecha de nacimiento</label>
-                                <input type="text" class="form-control input-sm" name="nac" placeholder="Fecha de nacimiento" autocomplete="off" required> 
+                                  <script>
+                                  function compruebaFecha($date){
+if ($date == "" || $date == "dd/mm/aaaa")
+return false;
+if (!ereg("^([[:digit:]]{2})/([[:digit:]]{2})/([[:digit:]]{4})$", $date, $vec))
+return false;
+else{
+if ($vec[1] <= 31)
+return false;
+if ($vec[2] <= 12)
+return false;
+//if ($vec[3] <= date("Y") + 1)
+//return false;
+if ($date != date("d/m/Y",mktime(0,0,0, $vec[2], $vec[1], $vec[3])))
+return false;
+}
+return true;
+}
+                                  </script>
+                                <input type="date" class="form-control input-sm" name="nac" placeholder="Fecha de nacimiento" autocomplete="off" required onkeypress="compruebaFecha"> 
                                 <label>Telefono</label>
-                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telefono" autocomplete="off" required
-                                onkeypress="return numbers(event)"> 
+                                  
+                                <input type="text" class="form-control input-sm" name="phone" maxlength="8" placeholder="7*******" autocomplete="off" required
+                                onKeyPress="return soloNumeros(event)"required="" pattern="7[0-9]{7}"> 
                               </div>
                               <div class="col-md-6">
                                 <label>Nombre</label>
@@ -177,7 +205,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                                   <select class="form-control input-sm" id="city" name="city">
                                     <option value="">Elige un pais</option>
                                     <?php
-                                      $query = mysql_query("SELECT city FROM cities");
+                                      $query = mysql_query("SELECT state FROM cities");
                                       while($row = mysql_fetch_row($query))
                                       {
                                           echo "<option value='".$row[0]."'>".$row[0]."</option>";
@@ -213,7 +241,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
+                        
                 </div>
             </div>
            
