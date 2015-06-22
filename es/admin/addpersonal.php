@@ -45,12 +45,12 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         if($query)
         {
             echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de clientes</a></p>";
+            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de personals</a></p>";
         }
         else
         {
             echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de clientes</a></p>";
+            echo "<p class='text-success text-center'><a href='costumers.php'>Lista de personals</a></p>";
         }
     }
     else
@@ -66,7 +66,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         <div class="col-md-8">
         <form method="post" action="addcostumer.php">
             <div class="form-group">
-            <label for="name">Nombre del cliente</label>
+            <label for="name">Nombre del personal</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del personal" required>
             </div>
             <div class="form-group">
