@@ -56,7 +56,6 @@ else
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
             <p>Aquí podrás editar todo lo referente a las ciudades</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="editcity.php">
