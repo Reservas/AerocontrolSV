@@ -28,6 +28,7 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
+		<a href='exportcities.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generar PDF</a>
         <table class="table table-striped">
             <thead><tr><td>ID</td><td>Nombre de la ciudad</td><td>Estado</td><td>Código ZIP</td><td><a href='addcity.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar ciudad</a></td></tr></thead><tbody>          
 <?php
