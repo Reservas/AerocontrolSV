@@ -145,26 +145,26 @@ else
             {
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
-            <p>Aquí se podrá editar todo, referente a la aerolínea escogida</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+            <h3>Help</h3>
+            <p>You can edit everything about the airline choosen </p>
+            
         </div>
         <div class="col-md-8">
         <form enctype="multipart/form-data" method="post" action="editairline.php">
             <div class="form-group">
-            <label for="idair">Nombre de la aerolinea</label>
+            <label for="idair">ID of the airline</label>
             <input type="text" class="form-control" id="idair" name="idair" value="<?=$row["id"]?>" readonly>
             </div>
             <div class="form-group">
-            <label for="name">Nombre de la aerolinea</label>
+            <label for="name">Name of the airline</label>
             <input type="text" class="form-control" id="name" name="name" value="<?=$row["name"]?>" onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="description">Descripción (Maximo 300 caracteres)</label>
+            <label for="description">Description (Max 300 characters)</label>
             <textarea class="form-control" id="description" name="description" rows="3" maxlength="300" onkeypress="return validar(event)"><?=$row["description"]?>     </textarea>
             </div>
             <div class="form-group">
-            <label for="imagen">Subir imagen de logo</label>
+            <label for="imagen">Upload Image</label>
             <input name="imagen" type="file"/>
             </div>
             <input type="submit" name="enviar" value="Enviar">
