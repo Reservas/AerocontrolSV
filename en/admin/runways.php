@@ -28,6 +28,7 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
+		<a href='exportrunways.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
         <table class="table table-striped">
             <thead><tr><td>ID</td><td>Airport</td><td>Length</td><td><a href='addrunway.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add runway</a></td></tr></thead><tbody>          
 <?php

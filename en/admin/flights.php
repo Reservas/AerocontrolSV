@@ -28,6 +28,7 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
+		<a href='exportflights.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
         <table class="table table-striped">
             <thead><tr><td>ID</td><td>Airline</td><td>Name of the aircraft</td><td>Departure city</td><td>city destination</td><td>Departurne track</td><td>track arribal</td><td>Cost</td><td>Departure time</td><td>Landing time</td><td>Seats</td><td><a href='addflight.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add flights</a></td></tr></thead><tbody>          
 <?php

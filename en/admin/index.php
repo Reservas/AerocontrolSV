@@ -54,15 +54,15 @@
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
+            <div class="alert alert-info">  
                 <h3>Flights</h3>
                     <a href="Flights.php" class="btn btn-primary">List</a>   <a href="addflight.php" class="btn btn-success">New</a>
                 </div>
         </div>
         <div class="col-md-4">
-            <div class="alert alert-danger">  
+            <div class="alert alert-info">  
                 <h3>Personal</h3>
-                    <a href="#" class="btn btn-primary">List</a>   <a href="#" class="btn btn-success">New</a>
+                    <a href="personal.php" class="btn btn-primary">List</a>
                 </div>
         </div>
         <div class="col-md-4">

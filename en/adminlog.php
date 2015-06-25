@@ -45,30 +45,30 @@
               <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h1 class="text-center">Administradores</h1>
+                      <h1 class="text-center">Administrator</h1>
                       <hr style="width:50%;">
-                      <h4 class="text-center">Inicio de sesion</h4>
+                      <h4 class="text-center">Login</h4>
                   </div>
                   <div class="modal-body">
                       <form action="validateadm.php" method="post">
                         <div class="form-group">
-                            <label>Usuario</label>
-                          <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" required>
+                            <label>User</label>
+                          <input type="text" class="form-control input-sm" name="user" placeholder="Username" required>
                         </div>
                         <div class="form-group">
-                            <label>Contraseña</label>
-                          <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" required>
+                            <label>Password</label>
+                          <input type="password" class="form-control input-sm" name="pass" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                         
-                          <input class="btn btn-primary btn-sm btn-block" value="Iniciar sesion" type="submit">
+                          <input class="btn btn-primary btn-sm btn-block" value="Login!" type="submit">
                           <!--<span><a href="#">Need help?</a></span>-->
                         </div>
                       </form>
                   </div>
                   <div class="modal-footer">
                       <div class="col-md-12">
-                      <a href="./"><button class="btn">Cancelar</button></a>
+                      <a href="./"><button class="btn">Cancel</button></a>
                       </div>	
                   </div>
               </div>

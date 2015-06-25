@@ -120,7 +120,16 @@ require_once "docs/connect.php";
                               <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Log in" style="width:100%;"></a>
                           </div>
                         </div>
+                                          <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h2 class="text-center" style="color:#fff;">Admin</h2>
+                          </div>
+                          <div class="panel-footer">
+                              <a href="adminlog.php"><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Admin" style="width:100%;"></a>
+                          </div>
+                        </div>
                     </div>
+        
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="panel panel-primary">
                           <div class="panel-heading">
@@ -197,7 +206,7 @@ require_once "docs/connect.php";
         <div class="overlay">       
         <div class="container">
             <div class="row text-center">
-                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  contact-cover" >
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  contact-cover" >
                      <h2>Colegio Santa Cecilia</h2>
                      <h3>Calle Don Bosco y Av. Manuel Gallardo</h3>
                      <h3>Santa Tecla, El Salvador.</h3>
