@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-06-2015 a las 22:39:43
+-- Tiempo de generación: 25-06-2015 a las 17:42:11
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.16
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `aerocontrol`
 --
-CREATE DATABASE IF NOT EXISTS `aerocontrol` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `aerocontrol` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `aerocontrol`;
 
 -- --------------------------------------------------------
@@ -292,14 +292,20 @@ CREATE TABLE IF NOT EXISTS `user-airline` (
   `airline` int(11) NOT NULL,
   `type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `user-airline`
 --
 
 INSERT INTO `user-airline` (`id`, `name`, `phone`, `user`, `password`, `status`, `airline`, `type`) VALUES
-(1, 'ted', 12341234, 'ted', '4297f44b13955235245b2497399d7a93', '1', 2, 1);
+(1, 'Avianca', 12341234, 'AdminAvianca', '4297f44b13955235245b2497399d7a93', '1', 2, 1),
+(2, 'Taca', 23242526, 'AdminTaca', '4297f44b13955235245b2497399d7a93', '1', 1, 1),
+(3, 'Ame Air', 74345687, 'AdminAme', '4297f44b13955235245b2497399d7a93', '1', 3, 1),
+(4, 'Delta Air', 23237434, 'AdminDelta', '4297f44b13955235245b2497399d7a93', '1', 4, 1),
+(5, 'IBERIA', 21239845, 'AdminIbe', '4297f44b13955235245b2497399d7a93', '1', 5, 1),
+(6, 'Copa Air', 76454534, 'AdminCopa', '4297f44b13955235245b2497399d7a93', '1', 6, 1),
+(7, 'AeroMexico', 23457432, 'AdminAero', '4297f44b13955235245b2497399d7a93', '1', 7, 1);
 
 --
 -- Restricciones para tablas volcadas
