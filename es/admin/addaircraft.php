@@ -16,7 +16,26 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
-    <?php include 'nav.php'; ?>
+<script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>      
+        <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Agregar avion</h1>
 <?php
@@ -82,7 +101,7 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 			</div>
 			<div class="form-group">
 				<label for="seats">Numero de asientos</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" required>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
 				<label for="type">Tipo de avion</label>

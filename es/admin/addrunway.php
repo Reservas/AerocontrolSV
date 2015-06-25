@@ -15,6 +15,25 @@
 <body>
 <div class="container-fluid">
     <div class="row">
+        <script>
+        function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+        </script>
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
@@ -65,7 +84,7 @@ if(isset($_POST["idairport"]) AND isset($_POST["lenght"]))
 			</div>
 			<div class="form-group">
 				<label for="lenght">Longitud</label>
-				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" placeholder="Longitud de la pista" required>
+				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" placeholder="Longitud de la pista" required onkeypress="return numeros(event)">
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>

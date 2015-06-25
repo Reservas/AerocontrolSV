@@ -14,7 +14,7 @@
 	<script src="../docs/js/jquery-ui.min.js" type="text/javascript"></script>
 	<script src="../docs/js/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		function findAircraftsByAirline(airline){
+function findAircraftsByAirline(airline){
 			$.ajax({
 					type : "GET",
 					dataType : 'html',
@@ -37,6 +37,26 @@
 <body>
 <div class="container-fluid">
     <div class="row">
+        <script>
+        function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+            
+        </script>
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
@@ -216,7 +236,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="seats">Numero de asientos</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" required>
+				<input type="number"  min="1" step="1" class="form-control" id="seats"  name="seats" placeholder="Asientos del avion" required onkeypress="return numeros(event)">
             </div>
 			<div class="form-group">
 				<label for="type">Descripcion</label>

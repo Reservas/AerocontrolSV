@@ -16,6 +16,15 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+        <script>
+       function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+                </script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Agregar aeropuerto</h1>
@@ -46,7 +55,7 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
         <form method="post" action="addairport.php">
             <div class="form-group">
             <label for="name">Nombre del aeropuerto</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del aeropuerto" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del aeropuerto" required onkeypress="return validar(event)">
             </div>
             <label for="location">Ubicación</label>
             <select class="form-control" name="location" id="location">
