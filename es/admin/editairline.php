@@ -16,6 +16,33 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+             <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>   
+
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un aerolinea</h1>
@@ -131,11 +158,11 @@ else
             </div>
             <div class="form-group">
             <label for="name">Nombre de la aerolinea</label>
-            <input type="text" class="form-control" id="name" name="name" value="<?=$row["name"]?>" >
+            <input type="text" class="form-control" id="name" name="name" value="<?=$row["name"]?>" onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="description">Descripción (Maximo 300 caracteres)</label>
-            <textarea class="form-control" id="description" name="description" rows="3" maxlength="300"><?=$row["description"]?>     </textarea>
+            <textarea class="form-control" id="description" name="description" rows="3" maxlength="300" onkeypress="return validar(event)"><?=$row["description"]?>     </textarea>
             </div>
             <div class="form-group">
             <label for="imagen">Subir imagen de logo</label>

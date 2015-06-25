@@ -41,7 +41,7 @@
                         {
                             $db = new PDO("mysql:host=". $hostname . ";dbname=". $database, $username, $password);
                             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            $stmt = $db->prepare("INSERT INTO costumers VALUES('', :name, :address, :city, :state, :mail, :birthdate, :phone, :user, :password, '0')");
+                            $stmt = $db->prepare("INSERT INTO costumers VALUES('', :name, :address, :city, :state, :mail, :birthdate, :phone, :user, :password, '0')"); 
                             $stmt->bindParam(':name',$name, PDO::PARAM_STR);
                             $stmt->bindParam(':address',$address, PDO::PARAM_STR);
                             $stmt->bindParam(':city',$city, PDO::PARAM_STR);

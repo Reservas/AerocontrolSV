@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <script>
-function numeros(e){
+function letras(e){
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
     letras = "abcdefghijklmnñopqrstuvwxyz";
@@ -134,7 +134,7 @@ else
             </div>
 			<div class="form-group">
 				<label for="type">Tipo de avion</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required onkeypress='return numeros(event)'>
+				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required onkeypress='return letras(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>
