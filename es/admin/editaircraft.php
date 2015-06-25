@@ -17,6 +17,26 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+    <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = "abcdefghijklmnñopqrstuvwxyz";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>      
+        <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un avion</h1>
 <?php
@@ -64,11 +84,11 @@ else
         <form method="post" action="editaircraft.php">
             <div class="form-group">
             <label for="idcity">ID del avion (No se puede editar)</label>
-            <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly>
+            <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly >
             </div>
             <div class="form-group">
            <label for="name">Nombre del avion</label>
-			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Nombre del avion" required>
+			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Nombre del avion" required >
             </div>
             <div class="form-group">
 			<?php
@@ -79,6 +99,7 @@ else
 				}else{
 				
 			  ?>
+            
            <label for="airline">Aerolinea (actual <?= $row["airline"]?>)</label>
              <select class="form-control" name="airline" id="airline" required>
                <option value="">Escoja la aerolinea</option>
@@ -113,7 +134,7 @@ else
             </div>
 			<div class="form-group">
 				<label for="type">Tipo de avion</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required>
+				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required onkeypress='return numeros(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>
