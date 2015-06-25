@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+                     <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>    
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Add airline</h1>
@@ -94,11 +120,11 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
         <form enctype="multipart/form-data" method="post" action="addairline.php">
             <div class="form-group">
             <label for="name">Name of the airline</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Name of the airline" required>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name of the airline" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="description">Description (Max 300 characters)</label>
-            <textarea class="form-control" id="description" name="description" rows="3" maxlength="300"></textarea>
+            <textarea class="form-control" id="description" name="description" rows="3" maxlength="300" onkeypress="return validar(event)"></textarea>
             </div>
             <div class="form-group">
             <label for="imagen">Image</label>

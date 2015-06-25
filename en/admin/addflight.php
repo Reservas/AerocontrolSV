@@ -38,6 +38,33 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+         <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+    }
+</script>
+        <?php include 'nav.php'; ?>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Add Flight</h1>
@@ -140,7 +167,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			</div>
 			<div class="form-group">
 				<label for="arrival_time">Arrival date</label>
-						<input type='text' class="form-control" name="arrival_time" id="arrival_time" required>
+						<input type='text' class="form-control" name="arrival_time" id="arrival_time" required onkeypress='return numeros(event)'>
 						<script type="text/javascript">
 							$(function () {
 								$('#arrival_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
@@ -149,7 +176,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="cost">Cost</label>
-				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Cost of the flight" required>
+				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Cost of the flight" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
 				<label for="departure_city">Departure City</label>	
@@ -191,7 +218,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			</div>
 			<div class="form-group">
 				<label for="departure_time">Departure date</label>
-						<input type='text' class="form-control" name="departure_time" id="departure_time" required>
+						<input type='text' class="form-control" name="departure_time" id="departure_time" required onkeypress='return numeros(event)'>
 						<script type="text/javascript">
 							$(function () {
 								$('#departure_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
@@ -200,11 +227,11 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="seats">Number of seats</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seatsco" required>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seatsco" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
 				<label for="type">Description</label>
-				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Descripcion del vuelo" required>
+				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Description of the fligth" required onkeypress="return validar(event)">
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>

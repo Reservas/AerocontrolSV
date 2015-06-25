@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+    <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Edit the airport</h1>
@@ -65,7 +91,7 @@ else
             </div>
             <div class="form-group">
             <label for="airname">Name of the airport</label>
-            <input type="text" class="form-control" id="airname" name="airname" value="<?=$row["name"]?>"  required>
+            <input type="text" class="form-control" id="airname" name="airname" value="<?=$row["name"]?>"  required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="state">Name of the State (actual <?= $row["zip"]." - ".$row["city"]." - ".$row["state"]?>)</label>

@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+         <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>  
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center"><Editing data of a runway/h1>
@@ -63,7 +89,7 @@ else
             <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly>
             </div>
            <label for="idairport">Aircraft (actual <?= $row["name"]?>)</label>
-             <select class="form-control" name="idairport" id="idairport" required>
+             <select class="form-control" name="idairport" id="idairport" required >
                <option value="">Choose the airport</option>
                 <?php
                 include "../docs/connect.php";
@@ -89,9 +115,9 @@ else
             </div>
 			<div class="form-group">
 				<label for="lenght">length</label>
-				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" value="<?=$row["length"]?>" placeholder="length of the runway" required>
+				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" value="<?=$row["length"]?>" placeholder="length of the runway" required onkeypress='return numeros(event)'>
             </div>
-            <input type="submit" name="enviar" value="Send">
+            <input type="submit" name="enviar" value="Send" >
         </form>
         </div>        
 <?php

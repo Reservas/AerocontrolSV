@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+            <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>   
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Add Costumers</h1>
@@ -77,17 +103,17 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
                                 <label>Repeat password</label>
                                 <input type="password" class="form-control input-sm" name="rpass" placeholder="Repit password" autocomplete="off" required>
                                 <label>Birthday</label>
-                                <input type="text" class="form-control input-sm" name="nac" placeholder="Birthday" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="nac" placeholder="Birthday" autocomplete="off" required onkeypress='return numeros(event)'> 
                                 <label>Telephone</label>
-                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telephone" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telephone" autocomplete="off" required onkeypress='return numeros(event)'> 
                               </div>
                               <div class="col-md-6">
                                 <label>Name</label>
-                                <input type="text" class="form-control input-sm" name="name" placeholder="Name" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="name" placeholder="Name" autocomplete="off" required onkeypress="return validar(event)"> 
                                 <label>Country</label>
-                                <input type="text" class="form-control input-sm" name="city" placeholder="Country" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="city" placeholder="Country" autocomplete="off" required onkeypress="return validar(event)"> 
                                 <label>State</label>
-                                <input type="text" class="form-control input-sm" name="state" placeholder="State" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="state" placeholder="State" autocomplete="off" required onkeypress="return validar(event)"> 
                                 <label>Address</label>
                                 <input type="text" class="form-control input-sm" name="address" placeholder="Address" autocomplete="off" required> 
                                 <label>E-mail</label>

@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+            <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Edit city</h1>
@@ -66,15 +92,15 @@ else
             </div>
             <div class="form-group">
             <label for="city">Name of the city</label>
-            <input type="text" class="form-control" id="city" name="city" value="<?=$row["city"]?>"  required>
+            <input type="text" class="form-control" id="city" name="city" value="<?=$row["city"]?>"  required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="state">Name of the State</label>
-            <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required>
+            <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="zip">ZIP code</label>
-            <input type="number" class="form-control" id="zip" name="zip"  value="<?=$row["zip"]?>"  required min="0" max="999">
+            <input type="number" class="form-control" id="zip" name="zip"  value="<?=$row["zip"]?>"  required min="0" max="999" onkeypress='return numeros(event)'>
             </div>
             <input type="submit" name="enviar" value="Send">
         </form>

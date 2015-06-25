@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+                 <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Editing data of an aircraft</h1>
@@ -67,7 +93,7 @@ else
             </div>
             <div class="form-group">
            <label for="name">Name of the aircraft</label>
-			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Name of the aircraft" required>
+			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Name of the aircraft" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
            <label for="airline">Airline (actual <?= $row["airline"]?>)</label>
@@ -97,11 +123,11 @@ else
             </div>
 			<div class="form-group">
 				<label for="seats">Numbers of seats</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats"  value="<?=$row["seats"]?>" placeholder="Numbers of seats" required>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats"  value="<?=$row["seats"]?>" placeholder="Numbers of seats" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
 				<label for="type">Aircrafts type</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Aircrafts type" required>
+				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Aircrafts type" required onkeypress="return validar(event)">
             </div>
             <input type="submit" name="enviar" value="Send">
         </form>
