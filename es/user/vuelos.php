@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php 
-            include "files/menu.php";
+            include "files/nav.php";
         ?>
         <div class="col-xs-12">
             <center><h1>Vuelos en tiempo real</h1></center>

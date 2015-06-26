@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php 
-            include "files/menu.php";
+            include "files/nav.php";
                  if(isset($_GET['s'])) {
                     echo "<div class='alert alert-dismissible alert-success'>
   <button type='button' class='close' data-dismiss='alert'>×</button>

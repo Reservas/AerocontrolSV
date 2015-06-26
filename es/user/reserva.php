@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php 
-            include "files/menu.php";
+            include "files/nav.php";
             if(isset($_POST['comprar'])){
                 include "files/conexion.php";
                 $stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.id = ? ORDER BY `flights`.`arrival_time`");

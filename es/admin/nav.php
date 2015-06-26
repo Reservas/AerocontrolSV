@@ -16,7 +16,7 @@
         <li><a href="index.php">Mantenimientos</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Cerrar sesión</a></li>
+        <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
       </ul>
     </div>
   </div>
