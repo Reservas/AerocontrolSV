@@ -1,3 +1,11 @@
+.redondo{
+border: 2px solid grey;
+margin: 0;
+padding: 0;
+border-radius: 800px;
+overflow: hidden;
+}
+
 /*=============================================================
     Authour URL: www.designbootstrap.com
     

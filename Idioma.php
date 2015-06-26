@@ -12,7 +12,7 @@
     <link rel="icon" href="./en/docs/img/favicon.ico" />
     <title>Aerocontrol</title>
     <!-- BOOTSTRAP CORE CSS -->
-    <link href="./en/docs/docs/css/bootstrap.css" rel="stylesheet" />
+    <link href="es/docs/css/bootstrap.css" rel="stylesheet">
     <!-- ION ICONS STYLES -->
     <link href="./en/docs/css/ionicons.css" rel="stylesheet" />
      <!-- FONT AWESOME ICONS STYLES -->
@@ -27,10 +27,22 @@
     <div id="home">
         <div class="overlay">
             <div class="container">
-                <div align="center" class="row scroll-me">
-                        <h2 color="white">SELECCIONE SU IDIOMA/CHOOSE YOUR LANGUAGE</h2> 
-                    <a href="es/index.php"> <img src="./base_de_datos/descarga" width=420 height=220/></a>
-                    <a href="en/index.php"> <img src="./base_de_datos/Ingles.jpg"  width="420" height="220"/> </a>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 style="color:#fff; text-align:center;">SELECCIONE SU IDIOMA/CHOOSE YOUR LANGUAGE</h2><br>
+                        <div class="col-lg-6">
+                            <figure align="center">
+                                <a href="es/index.php"> <img src="./base_de_datos/descarga" class="redondo" width=420 height=220/></a>
+                                <figcaption style="color:#fff;">English</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-lg-6">
+                            <figure align="center">
+                                <a href="en/index.php"> <img src="./base_de_datos/Ingles.jpg" class="redondo"  width="420" height="220"/> </a>
+                                <figcaption style="color:#fff;">Español</figcaption>
+                            </figure>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
