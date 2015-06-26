@@ -28,9 +28,9 @@
         <div class="overlay">
             <div class="container">
                 <div align="center" class="row scroll-me">
-                        
-                    <a href="en/index.php"> <img src="./base%2520de%2520datos/Ingles.jpg"  width="420" height="220"/> </a>
-                    <a href="es/index.php"> <img src="./base%2520de%2520datos/descarga.png" width=420 height=220/></a>
+                        <h2 color="white">SELECCIONE SU IDIOMA/CHOOSE YOUR LANGUAGE</h2> 
+                    <a href="es/index.php"> <img src="./base_de_datos/descarga.png" width=420 height=220/></a>
+                    <a href="en/index.php"> <img src="./base_de_datos/Ingles.jpg"  width="420" height="220"/> </a>
                 </div>
             </div>
         </div>
