@@ -29,7 +29,7 @@
             <div class="container">
                 <div align="center" class="row scroll-me">
                         <h2 color="white">SELECCIONE SU IDIOMA/CHOOSE YOUR LANGUAGE</h2> 
-                    <a href="es/index.php"> <img src="./base_de_datos/descarga.png" width=420 height=220/></a>
+                    <a href="es/index.php"> <img src="./base_de_datos/descarga" width=420 height=220/></a>
                     <a href="en/index.php"> <img src="./base_de_datos/Ingles.jpg"  width="420" height="220"/> </a>
                 </div>
             </div>

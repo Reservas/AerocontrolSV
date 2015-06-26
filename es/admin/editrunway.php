@@ -16,6 +16,32 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+                     <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script> 
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de una pista de aterrizaje</h1>
@@ -54,8 +80,13 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente a las pistas de aterrizaje</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+            <p>Aquí podrás editar todo lo referente a las pistas de aterrizaje
+            
+            
+            
+            
+            </p>
+            
         </div>
         <div class="col-md-8">
         <form method="post" action="editrunway.php">
@@ -87,14 +118,15 @@ else
                 }
                 ?>
             </select>
-            </div>
+           
 			<div class="form-group">
 				<label for="lenght">Longitud</label>
-				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" value="<?=$row["length"]?>" placeholder="Longitud de la pista" required>
+				<input type="number"  min="1" step="1" class="form-control" id="lenght" name="lenght" value="<?=$row["length"]?>" placeholder="Longitud de la pista" required  onkeypress='return numeros(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>
-        </div>        
+        </div> 
+        </div>
 <?php
             }
         }

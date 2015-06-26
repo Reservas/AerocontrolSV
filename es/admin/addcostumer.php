@@ -60,58 +60,78 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
             <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
-        </div>
-        <div class="col-md-8">
-        <form method="post" action="addcostumer.php">
-            <div class="form-group">
-            <label for="name">Nombre del cliente</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la cliente" required>
-            </div>
-            <div class="form-group">
-            <label for="address">Dirección</label>
-            <input type="text" class="form-control" id="address" name="address" placeholder="Dirección" required>
-            </div>
-            <div class="form-group">
-            <label for="location">Ubicación</label>
-            <select class="form-control" name="location" id="location">
-                <option value="">Escoja la ciudad donde se ubica</option>
-                <?php
-                include "../docs/connect.php";
-                $query = "SELECT * FROM cities ORDER BY id";
-                $resultado = mysql_query($query, $link);
-                $total = mysql_num_rows($resultado);
-                if($total>0)
-                {
-                    while($row = mysql_fetch_array($resultado))
-                    {
-                        echo "<option value='".$row['zip']."-".$row['city']."-".$row['state']."'>".$row['zip']." - ".$row['city']." - ".$row['state']."</option>";
-                    }                    
-                }
-                ?>
-            </select>
-            </div>
-            <div class="form-group">
-            <label for="birthdate">Nacimiento</label>
-            <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="AAAA/MM/DD" required>
-            </div>
-            <div class="form-group">
-            <label for="phone">Telefono</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="####-####" required>
-            </div>
-            <div class="form-group">
-            <label for="user">Nombre de usuario</label>
-            <input type="text" class="form-control" id="user" name="user" placeholder="Nombre de usuario" required>
-            </div>
-            <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
-            </div>
-            <div class="form-group">
-            <label for="password2">Confirme</label>
-            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirme" required>
-            </div>
-            <input type="submit" name="enviar" value="Enviar">
-        </form>
+        </div>  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="panel panel-primary">
+                          
+                          <div class="panel-body">
+                            <form name="register" action="register.php" method="post">
+                              <div class="col-md-6"> 
+                                <label>Usuario</label>
+                                <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required > 
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required maxlength="6" >  
+                                <label>Repetir contraseña</label>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required maxlength="6">
+                                <label>Fecha de nacimiento</label>
+                                  <script>
+                                  function compruebaFecha($date){
+if ($date == "" || $date == "dd/mm/aaaa")
+return false;
+if (!ereg("^([[:digit:]]{2})/([[:digit:]]{2})/([[:digit:]]{4})$", $date, $vec))
+return false;
+else{
+if ($vec[1] <= 31)
+return false;
+if ($vec[2] <= 12)
+return false;
+//if ($vec[3] <= date("Y") + 1)
+//return false;
+if ($date != date("d/m/Y",mktime(0,0,0, $vec[2], $vec[1], $vec[3])))
+return false;
+}
+return true;
+}
+                                  </script>
+                                <input type="date" class="form-control input-sm" name="nac" placeholder="Fecha de nacimiento" autocomplete="off" required onkeypress="compruebaFecha"> 
+                                <label>Telefono</label>
+                                  
+                                <input type="text" class="form-control input-sm" name="phone" maxlength="8" placeholder="7*******" autocomplete="off" required onKeyPress="return soloNumeros(event)"required="" pattern="7[0-9]{7}"> 
+                              </div>
+                              <div class="col-md-6">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control input-sm" name="name" placeholder="Nombre" autocomplete="off" required
+                                onkeypress="return alpha(event)" > 
+                                <label>Pais</label>
+                                <!--<div class="panel-body">-->
+                                  <select class="form-control input-sm" id="city" name="city">
+                                    <option value="">Elige un pais</option>
+                                    <?php
+                                    include "../connect.php";
+                                      $query = mysql_query("SELECT state FROM cities");
+                                      while($row = mysql_fetch_row($query))
+                                      {
+                                          echo "<option value='".$row[0]."'>".$row[0]."</option>";
+                                      }
+                                    ?>
+                                  </select>
+                                <!--</div>-->
+                                <!--<input type="text" class="form-control input-sm" name="city" placeholder="Pais" autocomplete="off" required 
+                                onkeyup="this.value=this.value.replace(/[^a-zA-Z] /g,'');"> -->
+                                <label>Estado</label>
+                                <input type="text" class="form-control input-sm" name="state" placeholder="Estado" autocomplete="off" required 
+                                onkeypress="return alpha(event)"> 
+                                <label>Direccion</label>
+                                <input type="text" class="form-control input-sm" name="address" placeholder="Direccion" autocomplete="off" required> 
+                                <label>Correo</label>
+                                <input type="text" class="form-control input-sm" name="mail" placeholder="Correo" autocomplete="off" required> 
+                              </div>
+                          </div> 
+                          <div class="panel-footer">
+                              <input type="submit" class="btn btn-success form-control btn-sm" value="Registro">
+                            </form>
+                          </div>
+                        </div>
+                    </div>
         </div>
     </div>    
 </div>

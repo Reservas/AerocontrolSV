@@ -167,9 +167,9 @@ function soloNumeros(e){
                                 <label>Usuario</label>
                                 <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required > 
                                 <label>Contraseña</label>
-                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required maxlength="6" >  
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo ">  
                                 <label>Repetir contraseña</label>
-                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required maxlength="6">
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo"   >
                                 <label>Fecha de nacimiento</label>
                                   <script>
                                   function compruebaFecha($date){
