@@ -2,6 +2,11 @@
 <?php 
 session_start();
 require_once "docs/connect.php";
+
+$user_pool = mysql_query("SELECT user FROM costumers");                          
+
+
+
 ?>
 <html lang="en">
 <head>
@@ -56,7 +61,7 @@ require_once "docs/connect.php";
     <div id="home">
         <div class="overlay">
             <div class="container">
-                <div class="row scroll-me" >
+                <div class="row scroll-me">
                     
                 </div>
             </div>
@@ -65,7 +70,22 @@ require_once "docs/connect.php";
     </div>
     <!--HOME SECTION END  -->
      <!-- ABOUT SECTION START-->
-    <section id="about">
+
+<!--     <script type="text/javascript"> 
+     function alpha(e) {
+       var k;
+       document.all ? k = e.keyCode : k = e.which;
+       return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k==32);
+    }
+
+    function numbers(e) {
+       var k;
+       document.all ? k = e.keyCode : k = e.which;
+       return ((k > 47 && k < 58) || k==45 k == 8 || k==32);
+    }
+     </script> -->
+    
+    <section id="about" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -76,9 +96,9 @@ require_once "docs/connect.php";
                           <div class="panel-body">
                             <form action="validate.php" method="post">
                               <label>Username</label>
-                              <input type="text" class="form-control input-sm" name="user" placeholder="Username" autocomplete="off" required> 
+                              <input type="text"  class="form-control input-sm" id="user" name="user" placeholder="Username" autocomplete="off" required  > 
                               <label>Password</label>
-                              <input type="password" class="form-control input-sm" name="pass" placeholder="Password" autocomplete="off" required>
+                              <input type="password"  class="form-control input-sm" name="pass" placeholder="¨Password" autocomplete="off" required>
                               <?php
                                 if(isset($_SESSION['error'])) 
                                 {
@@ -88,16 +108,23 @@ require_once "docs/connect.php";
                                         echo '
                                             <div class="alert alert-dismissible alert-danger">
                                                 <button type="button" class="close" data-dismiss="alert">×</button>
-                                               Incorrect user or password
+                                                User or pass incorrect
                                             </div>
                                         ';
                                         session_destroy();
                                     }
                                 }
                               ?>
+                                <script type="text/javascript">
+// Solo permite ingresar numeros.
+function soloNumeros(e){
+	var key = window.Event ? e.which : e.keyCode
+	return (key >= 48 && key <= 57)
+}
+</script>
                           </div> 
                           <div class="panel-footer">
-                              <input type="submit" class="btn btn-success btn-xs" value="Log in" style="width:100%;">
+                              <input type="submit" class="btn btn-success btn-xs" value="Iniciar" style="width:100%;">
                             </form>
                           </div>
                         </div>
@@ -117,10 +144,10 @@ require_once "docs/connect.php";
                                 </select>
                             </div>
                           <div class="panel-footer">
-                              <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Log in" style="width:100%;"></a>
+                              <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="ILogin" style="width:100%;"></a>
                           </div>
                         </div>
-                                          <div class="panel panel-primary">
+                      <div class="panel panel-primary">
                           <div class="panel-heading">
                             <h2 class="text-center" style="color:#fff;">Admin</h2>
                           </div>
@@ -129,34 +156,77 @@ require_once "docs/connect.php";
                           </div>
                         </div>
                     </div>
-        
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="panel panel-primary">
                           <div class="panel-heading">
-                            <h2 class="text-center" style="color:#fff;">Customer login
-</h2>
+                            <h2 class="text-center" style="color:#fff;">Costumer Log in</h2>
                           </div>
                           <div class="panel-body">
-                            <form action="register.php" method="post">
+                            <form name="register" action="register.php" method="post">
                               <div class="col-md-6"> 
                                 <label>Username</label>
-                                <input type="text" class="form-control input-sm" name="user" placeholder="Username" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="user" placeholder="Username" autocomplete="off" required > 
                                 <label>Password</label>
-                                <input type="password" class="form-control input-sm" name="pass" placeholder="Passwprd" autocomplete="off" required>  
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Password" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo ">  
                                 <label>Repit password</label>
-                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repit password" autocomplete="off" required>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repit password" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo"   >
                                 <label>Birthday</label>
-                                <input type="text" class="form-control input-sm" name="nac" placeholder="Birthday" autocomplete="off" required> 
-                                <label>Telephone</label>
-                                <input type="text" class="form-control input-sm" name="phone" placeholder="Telephone" autocomplete="off" required> 
+                                  <script>
+                                  function compruebaFecha($date){
+if ($date == "" || $date == "aaa/mm/dd")
+return false;
+if (!ereg("^([[:digit:]]{4})/([[:digit:]]{2})/([[:digit:]]{2})$", $date, $vec))
+return false;
+else{
+if ($vec[1] <= 31)
+return false;
+if ($vec[2] <= 12)
+return false;
+if ($vec[3] <= date("Y") + 1)
+return false;
+if ($date != date("Y/m/d",mktime(0,0,0, $vec[3], $vec[1], $vec[2])))
+return false;
+}
+return true;
+}
+                        function normalize_date($date){   
+                            
+                            if(!empty($date)){ 
+                                $var = explode('/',str_replace('-','/',$date)); 
+                                return "$var[2]/$var[1]/$var[0]"; 
+                            
+                            }   
+                        
+                        } 
+                                  </script>
+                                <input type="date"  class="form-control input-sm" name="nac" placeholder="Birthday" autocomplete="off" required  max=”1996-12-31″. > 
+                                <label>Cellphone</label>
+                                  
+                                <input type="text" class="form-control input-sm" name="phone" maxlength="8" placeholder="7*******" autocomplete="off" required
+                                onKeyPress="return soloNumeros(event)"required="" pattern="7[0-9]{7}"> 
                               </div>
                               <div class="col-md-6">
                                 <label>Name</label>
-                                <input type="text" class="form-control input-sm" name="name" placeholder="Name" autocomplete="off" required> 
+                                <input type="text" class="form-control input-sm" name="name" placeholder="NAme" autocomplete="off" required
+                                onkeypress="return alpha(event)" > 
                                 <label>Country</label>
-                                <input type="text" class="form-control input-sm" name="city" placeholder="Country" autocomplete="off" required> 
-                                <label>State</label>
-                                <input type="text" class="form-control input-sm" name="state" placeholder="State" autocomplete="off" required> 
+                                <!--<div class="panel-body">-->
+                                  <select class="form-control input-sm" id="city" name="city">
+                                    <option value="">Chosse a country</option>
+                                    <?php
+                                      $query = mysql_query("SELECT state FROM cities");
+                                      while($row = mysql_fetch_row($query))
+                                      {
+                                          echo "<option value='".$row[0]."'>".$row[0]."</option>";
+                                      }
+                                    ?>
+                                  </select>
+                                <!--</div>-->
+                                <!--<input type="text" class="form-control input-sm" name="city" placeholder="Pais" autocomplete="off" required 
+                                onkeyup="this.value=this.value.replace(/[^a-zA-Z] /g,'');"> -->
+                                <label>Estate</label>
+                                <input type="text" class="form-control input-sm" name="state" placeholder="Estate" autocomplete="off" required 
+                                onkeypress="return alpha(event)"> 
                                 <label>Address</label>
                                 <input type="text" class="form-control input-sm" name="address" placeholder="Address" autocomplete="off" required> 
                                 <label>E-mail</label>
@@ -180,7 +250,7 @@ require_once "docs/connect.php";
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
+                        
                 </div>
             </div>
            
