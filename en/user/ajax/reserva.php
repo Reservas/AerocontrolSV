@@ -9,7 +9,7 @@ include "../files/conexion.php";
                 $date = new DateTime($arrival_time);
                 $now = new DateTime();
                 $newFormatDep =  date("D M j y", strtotime($departure_time));
-                $resta = $date->diff($now)->format("%h hours, %i minutes y %s seconds");
+                $resta = $date->diff($now)->format("%h horas, %i minutos y %s segundos");
                 $restaDos = $date->diff($now)->format("%h");
                     if($restaDos <= 24) {
                     //echo "<tr class=''>
@@ -30,7 +30,7 @@ include "../files/conexion.php";
                              <a class='btn btn-info'><i class='fa fa-users'></i> $seats</a>
                             <a class='btn btn-success'><i class='fa fa-usd'></i> $cost</a>
                           </div>  
-                            <p><a id='$id' class='btn btn-primary btn-lg comprar'>Buy Flights</a></p>
+                            <p><a id='$id' class='btn btn-primary btn-lg comprar'>Comprar</a></p>
                         </div></div>";
                     }
                 }
