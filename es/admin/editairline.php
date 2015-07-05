@@ -148,7 +148,7 @@ else
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
             <p>Aquí se podrá editar todo, referente a la aerolínea escogida</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+
         </div>
         <div class="col-md-8">
         <form enctype="multipart/form-data" method="post" action="editairline.php">
