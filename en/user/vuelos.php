@@ -3,6 +3,8 @@
         <?php
             include "files/head.php";
         ?>
+        </head>
+    <body>
 		<link href='../docs/calendar/fullcalendar.min.css' rel='stylesheet' />
 		<link href='../docs/calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 		<script src='../docs/calendar/lib/moment.min.js'></script>
@@ -48,9 +50,6 @@
 
 </style>
 
-
-    </head>
-    <body>
         <?php 
             include "files/menu.php";
         ?>
