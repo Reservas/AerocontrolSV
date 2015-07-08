@@ -167,9 +167,9 @@ function soloNumeros(e){
                                 <label>Username</label>
                                 <input type="text" class="form-control input-sm" name="user" placeholder="Username" autocomplete="off" required > 
                                 <label>Password</label>
-                                <input type="password" class="form-control input-sm" name="pass" placeholder="Password" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo ">  
-                                <label>Repit password</label>
-                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repit password" autocomplete="off" required pattern=".{6,12}"   required title="6 caractères como mìnimo"   >
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Password" autocomplete="off" required pattern=".{6,12}"   required title="At least 6 characters">  
+                                <label>Repeat password</label>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repeat password" autocomplete="off" required pattern=".{6,12}"   required title="At least 6 characters"   >
                                 <label>Birthday</label>
                                   <script>
                                   function compruebaFecha($date){
@@ -207,12 +207,12 @@ return true;
                               </div>
                               <div class="col-md-6">
                                 <label>Name</label>
-                                <input type="text" class="form-control input-sm" name="name" placeholder="NAme" autocomplete="off" required
+                                <input type="text" class="form-control input-sm" name="name" placeholder="Name      " autocomplete="off" required
                                 onkeypress="return alpha(event)" > 
                                 <label>Country</label>
                                 <!--<div class="panel-body">-->
                                   <select class="form-control input-sm" id="city" name="city">
-                                    <option value="">Chosse a country</option>
+                                    <option value="">Choose a country</option>
                                     <?php
                                       $query = mysql_query("SELECT state FROM cities");
                                       while($row = mysql_fetch_row($query))
