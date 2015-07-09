@@ -2,11 +2,7 @@
 <?php 
 session_start();
 require_once "docs/connect.php";
-
 $user_pool = mysql_query("SELECT user FROM costumers");                          
-
-
-
 ?>
 <html lang="en">
 <head>

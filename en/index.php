@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<?php 
+<?php
 session_start();
 require_once "docs/connect.php";
-
-$user_pool = mysql_query("SELECT user FROM costumers");                          
-
-
-
+$user_pool = mysql_query("SELECT user FROM costumers");
 ?>
 <html lang="en">
 <head>
@@ -124,7 +120,7 @@ function soloNumeros(e){
 </script>
                           </div> 
                           <div class="panel-footer">
-                              <input type="submit" class="btn btn-success btn-xs" value="Iniciar" style="width:100%;">
+                              <input type="submit" class="btn btn-success btn-xs" value="Login" style="width:100%;">
                             </form>
                           </div>
                         </div>
@@ -144,7 +140,7 @@ function soloNumeros(e){
                                 </select>
                             </div>
                           <div class="panel-footer">
-                              <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="ILogin" style="width:100%;"></a>
+                              <a><input type="button" id="airlbtn" class="btn btn-success btn-xs" value="Login" style="width:100%;"></a>
                           </div>
                         </div>
                       <div class="panel panel-primary">

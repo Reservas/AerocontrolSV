@@ -128,7 +128,7 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
             </div>
             <div class="form-group">
             <label for="imagen">Image</label>
-            <input name="imagen" type="file" required/>
+            <input name="imagen" type="file" required style = 'display: none;'/>
             </div>
             <input type="submit" name="enviar" value="Save">
         </form>
