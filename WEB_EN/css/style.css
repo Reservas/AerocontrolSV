@@ -10,8 +10,10 @@ body {background:#fff;border:0;font:14px Arial,Helvetica,sans-serif;color:#3c404
 .ic, .ic a {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 .css3{border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;box-shadow:0 0 4px rgba(0, 0, 0, .4);-moz-box-shadow:0 0 4px rgba(0, 0, 0, .4);-webkit-box-shadow:0 0 4px rgba(0, 0, 0, .4);behavior:url(js/PIE.htc);position:relative}
 .main {margin:0 auto;width:1000px}
+.main2 {margin:0 auto;width:1000px}
 .body1 {background:url(../images/bg_top.jpg) top center no-repeat #1e2023}
 .body2 {background:url(../images/bg_bot.jpg) top center no-repeat #1e2023}
+.body3 {background:#6B6B6B; border:0; font: 16px Arial, sans-serif; color: black;}
 a {color:#1e749a;text-decoration:underline;outline:none}
 a:hover {text-decoration:none}
 h1 {font-size:20px;font-weight:400;text-transform:uppercase;line-height:26px;color:#fff;float:left;padding:23px 0 0 58px}
