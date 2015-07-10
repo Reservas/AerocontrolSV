@@ -94,7 +94,7 @@ else
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
             <p>Aquí podrás editar todo lo referente a los aviones</p>
-            <p>A sdglbsfg fgr rgiuf <strong>texto negrita</strong> uwehiw  goegpe fgubgr gwurgif sdqjerpqn asflbdfkjbsdkgj sglbd flsdf sdfbjsdkfb sdkfb</p>
+
         </div>
         <div class="col-md-8">
         <form method="post" action="editaircraft.php">
@@ -145,7 +145,7 @@ else
 			?>
             </div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
+				<label for="seats">N&uacute;mero de asientos</label>
 				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats"  value="<?=$row["seats"]?>" placeholder="Asientos del avion" required onkeypress=" return numeros(event)">
             </div>
 			<div class="form-group">
