@@ -8,7 +8,7 @@ include "../files/conexion.php";
          while ($stmt->fetch()) {
                 $date = new DateTime($arrival_time);
                 $now = new DateTime();
-                $newFormatDep =  date("D M j y", strtotime($departure_time));
+                $newFormatDep =  date(" M -j -Y", strtotime($departure_time));
                 $resta = $date->diff($now)->format("%h horas, %i minutos y %s segundos");
                 $restaDos = $date->diff($now)->format("%h");
                     if($restaDos <= 24) {

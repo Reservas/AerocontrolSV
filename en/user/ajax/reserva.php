@@ -30,7 +30,7 @@ include "../files/conexion.php";
                              <a class='btn btn-info'><i class='fa fa-users'></i> $seats</a>
                             <a class='btn btn-success'><i class='fa fa-usd'></i> $cost</a>
                           </div>  
-                            <p><a id='$id' class='btn btn-primary btn-lg comprar'>Comprar</a></p>
+                            <p><a id='$id' class='btn btn-primary btn-lg comprar'>Bu    y ticket</a></p>
                         </div></div>";
                     }
                 }
