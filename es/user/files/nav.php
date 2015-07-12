@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         <li><a href="vuelos.php">Tiempo Real </a></li>
-        <li><a href="reserva.php">Reserva</a></li>
+        <li><a href="purchase.php">Reserva</a></li>
         <li><a href="compras.php">Compras</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

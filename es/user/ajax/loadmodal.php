@@ -46,7 +46,7 @@ include "../files/conexion.php";
                             <a class='btn btn-success'><i class='fa fa-usd'></i> $cost</a>
                           </div>  
                       </div>
-                      <form action='reserva.php' method='post'>
+                      <form action='ajax/guardar_compra.php' method='post'>
                       <div class='form-group ' style='margin-left:4%;margin-right:4%;'>
                           <label class='control-label'>Numero de personas</label>
                           <div class='input-group'>
