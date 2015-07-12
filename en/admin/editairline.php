@@ -40,11 +40,11 @@ function numeros(e){
  
     if(letras.indexOf(tecla)==-1 && !tecla_especial)
         return false;
-}
+}¿
 </script>  
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Editando datos de un aerolinea</h1>
+        <h1 class="text-center">Edit an Airline</h1>
 <?php
 if(isset($_POST["idair"]) AND isset($_POST["name"]) AND isset($_POST["description"]))
 {
@@ -167,7 +167,7 @@ else
             <label for="imagen">Upload Image</label>
             <input name="imagen" type="file"/>
             </div>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Save">
         </form>
         </div>        
 <?php
