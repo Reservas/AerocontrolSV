@@ -67,7 +67,7 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 ?>
         <div class="col-md-4 well">
             <h3>Help</h3>
-            <p>Write the name of the <strong>City</strong> Later, the name of the <strong>State(departament)</strong> and the <strong>ZIP code</strong> </p>
+            <p>Write the name of the <strong>City</strong> Later, the name of the <strong>Country(departament)</strong> and the <strong>ZIP code</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addcity.php">
@@ -76,8 +76,8 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
             <input type="text" class="form-control" id="city" name="city" placeholder="Name of the city" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="state">Name of the state</label>
-            <input type="text" class="form-control" id="state" name="state" placeholder="Name of the state" required onkeypress="return validar(event)">
+            <label for="state">Name of the Country</label>
+            <input type="text" class="form-control" id="state" name="state" placeholder="Name of the Country" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
             <label for="zip">ZIP code</label>

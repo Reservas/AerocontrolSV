@@ -80,7 +80,7 @@ else
             {
 ?>
         <div class="col-md-4 well">
-            <h3>Ayuda</h3>
+            <h3>Help</h3>
             <p>You can edit everything about the cities</p>
 
         </div>
@@ -95,7 +95,7 @@ else
             <input type="text" class="form-control" id="city" name="city" value="<?=$row["city"]?>"  required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="state">Name of the State</label>
+            <label for="state">Name of the Country</label>
             <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
