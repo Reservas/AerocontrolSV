@@ -58,19 +58,19 @@
 							<input id="ida" type="checkbox" />
 							<input type="button" value="Buscar vuelos
 " onclick="buscarVuelos();">
+                    <div class="col-xs-12">
+						<div class="container flights">
 						</div>
 					</div>
-					<div class="col-xs-12">
-						<div class="container flights">
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+        </div>
 						</div>
 					</div>
 					</div>
 			</div>
                 </div>
-			</div>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          
-        </div>
+        </section>
     </body>
 <script type="text/javascript" >
 		function buscarVuelos(){

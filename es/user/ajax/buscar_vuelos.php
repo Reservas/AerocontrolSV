@@ -15,7 +15,7 @@ if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDe
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-			echo "<div class='col-xs-6'><div class='jumbotron'>
+			echo "<div class='col-xs-12'><div class='jumbotron'>
                           <h1>".$row['city']."</h1>
                           <p>".$row['description']."</p>
                           <div style='margin-bottom:3%;'>
@@ -38,7 +38,7 @@ if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDe
 				while($row = mysqli_fetch_assoc($result))
 				{
 				
-				echo "<div class='col-xs-6'><div class='jumbotron'>
+				echo "<div class='col-xs-12'><div class='jumbotron'>
 							  <h1>".$row['city']."</h1>
 							  <p>".$row['description']."</p>
 							  <div style='margin-bottom:3%;'>
@@ -72,7 +72,7 @@ if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDe
 			while($row = mysqli_fetch_assoc($result))
 			{
 			
-			echo "<div class='col-xs-6'><div class='jumbotron'>
+			echo "<div class='col-xs-12'><div class='jumbotron'>
                           <h1>".$row['city']."</h1>
                           <p>".$row['description']."</p>
                           <div style='margin-bottom:3%;'>
