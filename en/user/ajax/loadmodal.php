@@ -27,18 +27,38 @@ include "../files/conexion.php";
                             <a class='btn btn-success'><i class='fa fa-usd'></i> $cost</a>
                           </div>  
                       </div>
-                      <form action='reserva.php' method='post'>
+                      <form action='purchase.php' method='post'>
                       <div class='form-group ' style='margin-left:4%;margin-right:4%;'>
                           <label class='control-label'>Number of persons</label>
                           <div class='input-group'>
                             
                             <span class='input-group-addon'><i class='fa fa-users'></i></span>
-                            <input type='text' name='number' placeholder='Insert number of staff' class='form-control'>
+                            <script>
+                            function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = "0123456789";
+    especiales = [8];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>    
+                            <input type='text' name='number' placeholder='Insert number of staff' class='form-control' onkeypress="return numeros(event)">
                           </div>
                         </div>
                       <div class='modal-footer'>
+                      
                         
-                        <button value='$id' name='comprar' type='submit' class='btn btn-success'>Comprar</button>
+                        <button value='$id' name='comprar' type='submit' class='btn btn-success'>Buy flights</button>
                         </form>
                       </div>
                     </div>

@@ -3,7 +3,7 @@
         <?php
             include "files/head.php";
         ?>
- <meta charset="utf-8" />
+         <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -29,11 +29,11 @@
     </head>
     <body>
         <?php 
-            include "files/nav.php";
+            include "files/menu.php";
 			if(isset($_GET['e'])) {
                    echo "<div class='alert alert-dismissible alert-danger'>
   <button type='button' class='close' data-dismiss='alert'>×</button>
-  <strong>ERROR!</strong> <a href='#' class='alert-link'>intente con un numero menor.
+  <strong>ERROR!</strong> <a href='#' class='alert-link'>try a smaller number.
 </div>";
                 }
                 
@@ -44,33 +44,36 @@
         <div class="overlay">   
                     <div class="panel-heading" style="color:#fff;">
                     <h2 class="text-center">
-                   Búsqueda de vuelos</h2>
+                    Flight search</h2>
                         </div>
 					<div class="row text-center">
 						<div class="form-group" >
-							<label style="color:#fff;" >Origen</label> <br>
+							<label style="color:#fff;" >Departure</label> <br>
 							<select class="js-example-basic-multiple" id="dep_city" value="dep_city" name="dep_city" style="width:250px">
 							</select> <br>
-							<label style="color:#fff;"> Llegada</label><br>
+							<label style="color:#fff;"> Destination</label><br>
 							<select class="js-example-basic-multiple" id="arr_city" value="arr_city" name="arr_city" style="width:250px">
 							</select> <br> <br>
-							<label style="color:#fff;">Ida y vuelta</label>
+							<label style="color:#fff;">Round trip</label>
 							<input id="ida" type="checkbox" />
-							<input type="button" value="Buscar vuelos
+							<input type="button" value="Search flights
 " onclick="buscarVuelos();">
-						</div>
-					</div>
-					<div class="col-xs-12">
+                    <div class="col-xs-12">
 						<div class="container flights">
 						</div>
 					</div>
+					
+                                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+        </div>        
+						</div>
 					</div>
+					
+            </div>
 			</div>
                 </div>
-			</div>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          
-        </div>
+            </section>
+
     </body>
 <script type="text/javascript" >
 		function buscarVuelos(){
@@ -79,7 +82,7 @@
 			var arrcity = $("#arr_city").val();
 			var isOnlyDep = $("#ida").prop('checked');
 			if(depcity == arrcity){
-				alert("Selecciones ciudades distintas");
+				alert("Select a different country");
 			}else{
 			
 				$.ajax({
