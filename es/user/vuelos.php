@@ -3,6 +3,7 @@
         <?php
             include "files/head.php";
         ?>
+            </head>
 		<link href='../docs/calendar/fullcalendar.min.css' rel='stylesheet' />
 		<link href='../docs/calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 		<script src='../docs/calendar/lib/moment.min.js'></script>
@@ -49,15 +50,32 @@
 </style>
 
 
-    </head>
-    <body>
+
+        <body>
+
+
         <?php 
             include "files/nav.php";
         ?>
+        <section id="home">
+            <div class="overlay">
         <div class="col-xs-12">
-            <center><h1>Vuelos en tiempo real</h1></center>
+            <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h1 class="text-center" style="color:#fff;">Vuelos en tiempo real</h1>
+                          </div>
+
             <div class="container vuelos"></div>
         </div>
+            </section>
+             <section id="clients">
+               <div class="overlay">
+              <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h2 class="text-center" style="color:#fff;">Calendario</h2>
+                              </div>
+            
+ 
 		<div id='calendar'></div>
 
     <script>
@@ -65,5 +83,10 @@
             $(".1").addClass("active"); 
         });
     </script>
+             </div>     
+            </div>
+                </div>
+            </div>
+            </section>
     </body>
 </html>

@@ -40,6 +40,8 @@
         ?>
 			<div class="container-fluid">
                 <div class="panel panel-primary">
+                                            <a href="purchase.php">English/</a><a href="../../es/user/purchase.php">Español</a>
+
                      <section id="home">
         <div class="overlay">   
                     <div class="panel-heading" style="color:#fff;">

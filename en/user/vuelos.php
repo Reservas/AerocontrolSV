@@ -4,13 +4,13 @@
             include "files/head.php";
         ?>
         </head>
-    <body>
 		<link href='../docs/calendar/fullcalendar.min.css' rel='stylesheet' />
 		<link href='../docs/calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 		<script src='../docs/calendar/lib/moment.min.js'></script>
 		<script src='../docs/calendar/fullcalendar.min.js'></script>
 		<script src='../docs/calendar/lang/en-au.js'></script>
 		<script>
+            
 
 	$(document).ready(function() {
 		
@@ -49,14 +49,31 @@
 	}
 
 </style>
+        <body>
+
 
         <?php 
             include "files/menu.php";
         ?>
+        <section id="home">
+            <div class="overlay">
         <div class="col-xs-12">
-            <center><h1>Flights in real time</h1></center>
+            <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h1 class="text-center" style="color:#fff;">Flights in real time</h1>
+                          </div>
+
             <div class="container vuelos"></div>
         </div>
+            </section>
+             <section id="clients">
+               <div class="overlay">
+              <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <h2 class="text-center" style="color:#fff;">Calendar</h2>
+                              </div>
+            
+ 
 		<div id='calendar'></div>
 
     <script>
@@ -64,5 +81,10 @@
             $(".1").addClass("active"); 
         });
     </script>
+             </div>     
+            </div>
+                </div>
+            </div>
+            </section>
     </body>
 </html>
