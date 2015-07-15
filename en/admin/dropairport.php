@@ -17,6 +17,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                                                   <a href="../../en/admin/editairport.php">English/</a><a href="../../es/admin/editairport.php.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Borrando un aeropuerto</h1>
 <?php

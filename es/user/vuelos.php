@@ -57,6 +57,7 @@
         <?php 
             include "files/nav.php";
         ?>
+                                            <a href="../../en/user/vuelos.php">English/</a><a href="../../es/user/vuelos.php">Espa&ntilde;ol</a> 
         <section id="home">
             <div class="overlay">
         <div class="col-xs-12">

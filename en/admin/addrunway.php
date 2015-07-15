@@ -44,6 +44,7 @@ function numeros(e){
 </script>  
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
+<a href="../../en/admin/addrunway.php">English/</a><a href="../../es/admin/addrunway.php">Español</a>
         <h1 class="text-center">Add runways</h1>
 <?php
 if(isset($_POST["idairport"]) AND isset($_POST["lenght"]))

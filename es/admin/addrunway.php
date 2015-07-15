@@ -36,6 +36,7 @@
         </script>
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+        <a href="../../en/admin/addrunway.php">English/</a><a href="../../es/admin/addrunway.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar pista de aterrizaje</h1>
 <?php

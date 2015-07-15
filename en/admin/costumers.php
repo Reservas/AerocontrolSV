@@ -19,6 +19,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                       <a href="../../en/admin/costumers.php">English/</a><a href="../../es/admin/costumers.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">List of clients</h1>
         <br>

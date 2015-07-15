@@ -13,6 +13,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+            <a href="../../en/admin/index.php">English/</a><a href="../../es/admin/index.php.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Administración</h1>
         <div class="col-md-12">

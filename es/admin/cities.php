@@ -17,6 +17,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+               <a href="../../en/admin/cities.php">English/</a><a href="../../es/admin/cities.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Listado de ciudades y destinos</h1>
         <br>

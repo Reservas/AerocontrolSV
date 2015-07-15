@@ -17,6 +17,8 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                       
+<a href="../../en/admin/addcostumer.php">English/</a><a href="../../es/admin/addcostumer.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar cliente</h1>
 <?php

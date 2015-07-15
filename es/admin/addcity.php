@@ -44,6 +44,7 @@ function numeros(e){
 </script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
+                        <a href="../../en/admin/addcity.php">English/</a><a href="../../es/admin/addcity.php">Español</a>
         <h1 class="text-center">Agregar ciudad</h1>
 <?php
 if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))

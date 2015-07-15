@@ -26,6 +26,7 @@
 }
                 </script>
     <?php include 'nav.php'; ?>
+                <a href="../../en/admin/addairport.php">English/</a><a href="../../es/admin/addairport.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar aeropuerto</h1>
 <?php

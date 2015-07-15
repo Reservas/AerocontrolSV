@@ -43,6 +43,7 @@ function numeros(e){
 }
 </script>
     <?php include 'nav.php'; ?>
+                            <a href="../../en/admin/editcity.php">English/</a><a href="../../es/admin/editcity.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Edit city</h1>
 <?php

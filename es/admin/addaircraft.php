@@ -61,6 +61,7 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 }
 ?>
         <div class="col-md-4 well">
+                                                <a href="../../en/admin/addaircraft.php">English/</a><a href="../../es/admin/addaircraft.php">Español</a>
             <h3>Ayuda</h3>
             <p>Se necesita insertar el nombre del <strong>Avion</strong> </p>
         </div>
@@ -70,6 +71,7 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 				<label for="name">Nombre del avion</label>
 				<input type="text" maxlength="50" class="form-control" id="name" name="name" placeholder="Nombre del avion" required>
             </div>
+            
             <label for="airline">Aerolinea</label>
 			 <div class="form-group">
 			  <?php

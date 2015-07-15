@@ -17,6 +17,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                    <a href="../../en/admin/runways.php">English/</a><a href="../../es/admin/runways.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">List of runways</h1>
         <br>

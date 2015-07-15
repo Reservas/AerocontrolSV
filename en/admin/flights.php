@@ -16,7 +16,8 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
-    <?php include 'nav.php'; ?>
+    <?php include 'nav.php'; ?>        
+<a href="../../en/admin/flights.php">English/</a><a href="../../es/admin/flights.php.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">List of flights</h1>
         <br>

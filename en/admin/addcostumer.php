@@ -43,7 +43,8 @@ function numeros(e){
 }
 </script>   
     <?php include 'nav.php'; ?>
-    <!-- /NAV -->
+    <a href="../../en/admin/addcostumer.php">English/</a><a href="../../es/admin/addcostumer.php">Español</a>
+        <!-- /NAV -->
         <h1 class="text-center">Add Costumers</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location"]) AND isset($_POST["birthdate"]) AND isset($_POST["phone"]) AND isset($_POST["user"]) AND isset($_POST["password"]) AND isset($_POST["password2"]))

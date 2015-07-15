@@ -14,7 +14,9 @@
 </head>
 <body>
 <div class="container-fluid">
+    
     <div class="row">
+
     <!-- NAV -->
         <script>
        function validar(e) { // 1
@@ -26,6 +28,7 @@
 }
                 </script>
     <?php include 'nav.php'; ?>
+            <a href="../../en/admin/addairline.php">English/</a><a href="../../es/admin/addairline.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar aerolinea</h1>
 <?php

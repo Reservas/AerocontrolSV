@@ -66,6 +66,7 @@ function numeros(e){
 </script>
         <?php include 'nav.php'; ?>
     <?php include 'nav.php'; ?>
+        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Add Flight</h1>
 <?php

@@ -16,6 +16,7 @@
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
+     <a href="../../en/admin/airlines.php">English/</a><a href="../../es/admin/airlines.php">Español</a>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
         <h1 class="text-center">List of airlines</h1>

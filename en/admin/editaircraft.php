@@ -43,6 +43,7 @@ function numeros(e){
 }
 </script>
     <?php include 'nav.php'; ?>
+                                       <a href="../../en/admin/edithaircraft.php">English/</a><a href="../../es/admin/edithaircraft.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Editing data of an aircraft</h1>
 <?php

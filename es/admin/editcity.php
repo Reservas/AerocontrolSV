@@ -17,6 +17,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                                    <a href="../../en/admin/editcity.php">English/</a><a href="../../es/admin/editcity.php">Español</a>
          <script>
 function validar(e) { // 1
     tecla = (document.all) ? e.keyCode : e.which; // 2

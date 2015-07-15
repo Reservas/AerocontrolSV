@@ -19,6 +19,7 @@ $row = mysql_fetch_array($query);
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                                    <a href="../../en/airline/admin/index.php">English/</a><a href="../../es/airline/admin/index.php">Español</a>
     <!-- /NAV -->
         <div class="container">
             <div class="jumbotron well">

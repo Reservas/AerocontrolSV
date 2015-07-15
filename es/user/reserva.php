@@ -40,6 +40,7 @@
                 
             }
         ?>
+                                            <a href="../../en/user/reserva.php">English/</a><a href="../../es/user/reserva.php">Español</a>
         
         <div class="col-xs-12">
             <center><h1>Vuelos Disponibles</h1></center>

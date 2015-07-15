@@ -41,9 +41,11 @@ function numeros(e){
     if(letras.indexOf(tecla)==-1 && !tecla_especial)
         return false;
 }
-</script>    
+</script> 
+        
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
+            <a href="../../en/admin/addairline.php">English/</a><a href="../../es/admin/addairline.php">Español</a>
         <h1 class="text-center">Add airline</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["description"]))

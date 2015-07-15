@@ -60,6 +60,7 @@ function findAircraftsByAirline(airline){
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
+        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Español</a>
         <h1 class="text-center">Agregar vuelo</h1>
 <?php
 session_start();

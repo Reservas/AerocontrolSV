@@ -17,6 +17,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+<a href="../../en/admin/addpersonal.php">English/</a><a href="../../es/admin/addpersonal.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar Personal</h1>
 <!--               <thead><tr><td>ID</td><td>Nombre del personal</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>   -->
