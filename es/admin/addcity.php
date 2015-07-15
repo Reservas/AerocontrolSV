@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar ciudad</title>
+    <title>Administraci&oacute;n - Agregar ciudad</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -44,7 +44,7 @@ function numeros(e){
 </script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-                        <a href="../../en/admin/addcity.php">English/</a><a href="../../es/admin/addcity.php">Español</a>
+                        <a href="../../en/admin/addcity.php">English/</a><a href="../../es/admin/addcity.php">Espa&ntilde;ol</a>
         <h1 class="text-center">Agregar ciudad</h1>
 <?php
 if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
@@ -68,7 +68,7 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Escribe el nombre de la <strong>Ciudad</strong> luego ingresamos el nombre del <strong>Estado(departament)</strong> que se encuentra y el <strong>Código ZIP</strong> </p>
+            <p>Escribe el nombre de la <strong>Ciudad</strong> luego ingresamos el nombre del <strong>Estado(departament)</strong> que se encuentra y el <strong>C&oacute;digo ZIP</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addcity.php">
@@ -81,7 +81,7 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
             <input type="text" class="form-control" id="state" name="state" placeholder="Nombre del estado" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="zip">Código ZIP</label>
+            <label for="zip">C&oacute;digo ZIP</label>
             <input type="number" class="form-control" id="zip" name="zip" placeholder="Código ZIP" required min="0" onkeypress='return numeros(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">

@@ -10,14 +10,14 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Pistas de aterrizaje</title>
+    <title>Administraci&oacute;n - Pistas de aterrizaje</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-<a href="../../en/admin/runways.php">English/</a><a href="../../es/admin/runways.php">Español</a>
+<a href="../../en/admin/runways.php">English/</a><a href="../../es/admin/runways.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <h1 class="text-center">Listado de pistas de aterrizaje</h1>
         <br>

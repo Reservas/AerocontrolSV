@@ -10,14 +10,14 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Personal </title>
+    <title>Administraci&oacute;n - Personal </title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-            <a href="../../en/admin/personal.php">English/</a><a href="../../es/admin/personal.php">Español</a>
+            <a href="../../en/admin/personal.php">English/</a><a href="../../es/admin/personal.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <h1 class="text-center">Listado del personal</h1>
         <br>
@@ -30,7 +30,7 @@ if($total>0)
 {
 ?>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Nombre del personal</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Nombre del personal</td><td>Direcci&oacute;n</td><td>Ubicaci&oacute;n (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Tel&eacute;fono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{

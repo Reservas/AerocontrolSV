@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar aeropuerto</title>
+    <title>Administraci&acute;n - Agregar aeropuerto</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -26,7 +26,7 @@
 }
                 </script>
     <?php include 'nav.php'; ?>
-                <a href="../../en/admin/addairport.php">English/</a><a href="../../es/admin/addairport.php">Español</a>
+                <a href="../../en/admin/addairport.php">English/</a><a href="../../es/admin/addairport.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar aeropuerto</h1>
 <?php
@@ -50,7 +50,7 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaciòn de dicho aeropuerto</p>
+            <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaci&oacute;n de dicho aeropuerto</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addairport.php">
@@ -58,7 +58,7 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
             <label for="name">Nombre del aeropuerto</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del aeropuerto" required onkeypress="return validar(event)">
             </div>
-            <label for="location">Ubicación</label>
+            <label for="location">Ubicaci&oacute;n</label>
             <select class="form-control" name="location" id="location">
                 <option value="">Escoja la ciudad don de se ubica</option>
                 <?php

@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar avion</title>
+    <title>Administraci&oacute;n - Agregar avi&oacute;n</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -37,7 +37,7 @@ function numeros(e){
 </script>      
         <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar avion</h1>
+        <h1 class="text-center">Agregar avi&oacute;n</h1>
 <?php
 session_start();
 if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"]) AND isset($_POST["type"]))
@@ -61,18 +61,18 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 }
 ?>
         <div class="col-md-4 well">
-                                                <a href="../../en/admin/addaircraft.php">English/</a><a href="../../es/admin/addaircraft.php">Español</a>
+                                                <a href="../../en/admin/addaircraft.php">English/</a><a href="../../es/admin/addaircraft.php">Espa&ntilde;ol</a>
             <h3>Ayuda</h3>
-            <p>Se necesita insertar el nombre del <strong>Avion</strong> </p>
+            <p>Se necesita insertar el nombre del <strong>Avi&oacute;n</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addaircraft.php">
             <div class="form-group">
-				<label for="name">Nombre del avion</label>
+				<label for="name">Nombre del avi&oacute;n</label>
 				<input type="text" maxlength="50" class="form-control" id="name" name="name" placeholder="Nombre del avion" required>
             </div>
             
-            <label for="airline">Aerolinea</label>
+            <label for="airline">Aerol&iacute;nea</label>
 			 <div class="form-group">
 			  <?php
 				if(isset($_SESSION['airline'])){
@@ -82,7 +82,7 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 				
 			  ?>
             <select class="form-control" name="airline" id="airline" required>
-                <option value="">Escoja la aerolinea</option>
+                <option value="">Escoja la aerol&iacute;nea</option>
                 <?php
                 include "../docs/connect.php";
                 $query = "SELECT id, name FROM airlines ORDER BY id";
@@ -102,12 +102,12 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 			?>
 			</div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" required onkeypress='return numeros(event)'>
+				<label for="seats">N&uacute;mero de asientos</label>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avi&oacute;n" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
-				<label for="type">Tipo de avion</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type" placeholder="Tipo de avion" required>
+				<label for="type">Tipo de avi&oacute;n</label>
+				<input type="text" maxlength="50" class="form-control" id="type" name="type" placeholder="Tipo de avi&oacute;n" required>
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>

@@ -10,7 +10,7 @@ if(isset($_GET["airline"]))
 		$stmt->execute(); 
 		$stmt->store_result();
 		$stmt->bind_result($id,$name);
-		echo "<option value=''>Escoja el avion</option>";
+		echo "<option value=''>Escoja el avi&oacute;n</option>";
 		while($stmt->fetch())
 		{
 			if($id == $aircraft)

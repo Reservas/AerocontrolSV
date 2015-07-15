@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
                        
-<a href="../../en/admin/addcostumer.php">English/</a><a href="../../es/admin/addcostumer.php">Español</a>
+<a href="../../en/admin/addcostumer.php">English/</a><a href="../../es/admin/addcostumer.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar cliente</h1>
 <?php
@@ -61,7 +61,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
+            <p>Por favor escribe el <strong>nombre</strong> del cliente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> despu&eacute;s escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>n&uacute;mero de tel&eacute;fono</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contrase&ntilde;a</strong> y la volvemos a repetir.</p>
         </div>  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                         <div class="panel panel-primary">
                           
@@ -70,10 +70,10 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
                               <div class="col-md-6"> 
                                 <label>Usuario</label>
                                 <input type="text" class="form-control input-sm" name="user" placeholder="Usuario" autocomplete="off" required > 
-                                <label>Contraseña</label>
-                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contraseña" autocomplete="off" required maxlength="6" >  
-                                <label>Repetir contraseña</label>
-                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir contraseña" autocomplete="off" required maxlength="6">
+                                <label>Contrase&nacute;a</label>
+                                <input type="password" class="form-control input-sm" name="pass" placeholder="Contrase&nacute;a" autocomplete="off" required maxlength="6" >  
+                                <label>Repetir Contrase&nacute;a</label>
+                                <input type="password" class="form-control input-sm" name="rpass" placeholder="Repetir Contrase&nacute;a" autocomplete="off" required maxlength="6">
                                 <label>Fecha de nacimiento</label>
                                   <script>
                                   function compruebaFecha($date){

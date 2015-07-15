@@ -7,7 +7,7 @@
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
     <link href="../docs/css/style.css" rel="stylesheet">
-    <title>Administración - AeroControl</title>
+    <title>Administraci&oacute;n - AeroControl</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
             <a href="index.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
          
         <!-- /NAV -->
-        <h1 class="text-center">Administración</h1>
+        <h1 class="text-center">Administraci&oacute;n</h1>
         <div class="col-md-12">
             <h2 class="text-center">Vuelos en tiempo real</h2>
             <div class="container vuelos"></div>
@@ -47,7 +47,7 @@
         <!-- NO ESTAN -->
         <div class="col-md-4">
             <div class="alert alert-info">  
-                <h3>Aerolineas</h3>
+                <h3>Aerol&iacute;neas</h3>
                     <a href="airlines.php" class="btn btn-primary">Ver lista</a>   <a href="addairline.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>

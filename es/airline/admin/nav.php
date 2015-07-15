@@ -16,7 +16,7 @@
         <li><a href="index.php">Usuarios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../cerrar_sesion.php">cerrar sesión</a></li>
+        <li><a href="../cerrar_sesion.php">cerrar sesió&oacute;n</a></li>
       </ul> 
     </div>
   </div>

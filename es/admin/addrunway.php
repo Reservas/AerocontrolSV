@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar pista de aterrizaje</title>
+    <title>Administraci&oacute;n - Agregar pista de aterrizaje</title>
 </head>
 <body>
 <div class="container-fluid">

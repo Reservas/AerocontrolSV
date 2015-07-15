@@ -10,14 +10,14 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Aerolineas</title>
+    <title>Administraci&oacute;n - Aerol&iacute;neas</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-        <a href="../../en/admin/airlines.php">English/</a><a href="../../es/admin/airlines.php">Español</a>
+        <a href="../../en/admin/airlines.php">English/</a><a href="../../es/admin/airlines.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <h1 class="text-center">Listado de aerolineas</h1>
         <br>
@@ -31,7 +31,7 @@ if($total>0)
 ?>
 		<a href='exportairlines.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generar PDF</a>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Logo</td><td>Nombre de la aerolinea</td><td>Descripción</td><td><a href='addairline.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar aerolinea</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Logo</td><td>Nombre de la aerol&iacute;nea</td><td>Descripci&oacute;n</td><td><a href='addairline.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Agregar aerolinea</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
@@ -44,7 +44,7 @@ if($total>0)
 } 
 else
 {
-    echo "<p class='text-danger text-center'>Error: la base de datos esta vacia <a href='addairline.php' class='text-success'>Agregar aerolinea</a></p>";
+    echo "<p class='text-danger text-center'>Error: la base de datos esta vac&iacute;a <a href='addairline.php' class='text-success'>Agregar aerol&iacute;nea</a></p>";
 }
 ?>
         </tbody></table>

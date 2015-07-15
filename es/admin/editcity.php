@@ -10,14 +10,14 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar ciudad</title>
+    <title>Administraci&oacute;n - Agregar ciudad</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-                                    <a href="../../en/admin/editcity.php">English/</a><a href="../../es/admin/editcity.php">Español</a>
+                                    <a href="../../en/admin/editcity.php">English/</a><a href="../../es/admin/editcity.php">Espa&ntilde;ol</a>
          <script>
 function validar(e) { // 1
     tecla = (document.all) ? e.keyCode : e.which; // 2
@@ -83,7 +83,7 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente a las ciudades</p>
+            <p>Aqu&iacute; podr&aacute;s editar todo lo referente a las ciudades</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="editcity.php">
@@ -100,7 +100,7 @@ else
             <input type="text" class="form-control" id="state" name="state"  value="<?=$row["state"]?>" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="zip">Código ZIP</label>
+            <label for="zip">C&oacute;digo ZIP</label>
             <input type="number" class="form-control" id="zip" name="zip"  value="<?=$row["zip"]?>"  required min="0" max="999" onkeypress='return numeros(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">

@@ -32,7 +32,7 @@ function findAircraftsByAirline(airline){
 				});
 		}
 	</script>
-    <title>Administración - Agregar vuelo</title>
+    <title>Administraci&oacute;n - Agregar vuelo</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -60,7 +60,7 @@ function findAircraftsByAirline(airline){
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Español</a>
+        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Espa&ntilde;ol</a>
         <h1 class="text-center">Agregar vuelo</h1>
 <?php
 session_start();
@@ -99,7 +99,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
         <div class="col-md-8">
         <form method="post" action="addflight.php">
             <div class="form-group">
-				<label for="airline">Aerolinea</label>
+				<label for="airline">Aerol&iacute;nea</label>
 				<?php
 				if(isset($_SESSION['airline'])){
 					echo "<input type='text' class='form-control' id='airlinedes' name='airlinedes' value='".$_SESSION['airname']."' readonly>";
@@ -113,7 +113,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				
 			  ?>
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirline(this.value);" required>
-					<option value="">Escoja la aerolinea</option>
+					<option value="">Escoja la aerol&iacute;nea</option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, name FROM airlines ORDER BY id";
@@ -133,7 +133,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			?>
 			</div>
 			<div class="form-group">
-				<label for="airline">Avion</label>	
+				<label for="airline">Avi&oacute;n</label>	
 				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
 				</select>
 			</div>
@@ -236,11 +236,11 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						</script>
             </div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
+				<label for="seats">N&uacute;mero de asientos</label>
 				<input type="number"  min="1" step="1" class="form-control" id="seats"  name="seats" placeholder="Asientos del avion" required onkeypress="return numeros(event)">
             </div>
 			<div class="form-group">
-				<label for="type">Descripcion</label>
+				<label for="type">Descripci&oacute;n</label>
 				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Descripcion del vuelo" required>
             </div>
             <input type="submit" name="enviar" value="Enviar">

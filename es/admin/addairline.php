@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar aerolinea</title>
+    <title>Administraci&oacute;n - Agregar aerol&iacute;nea</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -28,9 +28,9 @@
 }
                 </script>
     <?php include 'nav.php'; ?>
-            <a href="../../en/admin/addairline.php">English/</a><a href="../../es/admin/addairline.php">Español</a>
+            <a href="../../en/admin/addairline.php">English/</a><a href="../../es/admin/addairline.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
-        <h1 class="text-center">Agregar aerolinea</h1>
+        <h1 class="text-center">Agregar aerol&iacute;nea</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["description"]))
 {
@@ -44,13 +44,13 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
     if( !in_array( $_FILES['imagen']['type'], $mime ) )
     {
         $error = true;
-        $mensaje = "<p class='text-danger text-center'>Solo es permitido subir imagenes tipo JPG, PNG y GIF</p>";
+        $mensaje = "<p class='text-danger text-center'>Solo es permitido subir im&aacute;genes tipo JPG, PNG y GIF</p>";
     }
     # Le decimos al usuario que se olvido de subir un archivo
     if( $_FILES['imagen']['type'] == '' )
     {
         $error = true;
-        $mensaje .= "<p class='text-danger text-center'>No se recibió ninguna imagen</p>";
+        $mensaje .= "<p class='text-danger text-center'>No se recibi&oacute; ninguna imagen</p>";
     }
     # Indicamos hasta que peso de archivo puede subir el usuario.
     if( $_FILES['imagen']['size'] > 1048576 )
@@ -100,16 +100,16 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Escribe el <strong>nombre</strong> de la aerolinea que desea ingresas, después una breve <strong>descripciòn</strong> luego termiamos con poner el <strong>logo </strong> de la empresa.</p>
+            <p>Escribe el <strong>nombre</strong> de la aerol&iacute;nea que desea ingresas, despu&eacute;s una breve <strong>descripci&oacute;n</strong> luego terminamos con poner el <strong>logo </strong> de la empresa.</p>
         </div>
         <div class="col-md-8">
         <form enctype="multipart/form-data" method="post" action="addairline.php">
             <div class="form-group">
-            <label for="name">Nombre de la aerolinea</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la aerolínea" required onkeypress="return validar(event)">
+            <label for="name">Nombre de la aerol&iacute;nea</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre de la aerol&íacute;nea" required onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="description">Descripción (Maximo 300 caracteres)</label>
+            <label for="description">Descripci&oacute;n (M&aacute;ximo 300 caracteres)</label>
             <textarea class="form-control" id="description" name="description" rows="3" maxlength="300"></textarea>
             </div>
             <div class="form-group">

@@ -12,19 +12,19 @@ $row = mysql_fetch_array($query);
     <link href="../../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../../docs/css/ionicons.css" rel="stylesheet">
-    <title>Administración - <?=$row['name']?></title>
+    <title>Administraci&oacute;n - <?=$row['name']?></title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-                                            <a href="../../en/airline/admin/index.php">English/</a><a href="../../es/airline/admin/index.php">Español</a>
+                                            <a href="../../en/airline/admin/index.php">English/</a><a href="../../es/airline/admin/index.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
         <div class="container">
             <div class="jumbotron well">
               <h1>Bienvenid@!</h1>
-              <p>Acaba de iniciar sesion dentro como Administrador</p>
+              <p>Acaba de iniciar sesi&oacute;n dentro como Administrador</p>
             </div>
             <div class="col-md-12">
                 <h2 class="text-center">Vuelos (<?=$row['name']?>)</h2>

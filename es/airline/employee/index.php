@@ -12,7 +12,7 @@ $row = mysql_fetch_array($query);
     <link href="../../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../../docs/css/ionicons.css" rel="stylesheet">
-    <title>Administración - <?=$row['name']?></title>
+    <title>Administraci&oacute;n - <?=$row['name']?></title>
 </head>
 <body>
 <div class="container-fluid">
@@ -23,7 +23,7 @@ $row = mysql_fetch_array($query);
         <div class="container">
             <div class="jumbotron well">
               <h1>Bienvenido!</h1>
-              <p>Acaba de iniciar sesion dentro como empleado</p>
+              <p>Acaba de iniciar sesi&oacute;n dentro como empleado</p>
             </div>
             <div class="col-md-12">
                 <h2 class="text-center">Vuelos (<?=$row['name']?>)</h2>

@@ -1,0 +1,20 @@
+-Borrar varios vuelos dentro de plataforma.
+-Si el usuario cliente compra un vuelo no le permite eliminar vuelo
+-Mostrar vuelos mas adecuadamente
+-Paginación
+-Ordenar por fechas
+-No es muy facil de manejar la creacion de vuelos
+-Permite ingresar numeros decimales en el costo
+-No se puede cancelar vuelos(Poner un justificante)
+-Extraer numero de asientos segun aviones para vuelos
+-Ingresar fecha anterior a la actual
+-Permite volar al mismo punto(De El Salvador-A El Salvador)
+-Mostrar paso a paso como ingresar vuelo
+-Ingresar avion- Tipo de avion hacerlo combobox
+-Poder ver vuelos por Aerolinea para administrador
+-Poder ver vuelos por Aerolinea para usuario
+-Busqueda dinamica para administrador 
+-AdminAerolinea,Errores de PDF selecciona todos los vuelos y aviones
+-Tildes
+-Errores
+-Mas consistencia en Forms

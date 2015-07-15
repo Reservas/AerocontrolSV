@@ -190,7 +190,7 @@ return true;
 }
                                   </script>
                                 <input type="date" class="form-control input-sm" name="nac" placeholder="Fecha de nacimiento" autocomplete="off" required onkeypress="compruebaFecha"> 
-                                <label>Telefono</label>
+                                <label>Tel&eacute;fono</label>
                                   
                                 <input type="text" class="form-control input-sm" name="phone" maxlength="8" placeholder="7*******" autocomplete="off" required
                                 onKeyPress="return soloNumeros(event)"required="" pattern="7[0-9]{7}"> 
@@ -199,10 +199,10 @@ return true;
                                 <label>Nombre</label>
                                 <input type="text" class="form-control input-sm" name="name" placeholder="Nombre" autocomplete="off" required
                                 onkeypress="return alpha(event)" > 
-                                <label>Pais</label>
+                                <label>Pa&iacute;s</label>
                                 <!--<div class="panel-body">-->
                                   <select class="form-control input-sm" id="city" name="city">
-                                    <option value="">Elige un pais</option>
+                                    <option value="">Elige un pa&iacute;s</option>
                                     <?php
                                       $query = mysql_query("SELECT state FROM cities");
                                       while($row = mysql_fetch_row($query))
@@ -229,18 +229,35 @@ return true;
                           </div>
                         </div>
                     </div>
+                
             </div>
-        </div>
+                    </div>
     </section>
     <!-- ABOUT SECTION END-->
-        
+                   
      <!-- CLIENTS SECTION START-->
     <section id="clients">
         <div class="overlay">       
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        
+            
+            <div class="row  text-center" style="align: center; ">                
+                    <h2 class="text-center" style="color:#fff;">Desarrolladores</h2>
+            </div>
+                    <div class="col-xs-6 col-sm-3 col-sm-offset-3 placeholder text-center" style="align: center;">
+              <img src="../base_de_datos/101567.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <span class="text-muted">Ted Gabriel Bonilla</span>
+                        <br>
+              <span class="text-muted">Programador, diseñador y analista
+</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder text-center">
+              <img src="../base_de_datos/041751.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <span class="text-muted">Diego Ronaldo Melendez</span>
+                <br>
+              <span class="text-muted">Programador, diseñador y analista
+</span>
+            </div>
+          </div>     
                 </div>
             </div>
            

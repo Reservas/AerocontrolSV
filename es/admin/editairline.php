@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Editar aerolinea</title>
+    <title>Administraci&oacute;n - Editar aerol&iacute;nea</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -44,9 +44,9 @@ function numeros(e){
 </script>   
 
     <?php include 'nav.php'; ?>
-                                       <a href="../../en/admin/editairline.php">English/</a><a href="../../es/admin/editairline.php.php">Español</a>
+                                       <a href="../../en/admin/editairline.php">English/</a><a href="../../es/admin/editairline.php.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
-        <h1 class="text-center">Editando datos de un aerolinea</h1>
+        <h1 class="text-center">Editando datos de un aerol&iacute;nea</h1>
 <?php
 if(isset($_POST["idair"]) AND isset($_POST["name"]) AND isset($_POST["description"]))
 {
@@ -102,13 +102,13 @@ if(isset($_POST["idair"]) AND isset($_POST["name"]) AND isset($_POST["descriptio
             echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
             echo "<p class='text-success text-center'><strong>La imagen &quot;".  basename( $_FILES['imagen']['name']). 
 		"&quot; se subio exitosamente al sistema</strong></p>";
-            echo "<hr><p class='text-warning text-center'><strong><a href='addairlineadmin.php?air=".mysql_insert_id()."'>Agregar un administrador a esta aerolinea</a></strong></p>";
+            echo "<hr><p class='text-warning text-center'><strong><a href='addairlineadmin.php?air=".mysql_insert_id()."'>Agregar un administrador a esta aerol&iacute;nea</a></strong></p>";
             echo "<p class='text-success text-center'><a href='airlines.php'>Lista de aerolineas</a></p>";
 		} 
 		else
 		{
             echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-            echo "<p class='text-success text-center'><a href='airlines.php'>Lista de aerolineas</a></p>";
+            echo "<p class='text-success text-center'><a href='airlines.php'>Lista de aerol&iacute;neas</a></p>";
 		}
     }
     else
@@ -148,21 +148,21 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí se podrá editar todo, referente a la aerolínea escogida</p>
+            <p>Aqu&iacute; se podr&aacute; editar todo, referente a la aerol&iacute;nea escogida</p>
 
         </div>
         <div class="col-md-8">
         <form enctype="multipart/form-data" method="post" action="editairline.php">
             <div class="form-group">
-            <label for="idair">Nombre de la aerolinea</label>
+            <label for="idair">Nombre de la aerol&iacute;nea</label>
             <input type="text" class="form-control" id="idair" name="idair" value="<?=$row["id"]?>" readonly>
             </div>
             <div class="form-group">
-            <label for="name">Nombre de la aerolinea</label>
+            <label for="name">Nombre de la aerol&iacute;nea</label>
             <input type="text" class="form-control" id="name" name="name" value="<?=$row["name"]?>" onkeypress="return validar(event)">
             </div>
             <div class="form-group">
-            <label for="description">Descripción (Maximo 300 caracteres)</label>
+            <label for="description">Descripci&oacute;n (M&aacute;ximo 300 caracteres)</label>
             <textarea class="form-control" id="description" name="description" rows="3" maxlength="300" onkeypress="return validar(event)"><?=$row["description"]?>     </textarea>
             </div>
             <div class="form-group">
@@ -177,12 +177,12 @@ else
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error: el aerolinea no existe. <a href='airlines.php'>Lista de aerolineas</a></strong></p>"; 
+            echo "<p class='text-danger text-center'><strong>Error: el aerol&iacute;nea no existe. <a href='airlines.php'>Lista de aerolineas</a></strong></p>"; 
         }
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: no hay id de aerolinea. <a href='airlines.php'>Lista de aerolineas</a></strong></p>"; 
+        echo "<p class='text-danger text-center'><strong>Error: no hay id de aerol&iacute;nea. <a href='airlines.php'>Lista de aerolineas</a></strong></p>"; 
     }
 }
 ?>

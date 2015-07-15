@@ -34,7 +34,7 @@
 				});
 		}
 	</script>
-    <title>Administración - Editar vuelo</title>
+    <title>Administraci&oacute;n - Editar vuelo</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -114,7 +114,7 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente al vuelo</p>
+            <p>Aqu&iacute; podr&aacute;s editar todo lo referente al vuelo</p>
                    </div>
         <div class="col-md-8">
         <form method="post" action="editflight.php">
@@ -136,9 +136,9 @@ else
 				}else{
 				
 			  ?>
-				<label for="airline">Aerolinea (actual <?= $row["airlinename"]?>)</label>	
+				<label for="airline">Aerol&iacute;nea (actual <?= $row["airlinename"]?>)</label>	
 				<select class="form-control" name="airline" id="airline" onchange="findAircraftsByAirlineEdit(this.value);" required>
-					<option value="">Escoja la aerolinea </option>
+					<option value="">Escoja la aerol&iacute;nea </option>
 					<?php
 						include "../docs/connect.php";
 						$query = "SELECT id, name FROM airlines ORDER BY id";
@@ -163,7 +163,7 @@ else
 			?>
 			</div>
 			<div class="form-group">
-				<label for="airline">Avion (actual <?= $row["aircname"]?>)</label>	
+				<label for="airline">Avi&oacute;n (actual <?= $row["aircname"]?>)</label>	
 				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
 				</select>
 				<script type="text/javascript">
@@ -291,11 +291,11 @@ else
 						</script>
             </div>
 			<div class="form-group">
-				<label for="seats">Numero de asientos</label>
+				<label for="seats">N&uacute;mero de asientos</label>
 				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Asientos del avion" value="<?=$row["seats"]?>" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
-				<label for="type">Descripcion</label>
+				<label for="type">Descripci&oacute;n</label>
 				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Descripcion del vuelo" value="<?=$row["description"]?>" required  onkeypress="return validar(event)">
             </div>
             <input type="submit" name="enviar" value="Enviar">

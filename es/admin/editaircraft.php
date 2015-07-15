@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Editar avion</title>
+    <title>Administraci&oacute;n - Editar avion</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -53,9 +53,9 @@ function letras(e){
 }
 </script>      
         <?php include 'nav.php'; ?>
-                               <a href="../../en/admin/edithaircraft.php">English/</a><a href="../../es/admin/edithaircraft.php">Español</a>
+                               <a href="../../en/admin/edithaircraft.php">English/</a><a href="../../es/admin/edithaircraft.php">Espa&ntilde;ol</a>
     <!-- /NAV -->
-        <h1 class="text-center">Editando datos de un avion</h1>
+        <h1 class="text-center">Editando datos de un avi&oacute;n</h1>
 <?php
 session_start();
 if(isset($_POST["id"]) AND isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"]) AND isset($_POST["type"]))
@@ -94,17 +94,17 @@ else
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Aquí podrás editar todo lo referente a los aviones</p>
+            <p>Aqu&iacute; podr&aacute;s editar todo lo referente a los aviones</p>
 
         </div>
         <div class="col-md-8">
         <form method="post" action="editaircraft.php">
             <div class="form-group">
-            <label for="idcity">ID del avion (No se puede editar)</label>
+            <label for="idcity">ID del avi&oacute;n (No se puede editar)</label>
             <input type="text" class="form-control" id="id" name="id" value="<?=$row["id"]?>"  readonly >
             </div>
             <div class="form-group">
-           <label for="name">Nombre del avion</label>
+           <label for="name">Nombre del avi&oacute;n</label>
 			<input type="text" maxlength="50" class="form-control" id="name" name="name" value="<?=$row["name"]?>" placeholder="Nombre del avion" required >
             </div>
             <div class="form-group">
@@ -117,9 +117,9 @@ else
 				
 			  ?>
             
-           <label for="airline">Aerolinea (actual <?= $row["airline"]?>)</label>
+           <label for="airline">Aerol&iacute;nea (actual <?= $row["airline"]?>)</label>
              <select class="form-control" name="airline" id="airline" required>
-               <option value="">Escoja la aerolinea</option>
+               <option value="">Escoja la aerol&iacute;nea</option>
                 <?php
                 include "../docs/connect.php";
                  $query = "SELECT id, name FROM airlines ORDER BY id";
@@ -150,7 +150,7 @@ else
 				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats"  value="<?=$row["seats"]?>" placeholder="Asientos del avion" required onkeypress=" return numeros(event)">
             </div>
 			<div class="form-group">
-				<label for="type">Tipo de avion</label>
+				<label for="type">Tipo de avi&oacute;sssn</label>
 				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required onkeypress='return letras(event)'>
             </div>
             <input type="submit" name="enviar" value="Enviar">

@@ -10,7 +10,7 @@
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="../docs/js/jquery.easing.min.js" type="text/javascript"></script>
-    <title>Administración - Agregar personal</title>
+    <title>Administraci&oacute;n - Agregar personal</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,7 +18,7 @@
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <a href="../../en/admin/addpersonal.php">English/</a><a href="../../es/admin/addpersonal.php">Español</a>
+        <a href="../../en/admin/addpersonal.php">English/</a><a href="../../es/admin/addpersonal.php">Espa&ntilde;ol</a>
         <h1 class="text-center">Agregar Personal</h1>
 <!--               <thead><tr><td>ID</td><td>Nombre del personal</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>   -->
 <?php
@@ -56,13 +56,13 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
     }
     else
     {
-        echo "<p class='text-danger'><strong>Las contraseñas no coinciden</strong></p>";
+        echo "<p class='text-danger'><strong>Las contrase&ntilde;as no coinciden</strong></p>";
     }
 }
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-            <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
+            <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de tel&eacute;fono</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contrase&ntilde;a</strong> y la volvemos a repetir.</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addcostumer.php">
@@ -71,11 +71,11 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
             <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del personal" required>
             </div>
             <div class="form-group">
-            <label for="address">Dirección</label>
+            <label for="address">Direcci&oacute;n</label>
             <input type="text" class="form-control" id="address" name="address" placeholder="Dirección" required>
             </div>
             <div class="form-group">
-            <label for="location">Ubicación</label>
+            <label for="location">Ubicaci&oacute;n</label>
             <select class="form-control" name="location" id="location">
                 <option value="">Escoja la ciudad donde se ubica</option>
                 <?php
@@ -110,7 +110,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
             <input type="text" class="form-control" id="user" name="user" placeholder="Nombre de usuario" required>
             </div>
             <div class="form-group">
-            <label for="password">Contraseña</label>
+            <label for="password">Contrase&ntilde;a</label>
             <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
             </div>
             <div class="form-group">
