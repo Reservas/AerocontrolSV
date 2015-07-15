@@ -5,10 +5,17 @@
              if(isset($_SESSION['id'])){
             include "files/head.php";
         ?>
+        
     </head>
+    
     <body>
+                                   
         <?php 
-            include "files/nav.php";
+            include "files/nav.php";?>
+                                 <a href="../../en/user/compras.php">English/</a><a href="../../es/user/compras.php">Espa&ntilde;ol</a>
+        
+            <?php
+                 
                  if(isset($_GET['s'])) {
                     echo "<div class='alert alert-dismissible alert-success'>
   <button type='button' class='close' data-dismiss='alert'>×</button>
