@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -17,7 +18,6 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-<a href="../../en/admin/addpersonal.php">English/</a><a href="../../es/admin/addpersonal.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Agregar Personal</h1>
 <!--               <thead><tr><td>ID</td><td>Nombre del personal</td><td>Dirección</td><td>Ubicación (ZIP - Ciudad - Estado)</td><td>Correo</td><td>Nacimiento (AAAA-MM-DD)</td><td>Teléfono</td><td>Usuario</td><td>Estado</td></tr></thead><tbody>   -->
@@ -61,8 +61,10 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
 }
 ?>
         <div class="col-md-4 well">
+            <a href="addpersonal.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/addpersonal.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayuda</h3>
-            <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
+            <p>Por favor escribe el <strong>nombre</strong> del cliente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de teléfonoi</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contraseña</strong> y la volvemos a repetir.</p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addcostumer.php">

@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -17,7 +18,6 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-               <a href="../../en/admin/airports.php">English/</a><a href="../../es/admin/airports.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">List of airports </h1>
         <br>
@@ -29,7 +29,9 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
-		<a href='exportairports.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
+		<a href="airports.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/airports.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
+        <a href='exportairports.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
         <table class="table table-striped">
             <thead><tr><td>ID</td><td>Name of the airport</td><td>Location (City)</td><td><a href='addairport.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add Airport</a></td></tr></thead><tbody>          
 <?php

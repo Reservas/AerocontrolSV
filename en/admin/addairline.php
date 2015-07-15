@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -45,7 +46,7 @@ function numeros(e){
         
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-            <a href="../../en/admin/addairline.php">English/</a><a href="../../es/admin/addairline.php">Español</a>
+ 
         <h1 class="text-center">Add airline</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["description"]))
@@ -115,6 +116,8 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
 }
 ?>
         <div class="col-md-4 well">
+            <a href="addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/addairline.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Help</h3>
             <p>Write the <strong>name</strong>of the airline what you want to register, later a little <strong>description</strong> now and for the <strong>logo </strong>of the airline.</p>
         </div>

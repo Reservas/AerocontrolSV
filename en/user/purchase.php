@@ -40,7 +40,9 @@
         ?>
 			<div class="container-fluid">
                 <div class="panel panel-primary">
-                                            <a href="purchase.php">English/</a><a href="../../es/user/purchase.php">Español</a>
+
+        <a href="purchase.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+        <a href="../../es/user/purchase.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
 
                      <section id="home">
         <div class="overlay">   

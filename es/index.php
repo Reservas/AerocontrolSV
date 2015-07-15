@@ -36,6 +36,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
 <body>
     <!-- HEADER SECTION START-->
    <header id="header">
+
     <div class="container" >
         <div class="row"  >
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 logo-wrapper">
@@ -57,6 +58,8 @@ $user_pool = mysql_query("SELECT user FROM costumers");
     <div id="home">
         <div class="overlay">
             <div class="container">
+                <a href="../en/index.php"> <img src="../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                <a href="index.php"> <img src="../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
                 <div class="row scroll-me">
                     
                 </div>

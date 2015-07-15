@@ -17,6 +17,8 @@
         <link href="docs/css/ionicons.css" rel="stylesheet" />
          <!-- FONT AWESOME ICONS STYLES -->
         <link href="docs/css/font-awesome.css" rel="stylesheet" />
+          
+        <link href="docs/css/style.css" rel="stylesheet"/>
          <!-- IE10 viewport hack  -->
         <script src="docs/js/ie-10-view-port.js"></script>
         <style>
@@ -38,13 +40,15 @@
 
       <body>
 
-        <div class="container">
-
+        <div class="container">    
           <!--login modal-->
             <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
+            <a href="adminlog.php"> <img src="../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../es/adminlog.php"> <img src="../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
+            
                       <h1 class="text-center">Administrator</h1>
                       <hr style="width:50%;">
                       <h4 class="text-center">Login</h4>

@@ -57,11 +57,14 @@
         <?php 
             include "files/nav.php";
         ?>
-                                            <a href="../../en/user/vuelos.php">English/</a><a href="../../es/user/vuelos.php">Espa&ntilde;ol</a> 
-        <section id="home">
+  <a href="../../en/user/vuelos.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+        <a href="vuelos.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
+        
+                                        <section id="home">
             <div class="overlay">
         <div class="col-xs-12">
             <div class="panel panel-primary">
+                
                           <div class="panel-heading">
                             <h1 class="text-center" style="color:#fff;">Vuelos en tiempo real</h1>
                           </div>

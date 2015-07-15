@@ -17,8 +17,9 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-                    <a href="../../en/admin/personal.php">English/</a><a href="../../es/admin/personal.php">Español</a>
     <!-- /NAV -->
+        <a href="personal.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/personal.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
         <h1 class="text-center">Listado del personal</h1>
         <br>
 <?php

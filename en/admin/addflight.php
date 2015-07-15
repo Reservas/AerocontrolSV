@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui.min.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui-timepicker-addon.css" rel="stylesheet">
@@ -64,9 +65,7 @@ function numeros(e){
         return false;
     }
 </script>
-        <?php include 'nav.php'; ?>
     <?php include 'nav.php'; ?>
-        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">Add Flight</h1>
 <?php
@@ -99,6 +98,8 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 }
 ?>
         <div class="col-md-4 well">
+            <a href="addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/addflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Help</h3>
             <p>Nedd to insert <strong>flight</strong> </p>
         </div>

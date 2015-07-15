@@ -40,8 +40,8 @@
                 
             }
         ?>
-                                            <a href="../../en/user/reserva.php">English/</a><a href="../../es/user/reserva.php">Español</a>
-        
+        <a href="../../en/user/reserva.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+        <a href="reserva.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>    
         <div class="col-xs-12">
             <center><h1>Vuelos Disponibles</h1></center>
             <div class="container reservas"></div>

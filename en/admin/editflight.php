@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
 	<link href="../docs/css/jquery-ui.min.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui-timepicker-addon.css" rel="stylesheet">
@@ -112,6 +113,8 @@ else
             {
 ?>
         <div class="col-md-4 well">
+            <a href="editflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/editflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Help</h3>
             <p>You can edit everything about the flight</p>
          
@@ -290,12 +293,12 @@ else
         }
         else
         {
-            echo "<p class='text-danger text-center'><strong>Error: The flight doesn`t exist. <a href='runways.php'>List of flights</a></strong></p>"; 
+            echo "<p class='text-danger text-center'><strong>Error: The flight doesn`t exist. <a href='flights.php'>List of flights</a></strong></p>"; 
         }
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: Put the id of the flight  <a href='runways.php'>List of flights</a></strong></p>"; 
+        echo "<p class='text-danger text-center'><strong>Error: Put the id of the flight  <a href='flights.php'>List of flights</a></strong></p>"; 
     }
 }
 ?>

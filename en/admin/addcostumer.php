@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">    
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -43,8 +44,8 @@ function numeros(e){
 }
 </script>   
     <?php include 'nav.php'; ?>
-    <a href="../../en/admin/addcostumer.php">English/</a><a href="../../es/admin/addcostumer.php">Español</a>
-        <!-- /NAV -->
+<a href="addcostumer.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/addcostumer.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>        <!-- /NAV -->
         <h1 class="text-center">Add Costumers</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location"]) AND isset($_POST["birthdate"]) AND isset($_POST["phone"]) AND isset($_POST["user"]) AND isset($_POST["password"]) AND isset($_POST["password2"]))

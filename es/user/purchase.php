@@ -38,11 +38,12 @@
                 }
                 
         ?>
+
 			<div class="container-fluid">
                 <div class="panel panel-primary">
 
-                        <a href="../../en/user/purchase.php">English/</a><a href="purchase.php">Español</a>
-
+                <a href="../../en/user/purchase.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                <a href="purchase.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
 
                      <section id="home">
         <div class="overlay">   

@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <title>Administración - AeroControl</title>
 </head>
 <body>
@@ -13,7 +14,8 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-    <a href="../../en/admin/index.php">English/</a><a href="../../es/admin/index.php.php">Español</a>
+                    <a href="index.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/index.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
     <!-- /NAV -->
         <h1 class="text-center">Administrator</h1>
         <div class="col-md-12">

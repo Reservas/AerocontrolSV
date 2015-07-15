@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -45,8 +46,7 @@ function numeros(e){
 
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-                <a href="../../en/admin/addairport.php">English/</a><a href="../../es/admin/addairport.php">Español</a>
-        <h1 class="text-center">Add airport</h1>
+<h1 class="text-center">Add airport</h1>
 <?php
 if(isset($_POST["name"]) AND isset($_POST["location"]))
 {
@@ -67,6 +67,8 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
 }
 ?>
         <div class="col-md-4 well">
+            <a href="addairport.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/addairport.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>        
             <h3>Help</h3>
             <p>Add the name of the <strong>airport</strong> the location to</p>
         </div>

@@ -11,8 +11,11 @@
     <body>
                                    
         <?php 
-            include "files/nav.php";?>
-                                 <a href="../../en/user/compras.php">English/</a><a href="../../es/user/compras.php">Espa&ntilde;ol</a>
+            include "files/nav.php";
+        ?>
+              <div class="panel panel-primary">
+                <a href="../../en/user/compras.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                <a href="compras.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
         
             <?php
                  
@@ -73,6 +76,7 @@
         });
     </script>
     </body>
+    </div>
 </html>
 <?php
              }

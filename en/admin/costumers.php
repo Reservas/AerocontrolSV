@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -19,7 +20,6 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-                       <a href="../../en/admin/costumers.php">English/</a><a href="../../es/admin/costumers.php">Español</a>
     <!-- /NAV -->
         <h1 class="text-center">List of clients</h1>
         <br>
@@ -31,7 +31,9 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
-		<a href='exportcustomers.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
+		<a href="costumers.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../es/admin/costumers.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
+        <a href='exportcustomers.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
         <table class="table table-striped">
 
             <thead><tr><td>ID</td><td>Name of the clients</td><td>Address</td><td>Location (ZIP - city - State)</td><td>Birthday (YYY-MM-DD)</td><td>Phone</td><td>Username</td><td>State</td><td><a href='addcostumer.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add client</a></td></tr></thead><tbody>          

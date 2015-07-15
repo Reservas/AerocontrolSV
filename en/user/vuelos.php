@@ -54,8 +54,9 @@
 
         <?php 
             include "files/menu.php";
-        ?>
-                                                        <a href="../../en/user/vuelos.php">English/</a><a href="../../es/user/vuelos.php">Espa&ntilde;ol</a> 
+        ?> 
+        <a href="vuelos.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+        <a href="../../es/user/vuelos.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
         <section id="home">
             <div class="overlay">
         <div class="col-xs-12">
