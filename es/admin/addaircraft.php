@@ -107,7 +107,10 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
             </div>
 			<div class="form-group">
 				<label for="type">Tipo de avi&oacute;n</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type" placeholder="Tipo de avi&oacute;n" required>
+				<select maxlength="50" class="form-control" id="type" name="type" placeholder="Tipo de avi&oacute;n" required onkeypress="return validar(event)">
+                    <option value="Comercial">Comercial</option>
+                    <option value="Pasajeros">Pasajeros</option>
+                </select>
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>

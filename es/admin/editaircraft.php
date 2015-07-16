@@ -151,7 +151,11 @@ else
             </div>
 			<div class="form-group">
 				<label for="type">Tipo de avi&oacute;sssn</label>
-				<input type="text" maxlength="50" class="form-control" id="type" name="type"  value="<?=$row["type"]?>" placeholder="Tipo de avion" required onkeypress='return letras(event)'>
+                <select maxlength="50" class="form-control" id="type" name="type" placeholder="Tipo de avi&oacute;n" required>
+                    <option  value="<?=$row["type"]?>">Comercial</option>
+                    <option  value="<?=$row["type"]?>">Pasajeros</option>
+                </select>
+
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>

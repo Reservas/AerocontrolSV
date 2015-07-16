@@ -16,6 +16,8 @@
     <!-- /NAV -->
         <div class="container">
             <div class="jumbotron well">
+                  <a href="index.php"> <img src="../../..//base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="../../../es/airline/employee/index.php"> <img src="../../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
               <h1>Bienvenid@!</h1>
               <p>Acaba de iniciar sesion dentro como empleado</p>
             </div>

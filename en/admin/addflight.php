@@ -82,6 +82,11 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 	$departure_time = $_POST["departure_time"];
 	$description = $_POST["description"];
 	$seats = $_POST["seats"];
+    
+     if($arrival_city == $departure_city){
+        echo "<script>alert('Por favor, seleccione correctamente la ciudad de partida y de llegada!'); window.history.goback();</script>";
+    }else{
+   
     include "../docs/connect.php";
     $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
     if($query)
@@ -95,6 +100,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
         echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
         echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
     }
+     }
 }
 ?>
         <div class="col-md-4 well">

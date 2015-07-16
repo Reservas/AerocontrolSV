@@ -31,8 +31,9 @@ function findAircraftsByAirline(airline){
 					}
 				});
 		}
+        
 	</script>
-    <title>Administraci&oacute;n - Agregar vuelo</title>
+    <title>Administraci&oacute;n - Agregar vuelos</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -77,18 +78,24 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 	$departure_time = $_POST["departure_time"];
 	$description = $_POST["description"];
 	$seats = $_POST["seats"];
-    include "../docs/connect.php";
-    $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
-    if($query)
-    {
-        echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
-		echo $departure_time;
-    }
-    else
-    {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+    
+    if($arrival_city == $departure_city){
+        echo "<script>alert('Por favor, seleccione correctamente la ciudad de partida y de llegada!'); window.history.goback();</script>";
+    }else{
+    
+        include "../docs/connect.php";
+        $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
+        if($query)
+        {
+            echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
+            echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+            echo $departure_time;
+        }
+        else
+        {
+            echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
+            echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+        }
     }
 }
 ?>
@@ -96,6 +103,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             <h3>Ayuda</h3>
             <p>Se necesita insertar el<strong>vuelo</strong> </p>
         </div>
+       
         <div class="col-md-8">
         <form method="post" action="addflight.php">
             <div class="form-group">

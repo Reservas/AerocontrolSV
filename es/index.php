@@ -10,9 +10,8 @@ $user_pool = mysql_query("SELECT user FROM costumers");
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
      <!-- Favicon Icon -->
     <link rel="icon" href="docs/img/favicon.ico" />
     <title>Aerocontrol</title>
