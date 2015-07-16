@@ -31,6 +31,7 @@ function findAircraftsByAirline(airline){
 					}
 				});
 		}
+function findSeatsByAircrafts()
         
 	</script>
     <title>Administraci&oacute;n - Agregar vuelos</title>
