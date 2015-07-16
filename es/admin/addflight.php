@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui.min.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui-timepicker-addon.css" rel="stylesheet">
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
@@ -31,15 +32,21 @@ function findAircraftsByAirline(airline){
 					}
 				});
 		}
-function findSeatsByAircrafts()
-        
 	</script>
     <title>Administraci&oacute;n - Agregar vuelos</title>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
+        <!--NAV-->
         <script>
+function validar(e) { // 1
+    tecla = (document.all) ? e.keyCode : e.which; // 2
+    if (tecla==8) return true; // 3
+    patron =/[A-Za-z\s]/; // 4
+    te = String.fromCharCode(tecla); // 5
+    return patron.test(te); // 6
+}
         function numeros(e){
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
@@ -62,12 +69,11 @@ function findSeatsByAircrafts()
     <!-- NAV -->
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-        <a href="../../en/admin/addflight.php">English/</a><a href="../../es/admin/addflight.php">Espa&ntilde;ol</a>
         <h1 class="text-center">Agregar vuelo</h1>
 <?php
 session_start();
 if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
-{
+{   
     $airline = $_POST["airline"];
 	$aircraft = $_POST["aircraft"];
 	$arrival_city = $_POST["arrival_city"];
@@ -81,8 +87,12 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 	$seats = $_POST["seats"];
     
     if($arrival_city == $departure_city){
-        echo "<script>alert('Por favor, seleccione correctamente la ciudad de partida y de llegada!'); window.history.goback();</script>";
-    }else{
+        echo "<script>alert('La ciudad de partida, no puede ser la misma que la de llegada'); window.history.goback();</script>";
+    }elseif($arrival_time > $daten){
+     echo "<script>alert('Seleccionar fechas anteriores a la de hoy, no está permitido'); window.history.goback();</script>";
+     }elseif($departure_time > $daten){
+        echo "<script>alert('Seleccionar fechas anteriores a la de hoy, no está permitido'); window.history.goback();</script>";
+     }else{
     
         include "../docs/connect.php";
         $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
@@ -101,6 +111,8 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 }
 ?>
         <div class="col-md-4 well">
+            <a href="../../en/admin/addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+<a href="addflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayuda</h3>
             <p>Se necesita insertar el<strong>vuelo</strong> </p>
         </div>
