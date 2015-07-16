@@ -1,8 +1,14 @@
 <?php
+session_start();
 include "../docs/phppdf/fpdf.php";
 include "../user/files/conexion.php";
 	
-	$stmt = $mysqli->prepare("SELECT aircraft.id, aircraft.name, aircraft.seats, aircraft.type, airlines.name AS airline FROM aircraft  INNER JOIN airlines ON aircraft.airline = airlines.id ");
+	if(isset($_SESSION['airline'])){
+		$stmt = $mysqli->prepare("SELECT aircraft.id, aircraft.name, aircraft.seats, aircraft.type, airlines.name AS airline FROM aircraft  INNER JOIN airlines ON aircraft.airline = airlines.id WHERE aircraft.airline = ?");
+		$stmt->bind_param('i',$_SESSION['airline']);
+	}else{
+		$stmt = $mysqli->prepare("SELECT aircraft.id, aircraft.name, aircraft.seats, aircraft.type, airlines.name AS airline FROM aircraft  INNER JOIN airlines ON aircraft.airline = airlines.id ");
+	}
 	$stmt->execute(); 
 	$result = $stmt->get_result();
 	$row_cnt = $result->num_rows;

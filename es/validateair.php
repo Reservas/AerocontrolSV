@@ -28,17 +28,17 @@ if(isset($_POST['user'],$_POST['pass'],$_POST['airline']))
                         switch($row['type'] ){
                             case 1:
                                 header("location:airline/admin/");
-                                $_SESSION['usuario'] = $row['Usuario'];
+                                $_SESSION['usuario'] = $row['user'];
                                 $_SESSION['airline'] = $row['airline'];
 								$_SESSION['airname'] = $row['airname'];
-                                $_SESSION['tipo'] = $row['air-admin'];
+                                $_SESSION['tipo'] = $row['type'];
                             exit();
                             case 2:
                                 header("location:airline/employee/");
-                                $_SESSION['usuario'] = $row['Usuario'];
+                                $_SESSION['usuario'] = $row['user'];
                                 $_SESSION['airline'] = $row['airline'];
 								$_SESSION['airname'] = $row['airname'];
-                                $_SESSION['tipo'] = $row['air-employ'];
+                                $_SESSION['tipo'] = $row['type'];
                             exit();
                         }
                     }
@@ -58,6 +58,8 @@ if(isset($_POST['user'],$_POST['pass'],$_POST['airline']))
     catch(PDOException $e){
         echo $e->getMessage();
     }
+}else{
+	echo "no entra";
 }
 
 ?>
