@@ -1,3 +1,11 @@
+function justNumbers(e)
+        {
+        var keynum = window.event ? window.event.keyCode : e.which;
+        if ((keynum == 8) || (keynum == 46))
+        return true;
+         
+        return /\d/.test(String.fromCharCode(keynum));
+        }
 $( document ).ready(function() {
     
     function loadReserva() {
@@ -21,7 +29,7 @@ $( document ).ready(function() {
     function loadVuelos() {
     $.ajax({
           method: "POST",
-          url: "ajax/algorit.php",
+          url: "../airline/algorit.php",
           data: { },
           //dataType: 'json',
           beforeSend: function() {
