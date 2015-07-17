@@ -75,7 +75,6 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
             <p> You nedd de name of the <strong>aircraft</strong> </p>
         </div>
         <div class="col-md-8">
-
         <form method="post" action="addaircraft.php">
             <div class="form-group">
 				<label for="name">Name of the aircraft</label>

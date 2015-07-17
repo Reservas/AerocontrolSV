@@ -31,7 +31,22 @@ function findAircraftsByAirline(airline){
 						alert(error);
 					}
 				});
-		}
+		}function findSeatsByAircraft(seats){
+			$.ajax({
+					type : "GET",
+					dataType : 'html',
+					async : true,
+					data : {
+						seats : seats
+					},
+					url : "seats_by_aircrafts.php",
+					success : function(response) {
+						$('.seats').val(response);
+					},
+					error : function(e, error) {
+						alert(e);
+					}
+				});
 	</script>
     <title>Administraci&oacute;n - Agregar vuelos</title>
 </head>
@@ -155,7 +170,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			</div>
 			<div class="form-group">
 				<label for="airline">Avi&oacute;n</label>	
-				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
+				<select class="form-control aircrafts" name="aircraft" id="aircraft" required onchange="findSeatsByAircraft(this.value);">
 				</select>
 			</div>
 			<div class="form-group">
@@ -258,7 +273,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="seats">N&uacute;mero de asientos</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats"  name="seats" placeholder="Asientos del avion" required onkeypress="return numeros(event)">
+				<input type="number"  min="1" step="1" class="form-control" id="seats"  name="seats" placeholder="Asientos del avion" required onkeypress="return numeros(event)" ReadOnly>
             </div>
 			<div class="form-group">
 				<label for="type">Descripci&oacute;n</label>

@@ -31,6 +31,22 @@
 						alert(error);
 					}
 				});
+		}function findSeatsByAircraft(seats){
+			$.ajax({
+					type : "GET",
+					dataType : 'html',
+					async : true,
+					data : {
+						seats : seats
+					},
+					url : "seats_by_aircrafts.php",
+					success : function(response) {
+						$('.seats').val(response);
+					},
+					error : function(e, error) {
+						alert(e);
+					}
+				});
 		}
 	</script>
     <title>Administration - Add flight</title>
@@ -115,7 +131,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             <a href="addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
 <a href="../../es/admin/addflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Help</h3>
-            <p>Nedd to insert <strong>flight</strong> </p>
+            <p>Need to insert <strong>flight</strong> </p>
         </div>
         <div class="col-md-8">
         <form method="post" action="addflight.php">
@@ -140,7 +156,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			</div>
 			<div class="form-group">
 				<label for="airline">Airplane</label>	
-				<select class="form-control aircrafts" name="aircraft" id="aircraft" required >
+				<select class="form-control aircrafts" name="aircraft" id="aircraft" required  onchange="findSeatsByAircraft(this.value);" required>
 				</select>
 			</div>
 			<div class="form-group">
@@ -243,7 +259,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="seats">Number of seats</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seats" required onkeypress='return numeros(event)'>
+				<input type="number"  min="1" step="1" class="form-control seats" id="seats" name="seats" placeholder="Number of seats" required onkeypress='return numeros(event)' ReadOnly>
             </div>
 			<div class="form-group">
 				<label for="type">Description</label>
