@@ -29,7 +29,7 @@ $( document ).ready(function() {
     function loadVuelos() {
     $.ajax({
           method: "POST",
-          url: "ajax/algorit.php",
+          url: "../airline/algorit.php",
           data: { },
           //dataType: 'json',
           beforeSend: function() {

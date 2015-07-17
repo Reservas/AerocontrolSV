@@ -1,10 +1,14 @@
 <?php
     session_start();
-    $airline = $_SESSION['airline'];
         $clase = "";
         include "../connect.php";
-        $stmt = $mysqli->prepare("SELECT flights.id,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE airlines.id = ? ORDER BY `flights`.`arrival_time` DESC");
-        $stmt->bind_param('s',$airline);
+		if(isset($_SESSION['airline'])){
+			$airline = $_SESSION['airline'];
+			$stmt = $mysqli->prepare("SELECT flights.id,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE airlines.id = ? ORDER BY `flights`.`arrival_time` DESC");	
+			$stmt->bind_param('i',$airline);
+		}else{
+			$stmt = $mysqli->prepare("SELECT flights.id,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id ORDER BY `flights`.`arrival_time` DESC");
+		}
         $stmt->execute(); 
         $stmt->store_result();
         $stmt->bind_result($id,$arrival_city,$arrival_time,$arrival_runway,$aircraft,$airline);
