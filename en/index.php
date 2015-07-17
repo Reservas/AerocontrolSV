@@ -60,7 +60,7 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                                 <a href="index.php"> <img src="../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
                 <a href="../es/index.php"> <img src="../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
                 <div class="row scroll-me">
-                    
+      <img src="../base_de_datos/logos%2520blancos/Logo_Informatica_InglesTecnico%203.png"  > </a> 
                 </div>
             </div>
         </div>
@@ -246,6 +246,24 @@ return true;
     <section id="clients">
         <div class="overlay">       
         <div class="container">
+                        
+            <div class="row  text-center" style="align: center; ">                
+                    <h2 class="text-center" style="color:#fff;">Developers</h2>
+            </div>
+                    <div class="col-xs-6 col-sm-3 col-sm-offset-3 placeholder text-center" style="align: center;">
+              <img src="../base_de_datos/101567.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <span class="text-muted">Ted Gabriel Bonilla</span>
+                        <br>
+              <span class="text-muted">Programmer, designer y analyst
+</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder text-center">
+              <img src="../base_de_datos/041751.jpg" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+              <span class="text-muted">Diego Ronaldo Melendez</span>
+                <br>
+              <span class="text-muted">Programmer, designer y analyst
+</span>
+            </div>
             <div class="row text-center">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         
