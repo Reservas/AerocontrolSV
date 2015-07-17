@@ -9,10 +9,19 @@
 		<script src='../docs/calendar/lib/moment.min.js'></script>
 		<script src='../docs/calendar/fullcalendar.min.js'></script>
 		<script src='../docs/calendar/lang/en-au.js'></script>
+			<link href="../docs/css/select2.min.css" rel="stylesheet" />		
+    <script src="../docs/js/selecion2.min.js"></script>
 		<script>
-            
 
 	$(document).ready(function() {
+		$.ajax({ 
+			url: "ajax/buscar_aerolinea.php",
+			context: document.body,
+			success: function(data){
+				$("#airline").html(data);
+			}
+		});
+		$(".js-example-basic-multiple").select2();
 		
 		$('#calendar').fullCalendar({
 			header: {
@@ -36,7 +45,7 @@
 	});
 
 </script>
-<style>
+    <style>
 
 	body {
 		margin: 40px 10px;
@@ -63,6 +72,9 @@
             <div class="panel panel-primary">
                           <div class="panel-heading">
                             <h1 class="text-center" style="color:#fff;">Flights in real time</h1>
+            <label style="color:#fff;" >Aerolinea</label>
+							<select class="js-example-basic-multiple" id="airline" value="airline" name="airline" style="width:250px" onchange="filtrarVuelos(this.value, false);">
+							</select> <br>  
                           </div>
 
             <div class="container vuelos"></div>
@@ -78,9 +90,29 @@
  
 		<div id='calendar'></div>
 
-    <script>
+    <script>		
+		function filtrarVuelos(airline, unset){
+			$.ajax({
+				type : "POST",
+				dataType : 'html',
+				async : true,
+				data : {
+					unset: unset,
+					airline : airline
+				},
+				url : "ajax/airline_sesion.php",
+				success : function(response) {
+					
+				},
+				error : function(e, error) {
+					alert(error);
+				}
+			});
+		}
+		
         $( document ).ready(function() {
-            $(".1").addClass("active"); 
+            $(".1").addClass("active");
+			filtrarVuelos(0, true);
         });
     </script>
              </div>     

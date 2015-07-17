@@ -6,8 +6,8 @@
             </head>
 		<link href='../docs/calendar/fullcalendar.min.css' rel='stylesheet' />
 		<link href='../docs/calendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-		<script src='../docs/calendar/lib/moment.min.js'></script>
-		<script src='../docs/calendar/fullcalendar.min.js'></script>
+<script src='../docs/calendar/lib/moment.min.js'></script>
+    <script src='../docs/calendar/fullcalendar.min.js'></script>
 		<script src='../docs/calendar/lang/es.js'></script>
 		<link href="../docs/css/select2.min.css" rel="stylesheet" />
 		<script src="../docs/js/selecion2.min.js"></script>
