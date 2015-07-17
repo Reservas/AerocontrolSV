@@ -6,7 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/style.css" rel="stylesheet">
-    <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/ionicons.css"     rel="stylesheet">
 	<link href="../docs/css/jquery-ui.min.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui-timepicker-addon.css" rel="stylesheet">
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
@@ -69,8 +69,12 @@ function numeros(e){
     <!-- /NAV -->
         <h1 class="text-center">Add Flight</h1>
 <?php
+session_start();
 if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arrival_city"]) AND isset($_POST["arrival_runway"]) AND isset($_POST["arrival_time"]) AND isset($_POST["cost"]) AND isset($_POST["departure_city"]) AND isset($_POST["departure_runway"]) AND isset($_POST["departure_time"]) AND isset($_POST["description"]) AND isset($_POST["seats"]))
 {
+    $date = new DateTime();
+    $daten = $date->format('Y-m-d');
+    
     $airline = $_POST["airline"];
 	$aircraft = $_POST["aircraft"];
 	$arrival_city = $_POST["arrival_city"];
@@ -84,24 +88,28 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 	$seats = $_POST["seats"];
     
      if($arrival_city == $departure_city){
-        echo "<script>alert('Por favor, seleccione correctamente la ciudad de partida y de llegada!'); window.history.goback();</script>";
-    }else{
-   
+        echo "<script>alert('The city of departure, may noy be the same as de arrival city!'); window.history.goback();</script>";
+    }elseif($arrival_time > $daten){
+     echo "<script>alert('Previous days, is not allowed'); window.history.goback();</script>";
+     }elseif($departure_time > $daten){
+        echo "<script>alert('Previous days, is not allowed'); window.history.goback();</script>";
+     }else{
     include "../docs/connect.php";
     $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
     if($query)
     {
         echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+        echo "<p class='text-success text-center'><a href='flights.php'>List of flights</a></p>";
 		echo $departure_time;
     }
     else
     {
-        echo "<p class='text-danger text-center'><strong>Error: los datos no fueron guardados</strong></p>";
-        echo "<p class='text-success text-center'><a href='flights.php'>Lista de vuelos</a></p>";
+        echo "<p class='text-danger text-center'><strong>Error: the data were not allowed</strong></p>";
+        echo "<p class='text-success text-center'><a href='flights.php'>List of flights</a></p>";
     }
      }
 }
+
 ?>
         <div class="col-md-4 well">
             <a href="addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
@@ -132,7 +140,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 			</div>
 			<div class="form-group">
 				<label for="airline">Airplane</label>	
-				<select class="form-control aircrafts" name="aircraft" id="aircraft" required>
+				<select class="form-control aircrafts" name="aircraft" id="aircraft" required >
 				</select>
 			</div>
 			<div class="form-group">
@@ -235,13 +243,13 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
             </div>
 			<div class="form-group">
 				<label for="seats">Number of seats</label>
-				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seatsco" required onkeypress='return numeros(event)'>
+				<input type="number"  min="1" step="1" class="form-control" id="seats" name="seats" placeholder="Number of seats" required onkeypress='return numeros(event)'>
             </div>
 			<div class="form-group">
 				<label for="type">Description</label>
 				<input type="text" maxlength="500" class="form-control" id="description" name="description" placeholder="Description of the fligth" required onkeypress="return validar(event)">
             </div>
-            <input type="submit" name="enviar" value="Enviar">
+            <input type="submit" name="enviar" value="Send">
         </form>
         </div>
     </div>    
