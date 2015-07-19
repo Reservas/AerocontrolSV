@@ -47,6 +47,12 @@ $row = mysql_fetch_array($query);
                     <a href="../../admin/flights.php" class="btn btn-primary">Ver lista</a>   <a href="../../admin/addflight.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
+		<div class="col-md-4">
+            <div class="alert alert-info">  
+                <h3>Compras</h3>
+                    <a href="../../admin/purchases.php" class="btn btn-primary">Ver lista</a>  
+                </div>
+        </div>
     </div>    	
 </div>
     

@@ -75,6 +75,12 @@
                     <a href="runways.php" class="btn btn-primary">Ver lista</a>   <a href="addrunway.php" class="btn btn-success">Nuevo</a>
                 </div>
         </div>
+		<div class="col-md-4">
+            <div class="alert alert-info">  
+                <h3>Compras</h3>
+                    <a href="purchases.php" class="btn btn-primary">Ver lista</a>  
+                </div>
+        </div>
     </div>    
 </div>
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
