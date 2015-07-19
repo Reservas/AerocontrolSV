@@ -60,7 +60,6 @@ $user_pool = mysql_query("SELECT user FROM costumers");
                                 <a href="index.php"> <img src="../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
                 <a href="../es/index.php"> <img src="../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
                 <div class="row scroll-me">
-      <img src="../base_de_datos/logos%20blancos/Escudo%20Blanco.png"  > </a> 
                 </div>
             </div>
         </div>

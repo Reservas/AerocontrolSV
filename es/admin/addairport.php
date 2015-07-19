@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
-    <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/ionicons.css" rel="stylesheet"
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -26,7 +27,7 @@
 }
                 </script>
     <?php include 'nav.php'; ?>
-                <a href="../../en/admin/addairport.php">English/</a><a href="../../es/admin/addairport.php">Espa&ntilde;ol</a>
+
     <!-- /NAV -->
         <h1 class="text-center">Agregar aeropuerto</h1>
 <?php
@@ -49,6 +50,8 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
 }
 ?>
         <div class="col-md-4 well">
+                        <a href="../en/admin/addairport.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/addairport.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayuda</h3>
             <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaci&oacute;n de dicho aeropuerto</p>
         </div>

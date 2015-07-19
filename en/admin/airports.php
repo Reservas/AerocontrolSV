@@ -33,7 +33,7 @@ if($total>0)
 <a href="../../es/admin/airports.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
         <a href='exportairports.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generate PDF</a>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Name of the airport</td><td>Location (City)</td><td><a href='addairport.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add Airport</a></td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Name of the airport</td><td>Location (City)</td><td><a href='airport.php' class="text-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Add Airport</a></td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{

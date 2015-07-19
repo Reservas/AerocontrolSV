@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -53,7 +54,8 @@ function letras(e){
 }
 </script>      
         <?php include 'nav.php'; ?>
-                               <a href="../../en/admin/edithaircraft.php">English/</a><a href="../../es/admin/edithaircraft.php">Espa&ntilde;ol</a>
+                <a href="/en/admin/editaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/editaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un avi&oacute;n</h1>
 <?php

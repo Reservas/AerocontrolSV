@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+            <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
     <script src="../docs/js/ie-10-view-port.js" type="text/javascript"></script>
     <script src="../docs/js/jquery-1.11.1.js" type="text/javascript"></script>
@@ -44,7 +45,7 @@ function numeros(e){
 </script>
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
-                        <a href="../../en/admin/addcity.php">English/</a><a href="../../es/admin/addcity.php">Espa&ntilde;ol</a>
+                        
         <h1 class="text-center">Agregar ciudad</h1>
 <?php
 if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
@@ -68,6 +69,8 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
+                        <a href="/en/admin/addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/addaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <p>Escribe el nombre de la <strong>Ciudad</strong> luego ingresamos el nombre del <strong>Estado(departament)</strong> que se encuentra y el <strong>C&oacute;digo ZIP</strong> </p>
         </div>
         <div class="col-md-8">

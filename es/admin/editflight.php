@@ -6,6 +6,7 @@
     <link href="../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../docs/css/ionicons.css" rel="stylesheet">
+      <link href="../docs/css/style.css" rel="stylesheet">
     <script src="../docs/js/bootstrap.js" type="text/javascript"></script>
 	<link href="../docs/css/jquery-ui.min.css" rel="stylesheet">
 	<link href="../docs/css/jquery-ui-timepicker-addon.css" rel="stylesheet">
@@ -113,6 +114,8 @@ else
             {
 ?>
         <div class="col-md-4 well">
+                        <a href="/en/admin/editflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../es/admin/editflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Aqu&iacute; podr&aacute;s editar todo lo referente al vuelo</p>
                    </div>
