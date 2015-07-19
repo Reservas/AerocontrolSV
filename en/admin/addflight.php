@@ -114,7 +114,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
     $query = mysql_query("INSERT INTO flights(id, airline, departure_time, departure_city, arrival_time, arrival_city, aircraft, departure_runway, arrival_runway, cost, seats, description) VALUES ('','$airline','$departure_time','$departure_city','$arrival_time','$arrival_city','$aircraft','$departure_runway','$arrival_runway','$cost','$seats','$description')");
     if($query)
     {
-        echo "<p class='text-success text-center'><strong>Los datos fueron guardados</strong></p>";
+        echo "<p class='text-success text-center'><strong>The data were not saved</strong></p>";
         echo "<p class='text-success text-center'><a href='flights.php'>List of flights</a></p>";
 		echo $departure_time;
     }
@@ -153,13 +153,68 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						}
 					?>
 				</select>
-			</div>
-			<div class="form-group">
 				<label for="airline">Airplane</label>	
 				<select class="form-control aircrafts" name="aircraft" id="aircraft" required  onchange="findSeatsByAircraft(this.value);" required>
 				</select>
-			</div>
+				<label for="seats">Number of seats</label>
+				<input type="number"  min="1" step="1" class="form-control seats" id="seats" name="seats" placeholder="Number of seats" required onkeypress='return numeros(event)' ReadOnly>
+            </div>
+  
+            
+            
+            
+            
+            
 			<div class="form-group">
+				<label for="departure_city">Departure City</label>	
+				<select class="form-control" name="departure_city" id="departure_city" required>
+					<option value="">Choose City - State</option>
+					<?php
+						include "../docs/connect.php";
+						$query = "SELECT id, city, state FROM cities ORDER BY id";
+						$resultado = mysql_query($query, $link);
+						$total = mysql_num_rows($resultado);
+						if($total>0)
+						{
+							while($row = mysql_fetch_array($resultado))
+							{
+								echo "<option value='".$row['id']."'>".$row['city']." - ".$row['state']."</option>";
+							}                    
+						}
+					?>
+				</select>
+				<label for="departure_time">Departure date</label>
+						<input type='text' class="form-control" name="departure_time" id="departure_time" required onkeypress='return numeros(event)'>
+						<script type="text/javascript">
+							$(function () {
+								$('#departure_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
+							});
+						</script>
+				<label for="departure_runway">Runway </label>	
+				<select class="form-control" name="departure_runway" id="departure_runway" required>
+					<option value="">Choose Runway</option>
+					<?php
+						include "../docs/connect.php";
+						$query = "SELECT id FROM runways ORDER BY id";
+						$resultado = mysql_query($query, $link);
+						$total = mysql_num_rows($resultado);
+						if($total>0)
+						{
+							while($row = mysql_fetch_array($resultado))
+							{
+								echo "<option value='".$row['id']."'>".$row['id']."</option>";
+							}                    
+						}
+					?>
+				</select>
+			</div>
+            
+            
+            
+            
+            
+            
+            <div class="form-group" style="bg-color: #0000;">
 				<label for="arrival_city">City destination</label>	
 				<select class="form-control" name="arrival_city" id="arrival_city" required>
 					<option value="">Choose City - State</option>
@@ -177,8 +232,15 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 						}
 					?>
 				</select>
-			</div>
-			<div class="form-group">
+
+				<label for="arrival_time">Arrival date</label>
+						<input type='text' class="form-control" name="arrival_time" id="arrival_time" required onkeypress='return numeros(event)'>
+						<script type="text/javascript">
+							$(function () {
+								$('#arrival_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
+							});
+						</script>
+                
 				<label for="arrival_runway">Runway</label>	
 				<select class="form-control" name="arrival_runway" id="arrival_runway" required>
 					<option value="">Choose runway</option>
@@ -198,68 +260,8 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="arrival_time">Arrival date</label>
-						<input type='text' class="form-control" name="arrival_time" id="arrival_time" required onkeypress='return numeros(event)'>
-						<script type="text/javascript">
-							$(function () {
-								$('#arrival_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
-							});
-						</script>
-            </div>
-			<div class="form-group">
 				<label for="cost">Cost</label>
 				<input type="number"  class="form-control" id="cost" name="cost" placeholder="Cost of the flight" required onkeypress='return numeros(event)'>
-            </div>
-			<div class="form-group">
-				<label for="departure_city">Departure City</label>	
-				<select class="form-control" name="departure_city" id="departure_city" required>
-					<option value="">Choose City - State</option>
-					<?php
-						include "../docs/connect.php";
-						$query = "SELECT id, city, state FROM cities ORDER BY id";
-						$resultado = mysql_query($query, $link);
-						$total = mysql_num_rows($resultado);
-						if($total>0)
-						{
-							while($row = mysql_fetch_array($resultado))
-							{
-								echo "<option value='".$row['id']."'>".$row['city']." - ".$row['state']."</option>";
-							}                    
-						}
-					?>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="departure_runway">Runway </label>	
-				<select class="form-control" name="departure_runway" id="departure_runway" required>
-					<option value="">Choose Runway</option>
-					<?php
-						include "../docs/connect.php";
-						$query = "SELECT id FROM runways ORDER BY id";
-						$resultado = mysql_query($query, $link);
-						$total = mysql_num_rows($resultado);
-						if($total>0)
-						{
-							while($row = mysql_fetch_array($resultado))
-							{
-								echo "<option value='".$row['id']."'>".$row['id']."</option>";
-							}                    
-						}
-					?>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="departure_time">Departure date</label>
-						<input type='text' class="form-control" name="departure_time" id="departure_time" required onkeypress='return numeros(event)'>
-						<script type="text/javascript">
-							$(function () {
-								$('#departure_time').datetimepicker({dateFormat: 'yy-mm-dd', timeFormat: 'HH:mm:ss'});
-							});
-						</script>
-            </div>
-			<div class="form-group">
-				<label for="seats">Number of seats</label>
-				<input type="number"  min="1" step="1" class="form-control seats" id="seats" name="seats" placeholder="Number of seats" required onkeypress='return numeros(event)' ReadOnly>
             </div>
 			<div class="form-group">
 				<label for="type">Description</label>
