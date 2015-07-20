@@ -30,7 +30,7 @@ $total = mysql_num_rows($resultado);
 if($total>0)
 {
 ?>
-		<a href="../AerocontrolSV/en/admin/cities.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+		<a href="../../en/admin/cities.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
 <a href="cities.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
         <a href='exportcities.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generar PDF</a>
         <table class="table table-striped">

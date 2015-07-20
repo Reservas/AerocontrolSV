@@ -17,7 +17,7 @@
           <li class="3"><a href="compras.php">Shopping</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Log out</a></li>
+        <li><a  href="../user/cerrar_sesion.php">Log out</a></li>
       </ul>
     </div>
   </div>

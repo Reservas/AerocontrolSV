@@ -17,7 +17,7 @@
         <li><a href="compras.php">Compras</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="es/admin/cerrar_sesion.php">Cerrar sesion</a></li>
+        <li><a href="../user/cerrar_sesion.php">Cerrar sesi&oacute;n</a></li>
       </ul>
     </div>
   </div>
