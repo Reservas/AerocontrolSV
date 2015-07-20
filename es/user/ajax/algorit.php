@@ -16,8 +16,8 @@
                       <th>Hora de aterrizaje</th>
                        <th>Tiempo estimado</th>
                       <th>Pista</th>
-                      <th>Avion</th>
-                      <th>Aerolinea</th>
+                      <th>Avión</th>
+                      <th>Aerolínea</th>
                     </tr>
                   </thead><tbody>";
             while ($stmt->fetch()) {
@@ -27,11 +27,11 @@
                 $restaDos = $date->diff($now)->format("%h");
                 
                     if($date >= $now) {
-                        $estado = "En el aire";
+                        $estado = "Disponible";
                         $clase = "success";
                     }else {
                         $resta = "En espera";
-                        $estado = "Aterrizo";
+                        $estado = "Aterrizó";
                         $clase = "danger";
                     }
                     if($restaDos <= 24) {

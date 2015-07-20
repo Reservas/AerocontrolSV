@@ -27,7 +27,7 @@
                 $restaDos = $date->diff($now)->format("%h");
                 
                     if($date >= $now) {
-                        $estado = "In the air";
+                        $estado = "available";
                         $clase = "success";
                     }else {
                         $resta = "landed";
