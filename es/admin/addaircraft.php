@@ -62,7 +62,7 @@ if(isset($_POST["name"]) AND isset($_POST["airline"]) AND isset($_POST["seats"])
 }
 ?>
         <div class="col-md-4 well">
-            <a href="/en/admin/addaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="/AerocontrolSV/en/admin/addaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Se necesita insertar el nombre del <strong>Avi&oacute;n</strong> </p>

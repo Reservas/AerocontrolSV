@@ -100,7 +100,7 @@ if(isset($_POST["name"]) AND isset($_POST["description"]))
 }
 ?>
         <div class="col-md-4 well">
-                        <a href="../en/admin/addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                        <a href="../AerocontrolSV/en/admin/addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addairline.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Escribe el <strong>nombre</strong> de la aerol&iacute;nea que desea ingresas, despu&eacute;s una breve <strong>descripci&oacute;n</strong> luego terminamos con poner el <strong>logo </strong> de la empresa.</p>

@@ -14,7 +14,7 @@
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
-            <a href="../../en/admin/index.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../AerocontrolSV/en/admin/index.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="index.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
          
         <!-- /NAV -->

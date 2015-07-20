@@ -83,7 +83,7 @@ else
             {
 ?>
         <div class="col-md-4 well">
-                        <a href="/en/admin/addaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                        <a href="/AerocontrolSV/en/admin/addaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Aqu&iacute; podr&aacute;s editar todo lo referente a las ciudades</p>

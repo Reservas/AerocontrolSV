@@ -61,7 +61,7 @@ if(isset($_POST["name"]) AND isset($_POST["address"]) AND isset($_POST["location
 }
 ?>
         <div class="col-md-4 well">
-                                    <a href="/en/admin/addpersonal.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                                    <a href="/AerocontrolSV/en/admin/addpersonal.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addpersonal.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Por favor escribe el <strong>nombre</strong> del cluente que deseas agregas, luego escribimos la <strong>direccón</strong> en donde resides, luego la <strong>Ciudad en donde se encuentra</strong> después escribimos la <strong>fecha de nacimiento </strong> ahora seguimos con el <strong>número de tel&eacute;fono</strong> para terminar con el <strong>usuario</strong> y terminamos con la <strong>contrase&ntilde;a</strong> y la volvemos a repetir.</p>

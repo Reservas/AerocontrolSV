@@ -50,8 +50,8 @@ if(isset($_POST["name"]) AND isset($_POST["location"]))
 }
 ?>
         <div class="col-md-4 well">
-                        <a href="../en/admin/addairport.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
-            <a href="../../es/admin/addairport.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
+                        <a href="../AerocontrolSV/en/admin/addairport.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../../AerocontrolSV/es/admin/addairport.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayuda</h3>
             <p>Sólo se necesita insertar el nombre del <strong>Aeropuerto</strong> la ubicaci&oacute;n de dicho aeropuerto</p>
         </div>

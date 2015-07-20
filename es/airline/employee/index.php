@@ -12,6 +12,7 @@ $row = mysql_fetch_array($query);
     <link href="../../docs/css/bootstrap.css" rel="stylesheet">
     <link href="../../docs/css/font-awesome.css" rel="stylesheet">
     <link href="../../docs/css/ionicons.css" rel="stylesheet">
+    <link href="../docs/css/style.css" rel="stylesheet">
     <title>Administraci&oacute;n - <?=$row['name']?></title>
 </head>
 <body>
@@ -19,6 +20,8 @@ $row = mysql_fetch_array($query);
     <div class="row">
     <!-- NAV -->
     <?php include 'nav.php'; ?>
+                    <a href="AerocontrolSV/en/employe/index.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="index.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
     <!-- /NAV -->
         <div class="container">
             <div class="jumbotron well">

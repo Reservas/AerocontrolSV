@@ -128,7 +128,7 @@ if(isset($_POST["airline"]) AND isset($_POST["aircraft"]) AND isset($_POST["arri
 
 ?>
         <div class="col-md-4 well">
-            <a href="../../en/admin/addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="../AerocontrolSV/en/admin/addflight.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
 <a href="addflight.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayúda</h3>
             <p>Necesita insertar los <strong>vuelos</strong> </p>

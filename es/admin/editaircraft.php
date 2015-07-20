@@ -54,7 +54,7 @@ function letras(e){
 }
 </script>      
         <?php include 'nav.php'; ?>
-                <a href="/en/admin/editaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                <a href="/AerocontrolSV/en/admin/editaircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/editaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
     <!-- /NAV -->
         <h1 class="text-center">Editando datos de un avi&oacute;n</h1>

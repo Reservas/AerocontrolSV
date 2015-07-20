@@ -60,7 +60,7 @@ if(isset($_POST["idairport"]) AND isset($_POST["lenght"]))
 }
 ?>
         <div class="col-md-4 well">
-                    <a href="/en/admin/addrunway.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                    <a href="/AerocontrolSV/en/admin/addrunway.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addaircraftrunway.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <h3>Ayuda</h3>
             <p>Se necesita insertar el nombre de la  <strong>pista</strong> </p>

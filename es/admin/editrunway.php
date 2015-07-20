@@ -80,7 +80,7 @@ else
             {
 ?>
         <div class="col-md-4 well">
-                        <a href="/en/admin/editrunway.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                        <a href="/AerocontrolSV/en/admin/editrunway.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/editrunway.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <h3>Ayuda</h3>
             <p>Aquí podr&aacute;s editar todo lo referente a las pistas de aterrizaje

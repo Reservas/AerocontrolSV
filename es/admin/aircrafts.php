@@ -21,7 +21,7 @@
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
                 
-            <a href="/en/admin/aircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="/AerocontrolSV/en/admin/aircraft.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/aircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
             <link href="../docs/css/style.css" rel="stylesheet">
         <h1 class="text-center">Listado de aviones</h1>

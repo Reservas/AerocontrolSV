@@ -69,7 +69,7 @@ if(isset($_POST["city"]) AND isset($_POST["state"]) AND isset($_POST["zip"]))
 ?>
         <div class="col-md-4 well">
             <h3>Ayuda</h3>
-                        <a href="/en/admin/addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+                        <a href="/AerocontrolSV/en/admin/addairline.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/addaircraft.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a>
             <p>Escribe el nombre de la <strong>Ciudad</strong> luego ingresamos el nombre del <strong>Estado(departament)</strong> que se encuentra y el <strong>C&oacute;digo ZIP</strong> </p>
         </div>

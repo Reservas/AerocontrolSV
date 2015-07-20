@@ -20,7 +20,7 @@
     <?php include 'nav.php'; ?>
     <!-- /NAV -->
            
-            <a href="/en/admin/airlines.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
+            <a href="/AerocontrolSV/en/admin/airlines.php"> <img src="../../base_de_datos/Ingles.jpg" class="redondo" width=60 height=30/></a>
             <a href="../../es/admin/airlines.php"> <img src="../../base_de_datos/descarga" class="redondo"  width="60" height="30"/> </a> 
         <h1 class="text-center">Listado de aerolineas</h1>
         <br>
