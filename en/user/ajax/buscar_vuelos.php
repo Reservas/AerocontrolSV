@@ -1,12 +1,12 @@
 <?php
-if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDep"]))
+if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDep"]) AND isset($_GET["airline"]))
 {
 	include "../files/conexion.php";
 	
 	if($_GET["isOnlyDep"]=='true'){
 		//ida y vuelta
-		$stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.departure_city = ? AND flights.arrival_city = ? AND flights.departure_time > (NOW() + INTERVAL 1 DAY) AND flights.seats > 0 ORDER BY flights.arrival_time ASC");
-		$stmt->bind_param('ii',$_GET['depcity'],$_GET['arrcity']);
+		$stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.departure_city = ? AND flights.arrival_city = ? AND airlines.id = ? AND flights.departure_time > (NOW() + INTERVAL 1 DAY) AND fl...(line truncated)...
+		$stmt->bind_param('iii',$_GET['depcity'],$_GET['arrcity'],$_GET["airline"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row_cnt = $result->num_rows;
@@ -29,8 +29,8 @@ if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDe
 				
 
 			}
-			$stmt->bind_param('ii',$_GET['arrcity'],$_GET['depcity']);
-			$stmt->execute();
+	        $stmt->bind_param('iii',$_GET['arrcity'],$_GET['depcity'],$_GET["airline"]);
+            $stmt->execute();
 			$result = $stmt->get_result();
 			$row_cnt = $result->num_rows;
 			if($row_cnt>0){
@@ -62,8 +62,8 @@ if(isset($_GET["depcity"]) AND isset($_GET["arrcity"]) AND isset($_GET["isOnlyDe
 		}
 	}else{
 		//Solo ida
-		$stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.departure_city = ? AND flights.arrival_city = ? AND flights.departure_time > (NOW() + INTERVAL 1 DAY) AND flights.seats > 0 ORDER BY flights.arrival_time ASC");
-		$stmt->bind_param('ii',$_GET['depcity'],$_GET['arrcity']);
+        $stmt = $mysqli->prepare("SELECT flights.id,flights.departure_time,flights.cost,flights.seats,flights.description,cities.city,flights.arrival_time,flights.arrival_runway,aircraft.name,airlines.name FROM `flights` INNER JOIN cities ON flights.arrival_city=cities.id INNER JOIN aircraft ON flights.aircraft=aircraft.id INNER JOIN airlines ON flights.airline=airlines.id WHERE flights.departure_city = ? AND flights.arrival_city = ? AND airlines.id = ? AND flights.departure_time > (NOW() + INTERVAL 1 DAY) AND fl...(line truncated)...
+		$stmt->bind_param('iii',$_GET['depcity'],$_GET['arrcity'],$_GET['airline']);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$row_cnt = $result->num_rows;

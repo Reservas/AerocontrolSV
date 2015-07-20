@@ -43,13 +43,13 @@ $row = mysql_fetch_array($query);
         <div class="col-md-4">
             <div class="alert alert-info">  
                 <h3>Flights</h3>
-                    <a href="../../admin/flights.php" class="btn btn-primary">List</a>   <a href="../../admin/addflight.php" class="btn btn-success">Nuevo</a>
+                    <a href="../../admin/flights.php" class="btn btn-primary">List</a>   <a href="../../admin/addflight.php" class="btn btn-success">New</a>
                 </div>
         </div>
                 <div class="col-md-4">
-            <div class="alert alert-danger">  
-                <h3>Employee</h3>
-                    <a href="#" class="btn btn-primary">List</a>   
+            <div class="alert alert-info">  
+                <h3>Buy´s</h3>
+                    <a href="../../admin/purchases.php" class="btn btn-primary">Ver lista</a>  
                 </div>
         </div>
     </div>    	

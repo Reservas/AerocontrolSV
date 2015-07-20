@@ -52,6 +52,9 @@
                         </div>
 					<div class="row text-center">
 						<div class="form-group" >
+                            	<label style="color:#fff;" >Airline</label> <br>
+							<select class="js-example-basic-multiple" id="airline" value="airline" name="airline" style="width:250px">
+							</select><br>
 							<label style="color:#fff;" >Departure</label> <br>
 							<select class="js-example-basic-multiple" id="dep_city" value="dep_city" name="dep_city" style="width:250px">
 							</select> <br>
@@ -84,6 +87,7 @@
 			//Validar que no se seleccionara la misma ciudad
 			var depcity = $("#dep_city").val();
 			var arrcity = $("#arr_city").val();
+            var airline = $("#airline").val();
 			var isOnlyDep = $("#ida").prop('checked');
 			if(depcity == arrcity){
 				alert("Select a different country");
@@ -94,6 +98,7 @@
 						dataType : 'html',
 						async : true,
 						data : {
+                            airline : airline,
 							depcity : depcity,
 							arrcity : arrcity,
 							isOnlyDep : isOnlyDep
@@ -137,6 +142,14 @@
         				$("#dep_city").html(data);
 						$("#arr_city").html(data);
         			}});
+            $.ajax({ 
+					url: "ajax/buscar_aerolinea.php",
+					context: document.body,
+					success: function(data){
+						$("#airline").html(data);
+					}
+				});
+				
 				$(".js-example-basic-multiple").select2();
 			});
 </script>
