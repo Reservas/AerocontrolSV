@@ -54,7 +54,7 @@
 					<div class="row text-center">
 						<div class="form-group" >
 							<label style="color:#fff;" >Aerolinea</label> <br>
-							<select class="js-example-basic-multiple" id="airline" value="airline" name="airline" style="width:250px">
+							<select class="js-example-basic-multiple" id="airline" value="airline" name="airline" style="width:250px" onchange="cargarCiudades(this.value);">
 							</select><br>
 							<label style="color:#fff;" >Origen</label> <br>
 							<select class="js-example-basic-multiple" id="dep_city" value="dep_city" name="dep_city" style="width:250px">
@@ -81,40 +81,71 @@
         </section>
     </body>
 <script type="text/javascript" >
-		function buscarVuelos(){
-			//Validar que no se seleccionara la misma ciudad
-			var depcity = $("#dep_city").val();
-			var arrcity = $("#arr_city").val();
-			var isOnlyDep = $("#ida").prop('checked');
-			var airline = $("#airline").val();
-			if(depcity == arrcity){
-				alert("Seleccione ciudades distintas");
-			}else{
-			
-				$.ajax({
-						type : "GET",
-						dataType : 'html',
-						async : true,
-						data : {
-							airline : airline,
-							depcity : depcity,
-							arrcity : arrcity,
-							isOnlyDep : isOnlyDep
-						},
-						url : "ajax/buscar_vuelos.php",
-						success : function(response) {
-							$('.flights').html(response);
-							$( ".comprar" ).click(function() {
-								var id = $(this).attr("id");
-								loadmodal(id);
-							});
-						},
-							error : function(e, error) {
-								alert(error);
-						}
-					});
-			}
+
+	function cargarCiudades(airline){
+	
+		$.ajax({
+			type : "GET",
+			dataType : 'html',
+			async : true,
+			data : {
+				airline : airline,
+				destiny : 'true'
+			},
+			url: "ajax/buscar_ciudad.php",
+			context: document.body,
+			success: function(data){
+				$("#dep_city").html(data);
+		}});
+		$.ajax({
+			type : "GET",
+			dataType : 'html',
+			async : true,
+			data : {
+				airline : airline,
+				destiny : 'false'
+			},
+			url: "ajax/buscar_ciudad.php",
+			context: document.body,
+			success: function(data){
+				$("#arr_city").html(data);
+		}});	
+	
+	}
+	function buscarVuelos(){
+		//Validar que no se seleccionara la misma ciudad
+		var depcity = $("#dep_city").val();
+		var arrcity = $("#arr_city").val();
+		var isOnlyDep = $("#ida").prop('checked');
+		var airline = $("#airline").val();
+		if(depcity == arrcity){
+			alert("Seleccione ciudades distintas");
+		}else{
+		
+			$.ajax({
+					type : "GET",
+					dataType : 'html',
+					async : true,
+					data : {
+						airline : airline,
+						depcity : depcity,
+						arrcity : arrcity,
+						isOnlyDep : isOnlyDep
+					},
+					url : "ajax/buscar_vuelos.php",
+					success : function(response) {
+						$('.flights').html(response);
+						$( ".comprar" ).click(function() {
+							var id = $(this).attr("id");
+							loadmodal(id);
+						});
+					},
+						error : function(e, error) {
+							alert(error);
+					}
+				});
 		}
+	}
 		
 		function loadmodal(id) {
          $.ajax({
@@ -134,12 +165,7 @@
 		
 		$(document).ready(function()		
 			{
-				$.ajax({ url: "ajax/buscar_ciudad.php",
-        			context: document.body,
-        			success: function(data){
-        				$("#dep_city").html(data);
-						$("#arr_city").html(data);
-        			}});
+				
 				$.ajax({ 
 					url: "ajax/buscar_aerolinea.php",
 					context: document.body,
