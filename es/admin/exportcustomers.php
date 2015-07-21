@@ -14,6 +14,13 @@ include "../user/files/conexion.php";
 		$pdf->Image('../docs/img/logoac.png',10,0,53);
 		$pdf->Ln(10);
 		$pdf->Cell(200,10,'Listado de clientes',0,0,'C');
+		$pdf->Ln(10);
+		$now = new DateTime();
+		$pdf->Cell(40,10,'Fecha: '.$now->format('d-m-Y'),0,0,'C');
+		$pdf->Ln(10);
+		if(isset($_SESSION['usuario'])){
+			$pdf->Cell(40,10,'Usuario: '.$_SESSION['usuario'],0,0,'C');
+		}
 		$pdf->Ln(20);
 		$w = array(10, 60, 60, 30, 30, 35, 35);
 		$header = array('Id', 'Nombre del cliente', 'Direccion', 'Nacimiento', 'Telefono', 'Usuario', 'Estado');

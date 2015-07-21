@@ -20,6 +20,13 @@ include "../user/files/conexion.php";
 		$pdf->Image('../docs/img/logoac.png',10,0,53);
 		$pdf->Ln(10);
 		$pdf->Cell(200,10,'Listado de vuelos',0,0,'C');
+		$pdf->Ln(10);
+		$now = new DateTime();
+		$pdf->Cell(40,10,'Fecha: '.$now->format('d-m-Y'),0,0,'C');
+		$pdf->Ln(10);
+		if(isset($_SESSION['usuario'])){
+			$pdf->Cell(40,10,'Usuario: '.$_SESSION['usuario'],0,0,'C');
+		}
 		$pdf->Ln(20);
 		$w = array(10, 30, 37, 37, 37, 27, 27, 23, 43, 43, 20);
 		$header = array('Id', 'Aerolinea', 'Nombre del avion', 'Ciudad de salida', 'Ciudad de destino', 'Pista salida', 'Pista llegada', 'Costo', 'Hora salida', 'Hora aterrizaje', 'Asientos');
