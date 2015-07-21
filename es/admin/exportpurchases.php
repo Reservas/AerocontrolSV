@@ -4,10 +4,10 @@ include "../docs/phppdf/fpdf.php";
 include "../user/files/conexion.php";
 	
 	if(isset($_SESSION['airline'])){
-		$stmt = $mysqli->prepare("SELECT `bookings`.`id`, `costumers`. `name`,`bookings`.`flight`, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` WHERE `airlines`. `id` = ? ");
+		$stmt = $mysqli->prepare("SELECT `bookings`.`id`, `costumers`. `name`, DATE_FORMAT(`flights`.`departure_time`,'%d %b %y') as date, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` WHERE `airlines`. `id` = ? ");
 		$stmt->bind_param('i',$_SESSION['airline']);
 	}else{
-		$stmt = $mysqli->prepare("SELECT `bookings`.`id`, `costumers`. `name`,`bookings`.`flight`, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` ");
+		$stmt = $mysqli->prepare("SELECT `bookings`.`id`, `costumers`. `name`, DATE_FORMAT(`flights`.`departure_time`,'%d %b %y') as date, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` ");
 	}
 	$stmt->execute(); 
 	$result = $stmt->get_result();
@@ -32,7 +32,7 @@ include "../user/files/conexion.php";
 		{
 			$pdf->Cell($w[0],6,$row['id'],'LR');
 			$pdf->Cell($w[1],6,$row['name'],'LR');
-			$pdf->Cell($w[2],6,$row['flight'],'LR');
+			$pdf->Cell($w[2],6,$row['date'],'LR');
 			$pdf->Cell($w[3],6,$row['seats'],'LR');
 			if($row['is_cancelled'] == 0){
 				$pdf->Cell($w[4],6,'Abierto','LR');

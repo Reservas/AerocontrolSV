@@ -26,11 +26,11 @@
 <?php
 session_start();
 include "../docs/connect.php";
-$query = "SELECT `bookings`.`id`, `costumers`. `name`,`bookings`.`flight`, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` ";
+$query = "SELECT `bookings`.`id`, `costumers`. `name`, DATE_FORMAT(`flights`.`departure_time`,'%d %b %y') as date, `bookings`.`seats`, `is_cancelled`, `justification` FROM `bookings` INNER JOIN `costumers` ON `bookings`.`costumer` = `costumers`. `id` INNER JOIN `flights` ON `bookings`.`flight` = `flights`. `id` INNER JOIN `airlines` ON `flights`. `airline` = `airlines`. `id` ";
 if(isset($_SESSION['airline'])){
 	$query = $query.'WHERE `airlines`. `id` = '.$_SESSION['airline'].' ';
 }
-$query = $query.'ORDER BY `costumers`. `id`, `bookings`.`id`';
+$query = $query.'ORDER BY `costumers`. `id`, `flights`.`departure_time` DESC';
 $resultado = mysql_query($query, $link);
 $total = mysql_num_rows($resultado);
 if($total>0)
@@ -38,13 +38,13 @@ if($total>0)
 ?>
 		<a href='exportpurchases.php' target="_blank" class="text-info"><span class='glyphicon glyphicon-file' aria-hidden='true'></span> Generar PDF</a>
         <table class="table table-striped">
-            <thead><tr><td>ID</td><td>Cliente</td><td>Vuelo</td><td>Asientos</td><td>Estado</td><td>Justificacion</td></tr></thead><tbody>          
+            <thead><tr><td>ID</td><td>Cliente</td><td>Fecha</td><td>Asientos</td><td>Estado</td><td>Justificacion</td></tr></thead><tbody>          
 <?php
     while($row = mysql_fetch_array($resultado))
 	{
         echo "<tr><td>".$row['id']."</td>";
         echo "<td>".$row['name']."</td>";
-        echo "<td>".$row['flight']."</td>";
+        echo "<td>".$row['date']."</td>";
 		echo "<td>".$row['seats']."</td>";
 		if($row['is_cancelled'] == 0){
 			echo "<td>Abierto</td>";
