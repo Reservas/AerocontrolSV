@@ -65,7 +65,7 @@
 							<label style="color:#fff;">Ida y vuelta</label>
 							<input id="ida" type="checkbox" />
 							<input type="button" value="Buscar vuelos
-" onclick="buscarVuelos();">
+" onclick="buscarVuelos(1,1);">
                     <div class="col-xs-12">
 						<div class="container flights">
 						</div>
@@ -112,7 +112,7 @@
 		}});	
 	
 	}
-	function buscarVuelos(){
+	function buscarVuelos(pageDep, pageDepa){
 		//Validar que no se seleccionara la misma ciudad
 		var depcity = $("#dep_city").val();
 		var arrcity = $("#arr_city").val();
@@ -130,7 +130,9 @@
 						airline : airline,
 						depcity : depcity,
 						arrcity : arrcity,
-						isOnlyDep : isOnlyDep
+						isOnlyDep : isOnlyDep,
+						pageDep : pageDep,
+						pageDepa: pageDepa
 					},
 					url : "ajax/buscar_vuelos.php",
 					success : function(response) {
